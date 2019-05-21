@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*绝对定位的元素是根据有相对定位的父级元素来定位的。如果直接父级没有定位就一级一级的往上找，直到找到body*/
+			/*offsetParent就是用来找有相对定位的父级*/
+			/*看效果第一步在#div1写上：margin: 50px;    第二步在#div1写上：position: relative;*/
+			/*在这里div2是相对于div1定位的*/
+			#div1{width: 200px; 
+				height: 200px; 
+				background-color: #999999; 
+				position: relative;
+				}
+				
+			#div2{
+				width: 100px; 
+				height: 100px; 
+				background-color: red; 
+				position: absolute; 
+				top: 50px; 
+				left: 50px; 
+				} 
+		</style>
+		<script>
+			window.onload = function(){
+				var oDiv2 = document.getElementById('div2');
+				alert(oDiv2.offsetParent);/*弹出的是[object HTMLDivElement]就是div1.  如果去掉#div里面的position: relative;弹出的是[object HTMLBodyElement]*/
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2"></div>
+		</div>
+	</body>
+</html>

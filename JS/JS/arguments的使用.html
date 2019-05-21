@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>arguments和css混合使用</title>
+		<!--<script>
+			function CSS()
+			{
+				if(arguments.length==2)//两个参数表示获取样式
+				{
+					return arguments[0].style[arguments[1]];
+				}
+				else
+				{
+					return arguments[0].style[arguments[1]] = arguments[2];
+				}
+			}
+			
+			window.onload = function()
+			{
+				var oDiv = document.getElementById('div1');
+				//alert(CSS(oDiv,'height'));
+				CSS(oDiv,'background','green');
+			}
+		</script>-->
+		<script>
+			function CSS(obj,name,value)
+				{
+					if(arguments.length==2)//两个参数表示获取样式,但是这么多的arguments显得代码复杂，可以设置参数
+					{						//obj=arguments[0];name=arguments[1];name=arguments[2]
+						return obj.style[name];
+					}
+					else
+					{
+						return obj.style[name] = value;
+					}
+				}
+				
+				window.onload = function()
+				{
+					var oDiv = document.getElementById('div1');
+					//alert(CSS(oDiv,'height'));
+					CSS(oDiv,'background','green');
+				}
+		</script>
+	</head>
+	<body>
+		<div id="div1" style="width: 200px; height: 400px; border: 2px solid #CCC; background:red"></div>
+	</body>
+</html>

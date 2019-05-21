@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>			
+			#div1{
+				width: 1300px;
+				height: 537px;
+				margin: 100px auto;
+				position: relative;
+				background-color: red;
+			}
+			#div1 ul{
+				position: absolute;
+				left: 0;
+				top: 0;
+				overflow: hidden;
+			}
+			#div1 ul li {
+				width: 400px;
+				height: 537px;
+				float: left;
+				list-style: none;
+			}
+			img{
+				box-shadow:0 0 20px rgba(0,0,0,0.8);  
+		        webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);  
+		        moz-box-shadow:0 0 20px rgba(0,0,0,0.8);  
+		        o-box-shadow:0 0 20px rgba(0,0,0,0.8); 
+			}
+			#li3{
+				margin-left: 37px;
+			}
+		</style>
+		<script>
+			window.onload=function (){
+				var oDiv = document.getElementById('div1');
+				var oUl = oDiv.getElementsByTagName('ul')[0];/*获取id为div1里面的ul.getElementsByTagName是数组*/
+				var oLi = oUl.getElementsByTagName('li')[0];/*获取ul里面的li*/
+				
+				oUl.innerHTML+=oUl.innerHTML;/*ul里面的图片翻一倍，3张变成6张*/
+				
+				oUl.style.width = oLi[0].offsetWidth*oLi.length+'px';
+				
+				setInterval(function(){
+					if(oUl.offsetLeft<-oUl.offsetWidth/2){/*offsetLeft表示向左滚，为负值，当它小于ul宽度的一半，说明就已经滚完了。但是offsetWidth最小为0，所以要在其那面加一个负号*/
+						oUl.style.left='0';/*滚完就让ul的左边为0，将其快速拖到第一张图片的地方，用户无法看出来*/
+					}
+					oUl.style.left=oUl.offsetLeft-2+'px';
+				},30)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<ul>
+				<li><img src="img/lb1.gif"></li>
+				<li><img src="img/lb2.gif"></li>
+				<li id="li3"><img src="img/lb3.gif"></li>
+			</ul>
+		</div>
+	</body>
+</html>

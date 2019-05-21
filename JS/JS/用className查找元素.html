@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*以前使用的老方法：
+			window.onload = function(){
+				var ou = document.getElementById('u');/*获取ul
+				var oli = ou.getElementsByTagName('li');/*获取ul里面的li,通过标签名获取元素，的到的是类数组
+				
+				for(var i=0;i<oli.length;i++){
+					if(oli[i].className=='box'){
+						oli[i].style.background = 'red';
+					}
+				}
+			};
+			*/
+			
+			
+			
+			
+			/*使用className查找元素封装为一个通用的函数*/
+			/*oParent表示父元素，oclassName表示在复原度里面要找的类名*/
+			function getByClass(oParent,oclassName){
+				var aResult=[];/*将我们找到的元素全都存放在里面*/
+				var oElem = document.getElementsByTagName('*');
+				
+				for(var i=0;i<oElem.length;i++)
+				{				
+					if(oElem[i].className==oclassName)
+					{
+						aResult.push(oElem[i]);/*经查找到的元素全部存在数组里面。然后返回数组就行*/
+					}
+				}
+				
+					return aResult;
+			}
+			
+			window.onload = function(){
+				var ou = document.getElementById('u');/*获取ul*/
+				var aBox = getByClass(ou,'box');/*调用自定义的函数*/
+				
+				for(var i=0;i<aBox.length;i++){					
+					aBox[i].style.background = 'red';
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<ul id="u">
+			<li class="box"></li>
+			<li class="box"></li>
+			<li></li>
+			<li></li>
+			<li class="box"></li>
+			<li></li>
+		</ul>
+	</body>
+</html>

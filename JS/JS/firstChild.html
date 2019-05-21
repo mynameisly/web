@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			描述：首尾子节点firstChild    firstElementChild
+						lastChile     lastElementChild
+				兄弟节点     nextSibling     nextElementChild
+						previousSibling   previousSibling
+			这些用法都是一样的，也都要考虑兼容性问题
+        -->
+		<script>
+			window.onload = function (){
+				var ou = document.getElementsByTagName('ul')[0];/*注意这里要使用ul的子元素，所以要用getElementsByTagName数组*/
+				
+				//ou.firstChild.style.background = 'red';/*在IE6--8使用*/
+				//ou.firstElementChild.style.background = 'red';/*在Chrome  Firefox使用*/
+				//if/else用于解决兼容性问题
+				if(ou.firstElementChild){
+					ou.firstElementChild.style.background = 'red';
+				}else{
+					ou.firstChild.style.background = 'red';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="u">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</body>
+</html>

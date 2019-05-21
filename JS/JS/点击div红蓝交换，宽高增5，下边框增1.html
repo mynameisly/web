@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击div，红蓝交换，宽高增5px，下边框增1px</title>
+		<style>
+			.div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				border-bottom: 1px solid green;
+			}
+			.div2{
+				width: 200px;
+				height: 200px;
+				background: blue;
+				border-bottom: 1px solid green;
+			}
+		</style>
+		<script>
+			function getStyle(obj,attr)/*这个函数用于获取非行间样式*/
+			{
+				return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj,null)[attr];
+			};
+			
+			function toggle()
+			{
+				var oDiv = document.getElementsByTagName('div')[0];
+				
+				if(oDiv.className.indexOf('div1')>=0)
+				{
+					oDiv.className = 'div2';
+				}else
+				{
+					oDiv.className = 'div1';
+				}
+				
+				
+				//alert(getStyle(oDiv , 'height'));
+				//return;
+				oDiv.style.width =parseInt(getStyle(oDiv , 'width'))+5+'px';
+				oDiv.style.height = parseInt(getStyle(oDiv , 'height'))+5+'px';
+				
+				oDiv.style.borderBottomWidth = parseInt(getStyle(oDiv , 'borderBottomWidth'))+1+'px';
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1" onclick="toggle()">
+			通过点击div，实现红蓝交换，宽高增加5px,下边框增加1px.
+		</div>
+	</body>
+</html>

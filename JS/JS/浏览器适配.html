@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用try-catch适配浏览器</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="divbox"></div>
+    <script>
+       var box = document.getElementById("divbox");
+       function scroller(event) {
+           event = event||window.event;
+           //申明变量记录方向，向上是正，向下是负
+           var direction;
+            if (event.wheelDelta){
+                //Chrome、IE
+                direction = event.wheelDelta > 0 ? 1 : -1;
+            } else if(event.detail){
+                //Firefox
+                direction = event.detail < 0 ? 1: -1;
+            }
+           box.innerHTML = direction;
+           // return direction;//如果后面需要用，就返回
+       }
+       box.onmousewheel = scroller;
+       try{
+           box.addEventListener("DOMMouseScroll",scroller,false);
+       }catch (error) {
+
+       }
+
+    </script>
+</body>
+</html>

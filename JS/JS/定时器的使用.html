@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 200px;
+				height: 200px;
+				border: 2px solid #999999;
+				background-color: red;
+				position: absolute;
+				top: 150px;
+				left: 200px;
+				/*margin: 30px;*/
+			}
+		</style>
+		<script>
+			setInterval(function(){
+				var oDiv = document.getElementById('div1');
+				oDiv.style.left = oDiv.offsetLeft+10+'px';
+			},30)
+		</script>
+	</head>
+	<body>
+		<!--offsetLeft获取盒子的左边距，可以参加计算，例如样式加上margin: 30px;后弹出的是230
+			类似的还有offsettop  offsetHeight   offsetWidth
+		-->
+		<div id="div1" onclick="alert(this.offsetLeft)"></div>
+	</body>
+</html>

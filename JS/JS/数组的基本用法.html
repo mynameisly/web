@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数组的基本用法</title>
+		<script>
+			var arr = [1,2,3,4];
+			document.write(arr+'<br />');
+			arr.push(5);					//从尾部添加一个数
+			document.write(arr+'<br />');
+			arr.pop();						//从尾部删除一个数
+			document.write(arr+'<br />');
+			arr.shift();					//从头部添加一个数
+			document.write(arr+'<br />');
+			arr.unshift(2);					//从头部添加一个数
+			document.write(arr+'<br />');
+			//删除：splice(起点，长度)；
+			arr.splice(1,2);//删除从起点（索引）为1开始后的长度为2的元素
+			document.write(arr+'<br />');
+			//splice(起点，长度，元素)；
+			arr.splice(1,0,'5','6','7');
+			document.write(arr+'<br />');//起点（索引）为1，长度为0的地方插入5，6，7三个数
+			arr.splice(1,2,'8','9')//起点（索引）为1、删除之后的2个元素，在加入8，9两个元素，相当于替换
+			document.write(arr+'<br />');
+		
+			var arr1 = [1,2,3];
+			var arr2 = [4,5,6];
+			document.write(arr1.concat(arr2)+'<br />');//数组的连接
+			document.write(arr2.concat(arr1)+'<br />');
+			document.write(arr1.join('--')+'<br />');//以后用来做网址的连接
+			document.write(arr1.join('-p')+'<br />');
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

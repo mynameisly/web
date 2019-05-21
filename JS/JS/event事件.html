@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function ()
+			{
+				// 适用于IE，Chrome
+				// document.onclick = function(){
+				// 	alert(event.clientX+','+event.clientY);
+				// }
+				
+				// 适用于Firefox，Chrome
+				// document.onclick = function(ev){
+				// 	alert(ev.clientX+','+ev.clientY);
+				// }
+				
+				/*兼容性写法*/
+				// document.onclick = function (ev){
+				// 	var oEvent = ev||event;
+				// alert(oEvent.clientX+','+oEvent.clientY);
+				// };
+
+				
+			};
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

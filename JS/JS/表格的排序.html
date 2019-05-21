@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!<!--
+        	描述：原理：把一串混乱的数字里面的最小数弄到最后的位置，然后就从小到大了。详见li排序
+        -->
+        <style>
+			#u1{background: deepskyblue;}
+			#u2{background: yellowgreen;}
+		</style>
+        <script>
+			window.onload = function()
+			{
+				var obtn = document.getElementById('btn');
+				var ou = document.getElementById('u1');
+				var oli = document.getElementsByTagName('li');
+				obtn.onclick = function ()
+				{
+					var arr = [];
+					for(var i=0;i<oli.length;i++)
+					{
+						arr[i] = oli[i];
+						//alert(arr.length);
+					}
+					arr.sort(function (li1,li2)
+					{
+						var n1 = parseInt(li1.innerHTML);
+						var n2 = parseInt(li2.innerHTML);
+						return n1-n2;
+					});
+					//alert(arr[2].innerHTML);
+					for(var i=0;i<arr.length;i++)
+					{
+						alert('该把'+arr[i].innerHTML+'添加到末尾')
+						ou.appendChild(arr[i]);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="排序" />
+		<ul id="u1">
+			<li>-5</li>
+			<li>62</li>
+			<li>30</li>
+			<li>4</li>
+			<li>54</li>
+			<li>100</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function (){
+				var ou = document.getElementById('u');
+				var oa = document.getElementsByTagName('a');
+				
+				for(var i=0;i<oa.length;i++){
+					oa[i].onclick = function (){
+					ou.removeChild(this.parentNode);/*this指的是a,他的父级节点是li*/
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="u">
+			<li>元素1<a href="javascript:;">删除</a></li>
+			<li>元素2<a href="javascript:;">删除</a></li>
+			<li>元素3<a href="javascript:;">删除</a></li>
+			<li>元素4<a href="javascript:;">删除</a></li>
+		</ul>
+	</body>
+</html>

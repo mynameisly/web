@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var otab = document.getElementById('tab');
+				var oldColor = '';//oldColor的作用是保存以前的灰色，当鼠标移除的时候，显示灰色
+				/*注意：这里的tBodies[0]要记得写，不然会把表头的行也算上*/
+				for( var i=0;i<otab.tBodies[0].rows.length;i++)
+				{
+					otab.tBodies[0].rows[i].onmouseover = function (){
+						oldColor=this.style.background;
+						this.style.background='green';
+					};
+					
+					otab.tBodies[0].rows[i].onmouseout = function (){
+						this.style.background=oldColor;
+					};
+					
+					if(i%2)
+					{
+						otab.tBodies[0].rows[i].style.background = '';
+					}else{
+						otab.tBodies[0].rows[i].style.background = '#CCC';
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<table id="tab" border="1px" width="200px">
+			<thead>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>性别</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>张丹</td>
+					<td>女</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>李四</td>
+					<td>男</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

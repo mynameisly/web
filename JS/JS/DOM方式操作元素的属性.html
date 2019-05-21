@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	描述：otxt.setAttribute(属性名,属性值);
+        	otxt.getAttribute(属性名);
+        	otxt.removeAttribute(属性名);
+        -->
+		<script>
+			window.onload = function(){
+				var otxt = document.getElementById('txt');
+				var obtn = document.getElementById('btn');
+				obtn.onclick = function(){
+					//otxt.value='内容1';
+					//otxt['value']='内容2';
+					//otxt.setAttribute(属性名,属性值);
+					otxt.setAttribute('value','内容3');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id="txt" type="text"  />
+		<input id="btn" type="button" value="按钮" />
+	</body>
+</html>

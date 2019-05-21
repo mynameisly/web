@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/move.js"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#ul1{width: 400px;height: 400px;border: 1px solid black;margin: 10px auto;overflow: hidden;}
+			#ul1 li{
+				border-bottom: 1px dashed #000000; list-style: none;overflow: hidden;padding: 4px;
+				filter:alpha(opacity:0);opacity: 0;
+			}
+		</style>
+		<script>
+			window.onload = function (){
+				var obtn = document.getElementById('btn1');
+				var otext= document.getElementById('text1');
+				var oul = document.getElementById('ul1');
+				
+				obtn.onclick = function (){
+					var oli = document.createElement('li');
+					oli.innerHTML = otext.value;
+					otext.value = '';
+					/*oul.appendChild(oli);把文本框里面的内容添加到li后面*/
+					if(oul.children.length > 0){
+						oul.insertBefore(oli,oul.children[0]);/*把内容插入到ul的第0个子节点前面*/
+					}
+					else{
+						oul.appendChild(oli);
+					}
+					
+					//运动
+					var iHeight = oli.offsetHeight;
+					//alert(iHeight);
+					oli.style.height = '0';
+					/*先是高度展开，然后是透明度变大*/
+					startMove(oli,{height:iHeight},function(){
+						startMove(oli,{opacity:100});
+					})
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<textarea id="text1" rows="4" cols="40"></textarea>
+		<input type="button" id="btn1" value="发布"/>
+		<ul id="ul1">
+			
+		</ul>
+	</body>
+</html>

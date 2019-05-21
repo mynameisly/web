@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				width: 400px;
+				height: 400px;
+				background: green;
+				border: 3px solid #000000;
+				border-collapse: collapse;/*把单元格合并为单一格式*/
+			}
+
+			table tr td{
+				border: 3px solid #000000;
+			}
+		</style>
+				
+		<script>
+			window.onload = function ()
+			{
+				var count = 0;/*计数器  奇数次为黑色。偶数次为白色*/
+				var oTab = document.getElementsByTagName('table')[0];
+				oTab.onclick = function (ev)
+				{
+					/*下面这里使用了时间委托，属性是target*/
+					ev.target.style.background = count++%2?'black':'white';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>

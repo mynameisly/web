@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 600px;
+				top: 50px;
+			}
+			#div2{
+				width: 1px;
+				height: 300px;
+				position: absolute;
+				left: 300px;
+				top: 0;
+				background: black;
+			}
+			#div3{
+				width: 1px;
+				height: 300px;
+				position: absolute;
+				left: 100px;
+				top: 0;
+				background: black;
+			}
+		</style>
+		<script>
+			var timer = null;
+			function startMove(iTarget)
+			{
+				var oDiv = document.getElementById('div1');
+				clearInterval(timer);
+				timer = setInterval(function(){
+					var speed = 0;
+					if(oDiv.offsetLeft<iTarget){
+						speed=7;/*从左往右走，速度是正的*/
+					}
+					else{
+						speed=-7;/*从右往左走，速度是负的*/
+					}
+					/*使用绝对值，只要目标和物体的距离<=7，物体近到一定程度就算到了，这样就不会抖动
+					 oDiv.style.left = iTarget+'px';让物体直接贴在线上，肉眼看不出来
+					 * */
+					if(Math.abs(iTarget-oDiv.offsetLeft)<=7){
+						clearInterval(timer);
+						oDiv.style.left = iTarget+'px';
+					}
+					else{
+						oDiv.style.left = oDiv.offsetLeft+speed+'px';
+					}
+					
+				},30);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="到100" onclick="startMove(100)" />
+		<br />
+		<input type="button" value="到300" onclick="startMove(300)" />
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+	</body>
+</html>

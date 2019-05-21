@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>间歇模型</title>
+    <!--间歇模型是运动一次停一次，运动一次停一次-->
+    <style>
+
+        /*.box{*/
+            /*width: 200px;*/
+            /*height: 50px;*/
+            /*border: 1px solid #ddd;*/
+            /*overflow: hidden; !*加上这句话之后就只显示明天放假*!*/
+            /*position: relative;*/
+        /*}*/
+        /*ul{*/
+            /*width: 200px;*/
+            /*list-style: none;*/
+            /*padding: 0;*/
+            /*margin: 0;*/
+
+            /*position: absolute;*/
+            /*top: 0;!*改变这个top值就会上下切换3个li*!*/
+            /*left: 0;*/
+        /*}*/
+        /*li{*/
+            /*height: 50px;*/
+            /*line-height: 50px;*/
+        /*}*/
+
+
+
+        *{margin: 0;padding: 0}
+        .box{width: 500px;height: 200px; border: 1px solid #ddd;margin: 100px auto;position: relative;top: 0;overflow: hidden;}
+        ul{position:absolute;top:0;left:0;}
+        li{width:500px;hieght:49px;line-height:49px;font-size:20px;border-bottom:1px solid #ddd;list-style: none;}
+    </style>
+</head>
+<body>
+
+    <!--<div class="box">-->
+        <!--<ul>-->
+            <!--<li>明天放假</li>-->
+            <!--<li>不开心</li>-->
+            <!--<li>因为学习使我快乐</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <!--<script src="js/animate-3.0.js"></script>-->
+    <!--<script>-->
+        <!--//获取元素ul-->
+        <!--var boxul = document.getElementsByTagName('ul')[0];-->
+        <!--var boxlis = document.getElementsByTagName('li');-->
+
+        <!--//获取长度-->
+        <!--liLength = boxlis.length;-->
+
+        <!--//在最后一个li后面拼接一个li,这个li是boxli[0]  即明天放假-->
+        <!--boxul.appendChild(boxlis[0].cloneNode(true));-->
+
+        <!--//声明信号量-->
+        <!--var idx = 0;-->
+
+        <!--setInterval(function(){-->
+            <!--idx++;-->
+            <!--//使用了回调函数-->
+            <!--animate(boxul,{'top':-50*idx},1000,function () {-->
+                <!--if (idx>liLength-1){-->
+                    <!--idx = 0;-->
+                    <!--boxul.style.top = '0px';-->
+                <!--}-->
+            <!--});-->
+        <!--},2000)-->
+    <!--</script>-->
+
+
+<!--------------------------------------------------------->
+    <div class="box">
+        <ul>
+            <li>杨同学--**巴巴网络有限公司</li>
+            <li>周同学--**保密大型网网络制作有限公司</li>
+            <li>苏同学--**清鸟网络有限公司</li>
+            <li>王同学--**小路职业技术有限公司</li>
+            <li>李同学--**传奇网络有限公司</li>
+            <li>孙同学--**吖吖互联网有限公司</li>
+            <li>吴同学--**一度人工智能有限公司</li>
+            <li>邱同学--**七乐康IT有限公司</li>
+        </ul>
+    </div>
+    <script src="js/animate-3.0.js"></script>
+    <script>
+        var boxul = document.getElementsByTagName('ul')[0];
+        var lilength = boxul.getElementsByTagName('li').length;
+        boxul.innerHTML += boxul.innerHTML;
+
+        //信号量
+        var idx = 0;
+
+        setInterval(function(){
+            idx++;
+            animate(boxul,{'top' : -50*idx},1000,function(){
+                if(idx == lilength/2)
+                    idx = 0;
+                    boxul.style.top = '0px';
+            });
+        },2000)
+    </script>
+</body>
+</html>

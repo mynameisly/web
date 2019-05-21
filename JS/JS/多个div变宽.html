@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	描述：3gediv加3个定时器
+        -->
+		<style>
+			div{
+			width: 100px;
+			height: 50px;
+			background: red;
+			margin: 10px;
+			border: 1px solid black;
+			}
+		</style>
+		<script>
+			window.onload= function (){
+				var oDiv = document.getElementsByTagName('div');
+				
+				for(var i=0;i<oDiv.length;i++){
+					oDiv[i].timer= null;/*给每个div都加上一个定时器，如果不这样做的话，就只设置一个定时器，第一个盒子还没有会到原处，第二个盒子开始，第一个就卡在那里了*/
+					
+					oDiv[i].onmouseover=function(){
+						startMove(this,400);
+					}
+					oDiv[i].onmouseout=function(){
+						startMove(this,100);
+					}
+				}
+			}
+			//var timer = null;
+			function startMove(obj,iTarget){
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function(){
+					var speed = (iTarget-obj.offsetWidth)/6;
+					speed = speed>0?Math.ceil(speed):Math.floor(speed);/*遇到缓冲的时候一定要加取整*/
+					if(obj.offsetWidth==iTarget){
+						clearInterval(obj.timer);
+					}
+					else{
+						obj.style.width=obj.offsetWidth+speed+'px';
+					}
+				},30);
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

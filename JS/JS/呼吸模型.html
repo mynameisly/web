@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>呼吸模型</title>
+    <!--一张慢慢淡出，另一种慢慢淡入，改变透明度-->
+</head>
+<body>
+    <input type="button" id="btn1" value="开启">
+    <input type="button" id="btn2" value="关闭">
+
+    <script>
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        var timer = null;
+
+
+        oBtn1.onclick = function(){
+            timer = setInterval(function(){
+                alert('a');
+            },3000);
+        };
+
+        oBtn2.onclick = function (){
+            clearInterval(timer);
+        }
+
+    </script>
+</body>
+</html>

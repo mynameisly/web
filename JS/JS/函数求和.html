@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS中用函数求和</title>
+		<!--arguments是数组，里面存了所有的参数-->
+		<script>
+			function sum()
+			{
+				var result = 0;
+				for(var i=0;i<arguments.length;i++)
+				{
+					result+=arguments[i];
+					
+				}
+				return result;
+			}
+			alert(sum(12,712,7,1,10));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

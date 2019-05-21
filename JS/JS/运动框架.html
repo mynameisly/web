@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	描述：多物体运动框架中。所有东西都不能公用
+        -->
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				margin: 20px;
+				background: red;
+				filter: alpha(opacity:30);
+				opacity: 0.3;
+				float: left;
+				border: 1px solid black;
+			}
+		</style>
+		<script>
+			window.onload = function (){
+				var aDiv = document.getElementsByTagName('div');
+				for(var i=0;i<aDiv.length;i++)
+				{
+					aDiv[i].alpha = 30;
+					aDiv[i].onmouseover = function (){
+						startMove(this,100);
+					};
+					aDiv[i].onmouseout = function (){
+						startMove(this,30);
+					};
+				}
+			};
+		//	var alpha = 30;/*在多物体框架中。所有物体都不能通用*/
+			var timer = null;
+			function startMove(obj,iTarget)
+			{
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function(){
+					var speed = (iTarget-obj.alpha)/6;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					
+					if(obj.alpha==iTarget){
+						clearInterval(obj.timer);
+					}else{
+						obj.alpha+=speed;
+						obj.style.filter = 'alpha(opacity:'+obj.alpha+')';
+						obj.style.opacity = obj.alpha/100;
+					}
+				});
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

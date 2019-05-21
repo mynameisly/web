@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			window.onload = function (){
+				var ou = document.getElementById('u');
+				var obtn = document.getElementById('btn');
+				 obtn.onclick = function(){
+				 
+				 	for(var i=0;i<10000;i++){
+				 		var oli = document.createElement('li');
+				 		ou.appendChild(oli);
+				 	}
+				 	
+				 }
+			}*/
+			
+			
+			window.onload = function (){
+				var ou = document.getElementById('u');
+				var obtn = document.getElementById('btn');
+				var oFrag = document.createDocumentFragment();
+				
+				 obtn.onclick = function()
+				 {				 	
+				 	for(var i=0;i<10000;i++)
+				 	{
+				 		var oli = document.createElement('li');
+				 		oFrag.appendChild(oli);/*把一万个li添加到文档碎片中*/
+				 	}
+				 	
+				 	ou.appendChild(oFrag);/*把文档碎片一次性添加到ul里面*/
+				 }
+			};
+		</script>
+	</head>
+	<body>
+		<ul id="u"></ul>
+		<input type="button" id="btn" value="按钮"/>
+	</body>
+</html>

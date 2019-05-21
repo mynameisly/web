@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{width: 800px; height: 700px; background: #CCC;position: relative;}
+			#div2{width: 100px; height: 100px; background: red; position: absolute;}
+		</style>
+		<script>
+			window.onload = function (){
+				var oDiv = document.getElementById('div1');
+				var oDiv2 = document.getElementById('div2');
+				var disX = 0;
+				var disY = 0;
+				
+				oDiv2.onmousedown = function (ev)
+				{
+					var oEvent = ev||event;
+					disX = oEvent.clientX-oDiv.offsetLeft;
+					disY = oEvent.clientY-oDiv.offsetTop;
+				
+					document.onmousemove = function (ev)
+					{
+						var oEvent = ev||event;
+						var l = oEvent.clientX-disX;
+						var r = oEvent.clientY-disY;
+						
+						if(l<50){l=0;}/*这里让l<50是指磁性吸附*/
+						else if(l>oDiv.offsetWidth-oDiv2.offsetWidth)
+						{
+							l=oDiv.offsetWidth-oDiv2.offsetWidth;
+						}
+						
+						if(r<50){r=0}/*这里让r<50是指磁性吸附*/
+						else if(r>oDiv.offsetHeight-oDiv2.offsetHeight)
+						{
+							r=oDiv.offsetHeight-oDiv2.offsetHeight;
+						}
+						oDiv2.style.left = l+'px';
+						oDiv2.style.top = r+'px';
+					}
+					
+					document.onmouseup = function (){
+						document.onmousemove = null;
+						document.onmouseup = null;
+					};
+					
+					return false;
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2"></div>
+		</div>
+		
+	</body>
+</html>

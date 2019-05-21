@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>多物体通用运动框架</title>
+		<style>
+			#div1 {width: 200px;height: 200px;background: red;float: left;}
+			#div2 {width: 200px;height: 200px;background: blue;float: left;}
+			#div3 {width: 200px;height: 200px;background: green;float: left; font-size: 20;font-weight: bold;}
+		</style>
+		<script>
+			function getStyle(obj, name) {
+				if(obj.currentStyle) {
+					return obj.currentStyle[name];
+				} else {
+					return getComputedStyle(obj, false)[name];
+				}
+			}
+
+			var timer = null;
+
+			function startMove(obj, attr, iTarget) {
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function() {
+					var cur = parseInt(getStyle(obj, attr));
+					var speed = (iTarget - cur) / 6;
+					speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+					if(cur == iTarget) {
+						clearInterval(obj.timer);
+					} else {
+						obj.style[attr] = cur + speed + 'px';
+					}
+				}, 30);
+			}
+			window.onload = function() {
+				var oDiv1 = document.getElementById('div1');
+				var oDiv2 = document.getElementById('div2');
+				var oDiv3 = document.getElementById('div3');
+				oDiv1.onmouseover = function() {
+					startMove(this, 'width', 400);
+				}
+				oDiv1.onmouseout = function() {
+					startMove(this, 'width', 200);
+				}
+				
+
+				oDiv2.onmouseover = function() {
+					startMove(this, 'height', 400);
+				}
+				oDiv2.onmouseout = function() {
+					startMove(this, 'height', 200);
+				}
+				
+
+				oDiv3.onmouseover = function() {
+					startMove(this, 'fontSize', 50);
+				}
+				oDiv3.onmouseout = function() {
+					startMove(this, 'fontSize', 20);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3">黄红光</div>
+	</body>
+
+</html>

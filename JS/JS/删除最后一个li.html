@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>删除最后一个li</title>
+		<script>
+			function del()
+			{
+				var oLi = document.getElementsByTagName('li');
+				var oLastLi =oLi[oLi.length-1] ;/*为什么要减1？因为最后一个节点是换行（空节点）*/
+				oLastLi.parentNode.removeChild(oLastLi);/*先找到li的父亲，然后父亲来删除子节点*/
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="del()" value="删除最后一个li" />
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+			<li>555</li>
+		</ul>
+	</body>
+</html>

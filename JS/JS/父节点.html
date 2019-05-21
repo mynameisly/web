@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var aa = document.getElementsByTagName('a');
+				for(var i=0;i<aa.length;i++){
+					aa[i].onclick=function(){/*注意这里的aa里面的i不要写漏了*/
+						this.parentNode.style.display= 'none';/*这里的this指的是标签a,他的父亲节点就是li*/
+					}					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1111<a href="javascript:;">隐藏</a></li>
+			<li>2222<a href="javascript:;">隐藏</a></li>
+			<li>3333<a href="javascript:;">隐藏</a></li>
+			<li>4444<a href="javascript:;">隐藏</a></li>
+			<li>5555<a href="javascript:;">隐藏</a></li>
+		</ul>
+	</body>
+</html>

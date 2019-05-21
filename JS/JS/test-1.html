@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>将数字转化为指定长度</title>
+		<script type="text/javascript">
+			function formatNO(str,len){
+				var strLen = str.length;
+				for(i=0;i<len-strLen;i++){
+					str="0"+str;
+				}
+			
+			function deal(){
+				var form1;
+				if(form1.str.value==""){alert("请输入要格式化的数字！");
+				form1.str.focus();
+				return false;
+				}
+				if(isNaN(form1.str.value=="")){alert("请输入要格式化的数字！");
+				form1.str.focus();
+				return false;
+				}
+				if(form1.len.value==""){alert("请输入要格式化后的长度！");
+				form1.len.focus();
+				return false;
+				}
+				if(isNaN(form1.str.value=="")){alert("请输入要格式化的数字！");
+				form1.len.focus();
+				return false;
+				}
+				form1.lastStr.value=formatNO(form1.str.value,form1.len.value)
+			}
+		}
+		</script>
+	</head>
+	<body>
+		请输入要格式化的数字：
+		<input type="text"  /><br />
+		请输入格式化后数字的长度：
+		<input type="text" /><br />
+		格式化后的数字：
+		<input type="text" /><br />
+		<input type="button" name="submit" value="转换" class="btn_grey" onclick="deal()" />
+	</body>
+</html>

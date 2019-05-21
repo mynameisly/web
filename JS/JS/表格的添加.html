@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	描述：在文本框中输入内容点击按钮后在表格最后加上一行，这里要用到创建元素的知识
+        -->
+		<script>
+			window.onload = function(){
+				var otab = document.getElementById('tab');
+				var otxt1 = document.getElementById('txt1');
+				var otxt2 = document.getElementById('txt2');
+				var obtn = document.getElementById('btn');
+				
+				obtn.onclick = function ()
+				{
+					var atr = document.createElement('tr');
+					
+					var atd = document.createElement('td');
+					atd.innerHTML = otab.tBodies[0].rows.length+1;//新添加的一行的ID就是行数+1
+					atr.appendChild(atd);
+					
+					var atd = document.createElement('td');
+					atd.innerHTML = otxt1.value;
+					atr.appendChild(atd);
+					
+					var atd = document.createElement('td');
+					atd.innerHTML = otxt2.value;
+					atr.appendChild(atd);
+					otab.tBodies[0].appendChild(atr);//把整个行的内容添加到身体里面
+				}
+			}
+		</script>
+	</head>
+	<body>
+	姓名：	<input id="txt1" type="text"  />
+	性别：        <input id="txt2" type="text" />
+			<input id="btn" type="button" value="添加"/>
+		<table id="tab" border="1px" width="200px">
+			<thead>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>性别</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>张丹</td>
+					<td>女</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>李四</td>
+					<td>男</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

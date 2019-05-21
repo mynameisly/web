@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var otab = document.getElementById('tab');
+				//获取李四
+				//alert(otab.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[1].getElementsByTagName('td')[1].innerHTML); 
+				/*tBodies一个表格可以有多个tbody,所有它是一个数组 而一个表格只能有一个头一个底部所有 tHead和tFoot这两个是直接元素  rows行     cells单元格   */
+					alert(otab.tBodies[0].rows[1].cells[1].innerHTML);	
+			}
+		</script>
+	</head>
+	<body>
+		<table id="tab" border="1px" width="200px">
+			<thead>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>性别</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>张丹</td>
+					<td>女</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>李四</td>
+					<td>男</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

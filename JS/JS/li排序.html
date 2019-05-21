@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#u1{background: deepskyblue;}
+			#u2{background: yellowgreen;}
+		</style>
+		<!--<script>
+			window.onload = function()
+			{
+				var obtn = document.getElementById('btn');
+				var ou1 = document.getElementById('u1');
+				var ou2 = document.getElementById('u2');
+				obtn.onclick = function ()
+				{
+					var oli = ou1.children[0];
+					ou2.appendChild(oli);//appendChild的功能是先删除父级元素后添加子元素
+				}
+			}
+		</script>
+		-->
+		
+		
+		<script>
+			window.onload = function()
+			{
+				var obtn = document.getElementById('btn');
+				var ou1 = document.getElementById('u1');
+				obtn.onclick = function ()
+				{
+					var oli = ou1.children[0];
+					ou1.appendChild(oli);//appendChild的功能是先删除父级元素后添加子元素
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--
+		<input type="button" id="btn" value="移动" />
+		<ul id="u1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<ul id="u2"></ul>
+		-->
+		
+		
+		<input type="button" id="btn" value="排序" />
+		<ul id="u1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		
+		
+	</body>
+</html>

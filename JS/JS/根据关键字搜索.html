@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	描述：在文本框中输入内容点击按钮后在表格最后加上一行，这里要用到创建元素的知识
+        -->
+		<script>
+			window.onload = function(){
+				var otab = document.getElementById('tab');
+				var otxt1 = document.getElementById('txt1');
+				var obtn = document.getElementById('btn');
+			
+				obtn.onclick = function()
+				{
+					for(var i=0;i<otab.tBodies[0].rows.length;i++)
+					{	
+						var stab = otab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase() ;//表示从表格里面取出的
+						var stxt = otxt1.value.toLowerCase();//表示用户输入的
+						//原理是将输入的切成一段一段的，然后分别找
+						var arr = stxt.split(' ');
+						otab.tBodies[0].rows[i].style.background = '';
+						for(var j=0;j<arr.length;j++)
+						{
+							if(stab.search(arr[j])!=-1 )//search表示找到并且返回字符串中的位置，只需要写一部分就能完整的显示出来
+						{
+							otab.tBodies[0].rows[i].style.background = 'yellow';
+						}
+						}
+						
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+	姓名：	<input id="txt1" type="text"  />
+			<input id="btn" type="button" value="搜索"/>
+		<table id="tab" border="1px" width="200px">
+			<thead>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>操作</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Zhangdan</td>
+					<td>女</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>zhangdan</td>
+					<td>女</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>李四</td>
+					<td>男</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>男</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>孙五</td>
+					<td>男</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>张华</td>
+					<td>男</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>style只能取行间的样式</title>
+		<style>
+			#div1{
+				width: 200px;
+				height: 300px;
+				border: 2ox solid #999;
+			}
+		</style>
+		<script>
+			function getStyle(obj,name)
+			{
+				if(obj.currentStyle)
+				{
+					return obj.currentStyle[name];
+				}
+				else
+				{
+					return getComputedStyle(obj,false)[name];
+				}
+			}
+			window.onload = function()
+			{
+				var oDiv = document.getElementById('div1');
+			//	alert(oDiv.style.height);//在这里，style只能获取到行间的样式。如果把行间样式写在外面就获取不到了。这时候不会弹出任何内容
+			//	alert(oDiv.currentStyle.height);//这样些只能在IE里面使用
+			//	alert(getComputedStyle(oDiv,false).height);//这样写能在Chrome,Firefox里面使用
+			//	alert(oDiv.currentStyle);//oDiv.currentStyle在Chrome,Firefox下面是假
+			//遇到这种兼容性问题，一般使用if/else语句来解决，但是也可以封装到
+//				if(oDiv.currentStyle)
+//				{
+//					alert(oDiv.currentStyle.height);//当在Chrome,Firefox下面是假，IE上面是真
+//				}
+//				else
+//				{
+//					alert(getComputedStyle(oDiv,false).height);//否则在Chrome,Firefox下面是真，注意这里的参数false是个垃圾，写什么都可以
+//				}
+				alert(getStyle(oDiv,'height'));
+				
+			}
+		</script>
+			
+	</head>
+	<body>
+		<div id="div1"></div>
+	<!--	<div id="div1" style="width: 200px; height: 300px; border: 2px solid #999;"></div>-->
+	</body>
+</html>

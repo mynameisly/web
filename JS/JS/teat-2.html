@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>系统时间</title>
+		<style type="text/javascript">
+			word_Green{
+				width: 300px;
+				height: 200px;
+				background-color: yellowgreen;
+			}
+		</style>
+		<script type="text/javascript">
+			function clockon(bgclock){
+			var now = new Date();
+			var year = now.getYear();
+			var month = now.getMonth();
+			var date1= now.getDate();
+			var day = now.getDay();
+			var hour = now.getHours();
+			var minu = now.getMinutes();
+			var sec = now.getSeconds();
+			var week;
+			month=month + 1;
+			if(month<10)month="0"+month;
+			if(date1<10)date1="0"+date1;
+			if(hour<10)hour="0"+hour;
+			if(minu<10)minu="0"+minu;
+			if(sec<10)sec="0"+sec;
+			var arr_week=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+			week = arr_week[day];
+			var time=year+"年"+month+"月"+date1+"日"+week+""+hour+":"+minu+":"+sec;
+			if(document.all){
+				bgclock.innerHTML="系统公告：["+time+"]";
+			}
+			var time = setTimeout("clockon(bgclock)",200);
+			}
+		</script>
+	</head>
+	<body onload="clockon(bgclock)">
+		<div id="bgclock" class="word_Green"></div>
+	</body>
+</html>
