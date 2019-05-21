@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>box-sizing确保两个div元素并列显示</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-08
+        	描述：将div1和div2的属性都设置为50%，就可以确保两个div并列显示。
+        -->
+		<style type="text/css">
+			div{
+				width: 50%;
+				border: 30px solid #FFAA00;
+				padding: 30px;
+				background-color: #ffff00;
+				box-sizing: border-box;
+				float: left;
+			}
+			#div2{
+				border: 30px solid #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			人的一生应该这样度过：当他回首往事的时候，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。
+		</div>
+		<div id="div2">
+			人的一生应该这样度过：当他回首往事的时候，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。
+		</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>overflow属性的使用</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-08
+        	描述：overflow:hidden当内容超出盒子时，隐藏超出的部分；
+        		 overflow:scoll不管内容超出还是不超出都显示水平和垂直滚动条（注意：是两个都显示）；
+        		 overflow:auto内容超出时显示水平或者是垂直滚动条（注意：只显示一个），不超出时两个都不显示
+        		 overflow:visible原样显示
+        		 如果使用overflow-x属性或者overflow-y属性，可以单独指定在水平方向上或者是垂直方向上内容超出盒子时的显示
+        -->
+		<style type="text/css">
+			div{
+				/*overflow: scroll;
+				overflow: hidden;
+				overflow: auto;
+				overflow: visible;*/
+				
+				overflow-x: hidden;
+				overflow-y: scroll;/*这两句只显示垂直方向上的滚动条*/
+				width: 300px;
+				height: 200px;
+				border: 2px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>
+				人的一生应该这样度过：当他回首往事的时候，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。
+			</p>
+			<p>
+				人的一生应该这样度过：当他回首往事的时候，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。
+			</p>
+			<p>
+				人的一生应该这样度过：当他回首往事的时候，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。
+			</p>
+			<p>
+				人的一生应该这样度过：当他回首往事的时候，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。
+			</p>
+		</div>
+	</body>
+</html>

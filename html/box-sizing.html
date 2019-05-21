@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>box-sizing的属性</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-08
+        	描述：box-sizing: content-box;表示元素的宽高不包括内部补白和边框的宽高：元素内容宽300+内部补白30*2+边框宽30*2 = 420
+        		box-sizing: border-box;…………………………………………包括……………………………………………………：元素内容宽300-内部补白30*2+边框宽30*2 = 180
+        		在Firefox浏览器中，box-sizing:padding-box表示指定的宽高包括内容补白，但不包括边框的宽高。
+        		如果不写的话，默认使用的是content-box属性
+        -->
+		<style type="text/css">
+		div{	
+			width:300px;
+			border: 30px solid #FFAA00;
+			padding: 30px;
+			background-color: #FFFF00;
+			margin: 20px auto;
+			}
+			#div1{
+				box-sizing: content-box;
+			}
+			#div2{
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">	
+			  人的一生应该这样度过：当他回首往事的时候，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。
+		</div>
+		<div id="div2">
+				人的一生应该这样度过：当他回首往事的时候，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。
+		
+		</div>
+	</body>
+</html>

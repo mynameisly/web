@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>通用兄弟元素选择器</title>
+		<style type="text/css">
+			div~p{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>这是一个p标签</p>
+			<p>这是一个p标签</p>
+		</div>
+		<p>P元素是div的兄弟元素</p>
+		<hr />
+		<p>P元素是div的兄弟元素</p>
+		<hr />
+		<div>
+			<p>这是一个p标签</p>
+		</div>
+		<p>P元素是div的兄弟元素</p>
+		<hr />
+		<p>P元素是div的兄弟元素</p>
+		<hr />
+	</body>
+</html>

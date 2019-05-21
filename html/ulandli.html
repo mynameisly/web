@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用ul和li来实现水平菜单</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-07
+        	描述：使用float: left;可以实现踩点水平显示，但不能去除li标签前面的圆点
+        	使用display: inline-block;不仅可以水平显示菜单，而且可以去除li标签前面的圆点。
+        	inline-block可以卸载li中，也可以写在a中，具有一样的浏览器效果。
+        -->
+		<style type="text/css">
+			ul{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				padding: 10px 0;
+				width: 200px;
+				display: inline-block;
+				background-color: #00FFFF;				
+				border: 1px solid #0000FF;
+				text-align: center;
+				/*float: left;*/
+				display: inline-block;
+			}
+			a{
+				color: #000000;
+				text-decoration: none;
+				/*padding: 10px 0;
+				width: 200px;
+				display: inline-block;
+				background-color: #00FFFF;		*/						
+			}
+			a:hover{
+				color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">家电</a></li>
+			<li><a href="#">生鲜</a></li>
+			<li><a href="#">服装</a></li>
+		</ul>
+	</body>
+</html>

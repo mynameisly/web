@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>将alt属性的值作为图像的标题来显示</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-06
+        	描述：在content属性中通过“attr(属性名)，可以将某个属性的属性值显示出来
+        	在该例中，图像的标题文字就是alt中的文字
+        	注意：目前只有Opera 10支持”
+        -->
+		<style type="text/css">
+			img:after{
+				content: attr(alt);
+				display: block;
+				text-align: center;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<p><img src="img/风景树图1.jpg" alt="风景树" />  </p>
+	</body>
+</html>

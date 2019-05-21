@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>inline-table的使用</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-07
+        	描述：table是块元素，使用display: inline-table;可以使文字和表格在同一行中显示
+        	但是不用的浏览器中可能是顶端对齐，也有可能是底端对齐，所有在使用的时候强制设定
+        	如：vertical-align: bottom;
+        -->
+		<style type="text/css">
+			table{
+				border: 3px solid #0000FF;
+				display: inline-table;
+			}
+			td{
+				border: 1px solid #008000;
+				padding: 5px;				
+			}
+		</style>
+	</head>
+	<body>
+		你好
+	<table>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+			<td>D</td>
+			<td>E</td>
+		</tr>
+		<tr>
+			<td>F</td>
+			<td>G</td>
+			<td>H</td>
+			<td>I</td>
+			<td>J</td>
+		</tr>
+	</table>
+	你也好啊！
+	</body>
+</html>

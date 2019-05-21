@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>read-onlyandread-write</title>
+		<style type="text/css">
+			input[type=text]:read-only{
+				background-color: yellow;
+			}
+			input[type="text"]:read-write{
+				background-color: cyan;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<p>名字：<input type="text" name="name" /></p>
+			<p>地址：<input type="text" name="address" value="四川省成都市" readonly="readonly"/> </p>
+		</form>
+	</body>
+</html>

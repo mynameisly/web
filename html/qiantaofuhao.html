@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>在字符串两边添加嵌套文字符号</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-06
+        	描述：使用content属性的open-quote属性和open-quote属性
+        	在字符串两边添加括号、单引号、双引号等符号。
+        	在元素样式中使用quotes来指定使用什么嵌套符号。
+        -->
+		<style type="text/css">
+			h1:before{
+				content: open-quote;
+			}
+			h1:after{
+				content: close-quote;
+			}
+			h1{
+				quotes: "(" ")";
+			}
+		</style>
+	</head>
+	<body>
+		<h1>标题</h1>
+	</body>
+</html>

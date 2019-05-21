@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用text-shadow给文字添加阴影</title>
+		<!--
+        	作者：LY
+        	时间：2018-09-06
+        	描述：语法：text-shadow:length  length  length  color
+        	第一个length表示阴影离开文字的横向距离，必写参数，可以是负值
+        	第二个表示纵向距离，必写参数，可以是负值
+        	第三个表示模糊半径
+        	color指阴影的颜色，该参数可以放在其他三个参数之前，也可以放在之后
+        -->
+		<style type="text/css">
+			.div{
+				text-shadow: 5px 5px 5px black;
+				color: red;
+				font-size: 40px;
+				font-weight: bold;
+				font-family: "微软雅黑";
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div">你好</div>
+	</body>
+</html>

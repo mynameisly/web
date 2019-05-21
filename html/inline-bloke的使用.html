@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>inline-block的使用</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-07
+        	描述：使用display: inline-block;可以将两个或者多个div并列显示，
+        	不需要使用float属性。
+        	top;inline-block默认情况下是底部对齐，
+        	使用vertical-align: top;就改为顶部对齐。
+        -->
+		<style type="text/css">
+			#a,#b,#c{
+				display: inline-block;
+				width: 300px;
+				height: 300px;				
+				vertical-align: top;
+			}
+			#a{
+				background-color: greenyellow;
+			}
+			#b{
+				background-color: blue;
+			}
+			#c{
+				background-color: gold;
+			}
+			#d{
+				background-color: royalblue;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="a">A A  A A  A A  A A  A A  A A  A A  A A  A A  A A  A A A A A A</div>
+		<div id="b">B B  B B  B B  B B  B B  B B  B B  B B  B B  B B  B B  B B  B B</div>
+		<div id="c">C C  C C  C C  C C  C C  C C  C C  C C  C C  C C  C C  C C  C C</div>
+		<div id="d">D  D  D  D  D  D  D  D  D  D  D  D  D  D  D  D  D  D  D  D  D</div>
+
+	</body>
+</html>

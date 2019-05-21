@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>E::selection</title>
+		<style type="text/css">
+			p::selection{
+				color: red;
+			}
+			input[type="text"]::selection{
+				background-color: blueviolet;
+			}
+			td::selection{
+				color: green;
+				background-color: lightgoldenrodyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<p>四川工商</p>
+		<input type="text" value="这是一段测试文字" />
+		<div style="padding-bottom: 30px;"></div>
+		<table border="1px">
+			<tr>
+				<td>张三</td>
+				<td>李四</td>
+				<td>王五</td>
+			</tr>
+		</table>
+	</body>
+</html>

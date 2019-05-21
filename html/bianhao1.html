@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>在多个标题前加入连续编号</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-06
+        	描述：若想在项目编号后追加样式，
+        	比如想在编号后面加一个点，就这样写content: counter(mycoun)'.';
+        	若想为编号设置大写英文编号，就这样写content: counter(mycoun,upper-alpha);
+        	若想为编号设置大写罗马编号，
+        -->
+		<style type="text/css">
+			h1:before{
+				content: counter(mycoun,upper-roman)'.';
+			}
+			h1{
+				counter-increment: mycoun;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>大标题</h1>
+		<p>文字</p>
+		<h1>大标题</h1>
+		<p>文字</p>
+		<h1>大标题</h1>
+		<p>文字</p>
+	</body>
+</html>

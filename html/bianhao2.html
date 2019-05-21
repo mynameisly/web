@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>编号的嵌套</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-06
+        	描述：大编号嵌套中编号，中编号嵌套小编号.
+        	在这个例子中，6个中标题的编号是按顺序的，如果想让第2个大标题的中标题从1开始
+        	就在h1中写counter-reset:mycounter;这叫做重置。
+        	若想把大编号中的中编号改为“大编号-中编号”的形式，就在h2中写
+        	content: counter(mycoun)'-'counter(mycounter)'.';
+        -->
+        <style type="text/css">
+        	h1:before{
+        		content: counter(mycoun)'.';
+        	}
+        	h1{
+        		counter-increment: mycoun;
+        		counter-reset:mycounter;
+        	}
+        	h2:before{
+        		content: counter(mycounter)'.';
+        	/*	content: counter(mycoun)'-'counter(mycounter)'.';*/
+        	}
+        	h2{
+        		counter-increment: mycounter;
+        		margin-left: 40px;
+        	}
+        </style>
+	</head>
+	<h1>大标题</h1>
+	<h2>中标题</h2>
+	<h2>中标题</h2>
+	<h2>中标题</h2>
+	<h1>大标题</h1>
+	<h2>中标题</h2>
+	<h2>中标题</h2>
+	<h2>中标题</h2>
+	<body>
+	</body>
+</html>

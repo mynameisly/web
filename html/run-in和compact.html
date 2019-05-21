@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>run-in和compact的使用</title>
+		<!--
+        	作者：offline
+        	时间：2018-09-07
+        	描述：当元素被指定为run-in类型，如果元素后面还有block类型的元素，run-in类型元素被包含在block内部
+        	compact元素在block左边
+        	目前run-in只被Opera和Safari支持，compact只被Opera支持。
+        -->
+		<style type="text/css">
+			dl #runin dt{
+				display: run-in;
+				border: 2px solid red;
+			}
+			dl #compact dt{
+				display: compact;
+				border: 2px solid yellow;
+			}
+			dd{
+				margin-left: 100px;
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<dl id="runin">
+			<dt>第一个</dt>
+			<dd>第一个解释</dd>
+		</dl>
+		<dl id="compact">
+			<dt>第二个</dt>
+			<dd>第二个解释</dd>
+		</dl>
+	</body>
+</html>
