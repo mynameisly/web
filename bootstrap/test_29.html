@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>警告框的使用</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="alert alert-success" role="alert">
+				Hello 大家好！
+			</div>
+			<div class="alert alert-danger" role="alert">
+				Hello 大家好！
+			</div>
+			<div class="alert alert-info" role="alert">
+				Hello 大家好！
+			</div>
+			<div class="alert alert-warning" role="alert">
+				Hello 大家好！
+			</div>
+			
+			
+			<!--可关闭的警告框-->
+			<div class="alert alert-warning" role="alert">
+				<button type="button" class="close" data-dismiss="alert">
+					<span aria-disabled="true">&times;</span>				
+				</button>
+				<strong>欢迎来到极客学院</strong>
+			</div>
+			
+			
+			<div class="alert alert-info" role="alert">
+				如有问题，请到
+			<!--点击极客学院后，会跳转到百度的网站-->
+				<a href="http://www.baidu.com" class="alert-link">极客学院</a>
+			</div>
+		</div>
+		
+		<!--引入之后可关闭的警告框才能关闭-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+		
+		
+	</body>
+</html>

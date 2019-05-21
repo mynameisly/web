@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>按钮式下拉菜单</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="btn-group dropup">
+				<button type="button" class="btn btn-info btn-lg">分裂式下拉菜单</button>
+				<button type="button" class="btn btn-info dropdown-toggle btn-lg"  data-toggle="dropdown">
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+				</ul>
+			</div>
+			
+			<div class="btn-group">
+				<button type="button" class="btn btn-info btn-sm">分裂式下拉菜单</button>
+				<button type="button" class="btn btn-info dropdown-toggle btn-sm"  data-toggle="dropdown">
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+				</ul>
+			</div>
+			
+			<div class="btn-group">
+				<button type="button" class="btn btn-info btn-xs">分裂式下拉菜单</button>
+				<button type="button" class="btn btn-info dropdown-toggle btn-xs"  data-toggle="dropdown">
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!--分裂式下拉菜单：就是显示分裂式下拉菜单的地方和按钮是分开的。
+		 指需要将“分裂式下拉菜单放在一个button里面即可”-->
+		 
+		<!-- 按钮的尺寸:在class里面加入btn-lg或者btn-sm或者btn-xs-->
+		 
+		 
+		<!-- 将下拉列表的按钮箭头设置为向上就在<div class="btn-group dropup"></div>-->
+		 
+	</body>
+</html>

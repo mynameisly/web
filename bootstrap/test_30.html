@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>精度条</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			body{
+				margin: 20px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+					<span class="sr-only">60%</span>
+				</div>
+			</div>
+			
+			
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+					60%
+				</div>
+			</div>
+			
+			<!--这是一个设置进度条为警告样式-->
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 20%;" >
+					20%
+				</div>
+			</div>
+			
+			<!--这是一个带纹理的精度条-->
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+					40%
+				</div>
+			</div>
+			
+			<!--这是一个可以动的进度条-->
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+					40%
+				</div>
+			</div>
+			
+			<!--这是一个堆叠的进度条-->
+			<div class="progress">
+				<div class="progress-bar" style=" width: 50%;">
+					50%
+				</div>
+				
+				<div class="progress-bar progress-bar-warning progress-bar-striped" style=" width: 20%;">
+					50%
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

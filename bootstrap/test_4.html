@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style type="text/css">
+			.row{
+				margin-bottom: 20px;
+			}
+			.row .row{
+				margin-top: 10px;
+				margin-bottom: 0;
+			}
+			[class*="col-"]{
+				padding-top: 15px;
+				padding-bottom: 15px;
+				background-color: #EEEEEE;
+				background-color: rgba(86,61,124,.15);
+				border: 1px solid #DDDDDD;
+				border: 1px solid rgba(86,61,124,.2);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+				<div class="col-lg-1">col-lg-1</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">col-lg-3</div>
+				<div class="col-lg-3">col-lg-3</div>
+				<div class="col-lg-3">col-lg-3</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-3">col-lg-3col-lg-3col-lg-1col-lg-1col-lg-1col-lg-1</div>
+				<div class="col-lg-3">col-lg-3</div>
+				<div class="col-lg-3">col-lg-3</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4 col-md-offset-1"></div>/*实现偏移*/
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-6">
+					one
+					<div class="row">
+						<div class="col-xs-8">
+							first
+						</div>
+						<div class="col-xs-4">
+							two
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="row">将col-md-9和col-md-3这两个块调换一下位置
+				<div class="col-md-9 col-md-push-3">col-md-9</div>
+				<div class="col-md-3 col-md-pull-9">col-md-3</div>
+			</div>
+		</div>
+	</body>
+</html>

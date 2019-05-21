@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>工具提示框</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h1>Tooltip</h1>
+				<small>Bootstrap test</small>
+			</div>
+			<p class="muted" style="margin-bottom: 0;">客学院我喜欢极客学院我喜欢极客学院客学院我喜欢极客学院我喜欢极客学院客学院我喜欢极客学院我喜欢极客学院
+				我喜欢极客学院我喜欢极客学院我喜欢极客学院<a href="#" data-toggle="tooltip" title="今天天气好晴朗">极客学院</a>我喜欢我喜欢极客学院我喜欢极客学院
+				我喜欢极客学院我喜欢极客学院我喜欢极客学院<a href="#" data-toggle="tooltip" title="Default tooltip">极客学院</a>我喜欢极客学院我喜欢极客学院我喜欢极客学院我
+				喜欢极客学客学院我喜欢极客学院我喜欢极客学院客学院我喜欢极客学院我喜欢极客学院客学院我喜欢极客学院我喜欢极客学院客学院我喜欢极客学院我喜欢极客学院
+				客学院我喜欢极客学院我喜欢极客学院客学院我喜欢极客学院我喜欢极客学院客学院我喜欢极客学院我喜欢极客学院
+				客学院我喜欢极客学院我喜欢极客<a href="#" data-togglr="tooltip" title="Default tooltip">极客学院</a>学院客学院我喜欢极客学院我喜欢极客学院客学院我喜欢极客学院我喜欢极客学院
+			</p>
+			
+			<br />
+			<p>
+				<button type="button" class="btn btn-default" data-placement="left" data-toggle="tooltip" title="内容可以在左边显示" data-original-title="left button">Tooltip button </button>
+				<button type="button" class="btn btn-default" data-placement="top" data-toggle="tooltip" title="内容可以在上边显示" data-original-title="top button">Tooltip button </button>
+				<button type="button" class="btn btn-default" data-placement="bottom" data-toggle="tooltip" title="内容可以在下边显示" data-original-title="bottom button">Tooltip button </button>
+				<button type="button" class="btn btn-default" data-placement="right" data-toggle="tooltip" title="内容可以在右边边显示" data-original-title="right button">Tooltip button </button>
+			</p>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function(){
+				$('[data-toggle="tooltip"]').tooltip();
+			})
+		</script>
+	</body>
+</html>

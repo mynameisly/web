@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		/*字体图标，包括200多个，所有的图标类都要承载在span标签上*/
+		/*下拉菜单*/
+		<div class="container">
+			<div class="dropdown pull-right">
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">下拉菜单
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+					<!--<li class="dropdown-header">大写的一到四</li>/*使用了这一句就相当于起了一个标识的作用，也可以添加分割线*/-->
+					<li><a href="#" role="menuitem">一</a></li>
+					<li><a href="#" role="menuitem">二</a></li>
+					<li><a href="#" role="menuitem">三</a></li>
+					<li><a href="#" role="menuitem">四</a></li>
+				<!--	<li class="dropdown-header">小写的1到4</li>-->
+					<li role="presentation" class="divider"></li><!--加入分割线-->
+					<li><a href="#" role="menuitem">1</a></li>
+					<li><a href="#" role="menuitem">2</a></li>
+					<li class="disabled"><a href="#" role="menuitem">3</a></li>
+					<li><a href="#" role="menuitem">4</a></li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+		/*下拉菜单的对齐*/
+		在外层class里面加入pull-right;在ul的class里面加入dropdown-menu-right
+	</body>
+</html>

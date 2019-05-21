@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>模态框</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open
+			modal for @mdo
+		</button>
+		<!-- 将tabIndex赋值为-1，则在使用[Tab]键时，此元素被忽略。注意：如果使用-1值时，onfocus与onblur事件仍被启动。   tabIndex的值可为0至32767之间的任意数字-->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModallabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="exampleModalLable">New Message</h4>
+					</div>
+					<div class="modal-body">
+						<form >
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">Recipient</label>
+								<input class="form-control" type="text" id="recipient-name" />
+							</div>						
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-diamiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Send</button>
+					</div>
+				</div>
+			</div>			
+		</div>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$("#exampleModal").on("show.bs.modal",function(event){
+				var button = $(event.relatedTarget);
+				var recipient = button.data("whatever");
+				var modal = $(this);
+				modal.find(".modal-title").text("New Messsage to" +recipient);
+				modal.find(".modal-body input").val(recipient);
+			})
+		</script>
+	</body>
+</html>

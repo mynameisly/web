@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下拉菜单</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="dropdown">
+				<!--data-toggle是数据切换的意思，dropdown是下拉菜单的意思。data-toggle="dropdown"表示数据切换为下拉菜单。-->
+				<!--role的功能：让一些标签语义化，使浏览器识别其具体功能。例如：
+				Eg1:<div role="button"></div> ，把div元素转换为button按钮功能使用；
+				Eg2:<div role="navigation"></div>，把div元素转换为navigation导航功能使用；
+				Eg3:<div role="checkbox" aria-checked="checked"></div>，把div元素转换为checkbox复选框功能使用；
+				Eg4:<a role="button" class="btn btn-default" href="#" >链接</a>，把a链接元素转换为button按钮功能使用。-->
+				<!--aria-expanded是展开状态，默认是undefined,true表示展开，false表示不展开。-->
+				<button type="button" class="btn btn-default" id="dLabel" data-toggle="dropdown" aria-expanded="false">
+					下拉菜单
+					<span class="caret"></span>
+				</button>	
+				<!--当想要的标签在其他元素中存在时，可以使用aria-labelledby,它的值为读取的的元素的id.
+				当ul获取到焦点时，会显示“下拉菜单”。因为aria-labelledby="dLabel"和id="dLabel"一样-->
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">				
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>				
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

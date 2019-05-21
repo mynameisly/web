@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css"  />
+		<style>
+			h4{
+				margin: 40px 0 10px;
+			}
+			.nav-tabs{
+				margin-bottom: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h4>Tabs</h4>
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+				<li><a href="#myhome" data-toggle="tab">MyHome</a></li>				
+				<li class="dropdown">
+					<a href="#" id="myTabDrop1" class="dropdown-toggle" data-labelledby="dropdown">Dropdown<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+						<li><a href="#fat" tabindex="-1" data-toggle="tab">@fat</a></li>
+						<li><a href="#mdo" tabindex="-1" data-toggle="tab">@mdo</a></li>
+					</ul>
+				</li>
+			</ul>
+			<!--承载我们要展示的内容-->
+			<!--这段程序代码在下拉菜单的时候，无法点击显示-->
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade in active" id="home">
+					<p>www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com</p>
+				</div>
+				
+				<div class="tab-pane fade" id="myhome">
+					<p>www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					</p>
+				</div>
+				<div class="tab-pane fade" id="fat">
+					<p>www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					</p>
+				</div>
+				<div class="tab-pane fade" id="mdo">
+					<p>www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					www.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.comwww.jikexueyuan.com
+					</p>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

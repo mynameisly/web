@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>模态框的尺寸大小</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
+			启动大的模态框
+		</button>
+		
+		<!--这里的fade表示过渡效果。去掉之后会一下就弹出-->
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					这是一个大的模态框
+				</div>
+			</div>
+		</div>
+		
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">
+			启动小的模态框
+		</button>
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					这是一个小的模态框
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

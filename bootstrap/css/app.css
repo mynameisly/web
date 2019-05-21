@@ -1,0 +1,163 @@
+h1,h3,p,a,button{
+	font-family: helvetica; Helvetica, Arial, "Hiragino Sans GB", 
+}
+
+.onepage{
+	height: 750px;
+}
+
+.onepage-bg{
+	height: 800px;
+	width: 100%;
+	position: absolute;
+	background-position: center center;
+	background-size: cover;
+}
+
+#onepagebg{
+	background-image: ;
+}
+
+.headh1content{
+	margin-top: 150px;
+	line-height: 75px;
+}
+
+.title-text{
+	margin-left: 50px;
+}
+
+.headfontsize{
+	font-size: 50pt;
+	color: #FFFFFF;
+}
+
+.headfontsize p{
+	color: #FFFFFF;
+}
+
+.twopage{
+	padding: 20px 0 0 2px;
+	height: auto;
+	background-image: url();
+	position: relative;
+}
+
+.twopage-text{
+	width: 100%;
+	text-align: center;
+}
+
+.twopage-text-h1{
+	margin-left: 120px;
+	letter-spacing: 2px;
+	margin-top: 80px;
+	margin-bottom: 0;
+	padding: 20px 0 0 0;
+}
+
+.twopage-text-h1 img{
+	width: 120px;
+	margin-top: -20px;
+}
+
+.twopage .row{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.twopage-courses{
+	float: left;
+	background: #FFFFFF;
+	padding: 0 2px 2px 0;
+	overflow: hidden;
+}
+
+.twopage-courses >a{
+	width: 100%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	position: relative;
+}
+
+.classicon h3{
+	margin-top: 120px;
+	color: #dle973;
+}
+
+.classicon h1{
+	color: #fff5e1;
+}
+
+.classicon{
+	width: 100px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	color: #fff;
+	opacity: 0;
+}
+
+.classicon:hover{
+	background: #1eb450;
+	opacity: 0.9;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+}
+
+.twopagebtn{
+	width: 100%;
+	margin: 0% auto;
+	text-align: center;
+}
+
+.twopagebtn .btn-lg{
+	font-size: 25px;	
+}
+
+#twopage-easy{
+	margin: 50px 0;
+	margin-bottom: 100px;
+}
+
+.threepage{
+	position:absolute;
+	width: 100%;
+	height: 800px;
+}
+
+.threepage-bg{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;  
+}
+
+#threepagebg{
+	background-image: url();
+}
+
+.threepagecontent{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.threepagetext{
+	margin-top: 100px;
+}
+
+.threepagetext p{
+	margin-top: 20px;
+	color: #000000;
+	font-size: 20px;
+	line-height: 32px;
+}
+
+.threepagecontent{
+	margin-top: 450px;
+	font-size: 25px;
+}
