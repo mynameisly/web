@@ -1,0 +1,1 @@
+window.alert('Hello 欢迎学习 Node.js')
