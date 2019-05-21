@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height:400px;
+            background: #abcdef;
+        }
+    </style>
+</head>
+<body>
+        <button>show()</button>
+        <button>hide()</button>
+        <button>toggle()</button>
+
+        <button>show(1000)</button>
+        <button>hide(1000)</button>
+        <button>toggle(1000)</button>
+
+        <button>slideDown(1000)</button>
+        <button>skudeUp(1000)</button>
+        <button>slideToggle(1000)</button>
+
+        <button>fadeIn(1000)</button>
+        <button>fadeOut(1000)</button>
+        <button>fadeTo(1000,0.5)</button><!--比较特殊，要给一个透明度-->
+        <button>fadeToggle(1000)</button>
+
+        <button id="delay">delay</button>
+        <div class="box" id="box">
+            <p>hgukfkutuouto</p>
+        </div>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+        //元素是display：none才能用
+        $('button').eq(0).click(function(){
+            $('.box').show();
+        });
+        //元素是display：block采用
+        $("button").eq(1).click(function(){
+            $('.box').hide();
+        });
+        $('button').eq(2).click(function(){
+            $('.box').toggle();
+        });
+
+        $('button').eq(3).click(function(){
+            $('.box').show(1000);
+        });
+        $("button").eq(4).click(function(){
+            $('.box').hide(1000);
+        });
+        $('button').eq(5).click(function(){
+            $('.box').toggle(1000);
+        });
+
+        $('button').eq(6).click(function(){
+            $('.box').slideDown(1000);
+        });
+        $("button").eq(7).click(function(){
+            $('.box').slideUp(1000);
+        });
+        $('button').eq(8).click(function(){
+            $('.box').slideToggle(1000);
+        });
+
+        $('button').eq(6).click(function(){
+            $('.box').fadeIn(1000);
+        });
+        $("button").eq(7).click(function(){
+            $('.box').fadeOut(1000);
+        });
+        $('button').eq(8).click(function(){
+            $('.box').fadeTo(1000,0.5);
+        });
+        $('button').eq(8).click(function(){
+            $('.box').fadeToggle(1000);
+        });
+
+
+        //延迟
+        $('#delay').click(function(){
+            $('.box').delay(1000).hide(1000);
+        });
+
+        //childnodes在高级浏览器中，包括文本节点和标签节点，在IE下面只包括标签节点
+        //要想统一两者，就是用nodeType
+        var box = document.getElementById('box');
+        var arr = [];
+        for(var i=0;i<box.childNodes.length;i++){
+            // console.log(box.childNodes[0],box.nodeName);
+            // console.log(box.childNodes[1],box.nodeName);
+            // console.log(box.childNodes[2],box.nodeName);
+            // alert(arr[i].nodeType,arr[i].nodeName());
+            if(box.childNodes[i].nodeType ==1){
+                arr.push(box.childNodes[i]);
+            }
+        }
+        arr[0].style.background = 'red';
+        // arr[1].parentNode.parentNode.style.background = 'red';
+</script>
+</body>
+</html>

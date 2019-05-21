@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object对象</title>
+</head>
+<body>
+<script>
+
+    //一般情况下可以不用加引号，加上引号是为了后台
+    //特殊字符、特殊符号、数字、关键字、保留字必须要加上
+    //V必须要加上引号
+    // var obj = {
+    //     name:'zhangdan',
+    //     age:15,
+    //     gender:'男',
+    //     growup:function(){
+    //         this.age++;
+    //         console.log(this.age);
+    //     },
+    //     sayhello:function(){
+    //         console.log("Hello");
+    //     }
+    //
+    // };
+    // console.log(obj);
+    // console.log(typeof obj);
+    // console.log(obj.name);
+    // console.log(obj['age']);
+
+    // var obj = new Object();
+    // console.log(typeof obj);
+    // console.log(obj);
+
+    //添加属性
+    // obj.age=29;
+    // obj.gender = 'famale';
+    // obj.name='hi';
+    // console.log(obj);
+    // console.log(obj.age);
+    // console.log(obj.sayhello);
+    // obj.sayhello();
+    // obj.growup();
+
+
+    // var obj = {
+    //     name:'xiaoming',
+    //     age:18,
+    //     sayhi:function(){
+    //         console.log('hi');
+    //     },
+    //     gf:{   //注意上面有一个逗号  这里使用的是对象
+    //         name:'xiaohong',
+    //         age:18,
+    //         gender:'female'
+    //     }
+    // }
+    // console.log(obj.name);
+    // console.log(obj['name']);
+    // console.log(obj.age);
+    // console.log(obj.gf);
+    // obj.sayhi();
+    // ---------------------------------------------------------------
+    var obj = new Object();//使用new关键字创建一个对象，它做了4件事
+    //隐秘的创建一个新的空对象
+    //将这个函数里面的this绑定到刚才创建隐秘新对象上
+    //执行函数里面的语句
+    //返回这个新的函数
+    // obj.name = 'zhangdan';
+    // obj.age = 20;
+    // obj.denger = 'female';
+    // obj.sayhi = function(){
+    //     console.log('hello');
+    // }
+    // obj.sayhi();
+
+    // ---------------------------------------------------------------------
+    /*
+    function People(name,age,gender){
+        this.name = name;//等号右边的都是形参，把要传进来的值绑定给当前对象
+        this.age = age;
+        this.gender = gender;
+    }
+    var xiaohua = new People('xiaohua',30,'male');//使用构造函数创建一个对象
+    console.log(xiaohua);
+    */
+
+    function People(name,age){
+        this.name = name;
+        this.age = age;
+
+        if(age>=18){
+            this.adult = true;
+        }else{
+            this.adult = false;
+        }
+
+        this.sayhi = function(){
+            console.log('hi');
+        }
+    }
+
+    //虽然只有两个参数，但是xiaoming这个对象里面有4个属性
+    var xiaoming = new People('xiaomipng',29);
+    console.log(xiaoming);//People {name: "xiaomipng", age: 29, adult: true, sayhi: ƒ}
+    console.log(typeof xiaoming);//Object
+
+
+</script>
+
+</body>
+</html>

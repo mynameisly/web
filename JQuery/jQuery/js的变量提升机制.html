@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 的变量提升机制</title>
+</head>
+<body>
+    <script>
+        // function test(){
+        //     console.log(a);
+        //     var a = 1;
+        // }
+        // test();
+
+        // a = 1;
+        // var a ;
+        // console.log(a);
+
+        /*
+        console.log(b);
+        var b = 100;
+        function foo(){
+            console.log(b);
+            var b = 200;
+            console.log(b);
+        }
+        foo();
+        console.log(b)
+
+
+        var b;
+        console.log(b);//undefined
+        b = 100;
+        function foo(){
+            var b;
+            console.log(b);//undefined
+            b = 200;
+            console.log(b);//200
+        }
+        foo();
+        console.log(b);//100
+        */
+
+
+        // function bar(){
+        //     console.log(1);
+        // }
+        // console.log(bar);
+
+        /*
+        function foo(){
+            console.log(1);
+        }
+        foo();
+
+        var foo = function foo(){
+            console.log(2);
+        }
+        foo();
+        */
+
+        /*
+        var s = 'global';
+        function fn(){
+            console.log(s);//global
+            s = 'local';
+            console.log(s);//local
+        }
+        fn();
+        console.log(s);//local
+        */
+
+        /*
+        var a = 10;
+            bar = function(x){
+                var b = 5;
+                fn(x+5);
+            };
+
+            fn = function(y){
+                var c = 5;
+                console.log(y+c);
+            };
+            bar(10);
+            */
+
+        /*
+        var a = 10;
+        function fn(){
+            console.log(a);//10
+            a = 20;
+            console.log(a);//20
+        }
+        fn();
+        console.log(a);//20
+        */
+
+        /*
+        var a = 10;
+        function fn(a){
+            console.log(a);//undefined
+            a = 20;
+            console.log(a);//20
+        }
+        fn();
+        console.log(a);//10
+        */
+
+        // console.log(a);
+        // {
+        //     var a;
+        //     console.log(a);//undefined
+        //     a = 10;
+        //     console.log(a);//10
+        // }
+        // console.log(a);//10
+
+
+        /*
+        console.log(a);
+        {
+            a = 10;
+        }
+        console.log(a);
+        */
+
+        /*
+        function t(age){
+            var age;
+            function age(){}
+            console.log(age);
+            age = 99;
+            console.log(age);
+            console.log(age);
+            //参数、变量、函数
+            //AO.age=undefined
+        }
+        t(5);
+        */
+
+
+        /*
+        var a = function (){
+            console.log(100);
+        }
+        console.log(a);
+        console.log(a());
+        */
+
+        /*
+        function t(age) {
+            var age;
+            console.log(age);
+            age = "99";
+            console.log(age);
+            function age() {
+                console.log(age);
+            }
+            age();//这里不一样
+            console.log(age);
+        }
+        t(5);
+        */
+
+        /*
+        function test(a,b){
+            console.log(a);   //f a(){}
+            var a = 123;
+            function a(){}
+            console.log(b);   //f b(){}
+            var b = 234;
+            console.log(b);   //234
+            function b(){}
+            console.log(a);    //123
+            var b = function (){}
+            console.log(b)    //f (){}
+        }
+
+        test(1);
+
+
+        function test(a,b){
+            function a(){}
+            function b(){}
+            var a;
+            var b;
+            console.log(a);
+            a = 123;
+            console.log(b);
+            b= 234;
+            console.log(b);
+            console.log(a);
+            var b = function (){}
+            console.log(b)
+        }
+        test(1)
+        */
+
+
+
+        function test(a,b){
+            var b = function (){}
+            console.log(b);
+        }
+        test(1);
+
+    </script>
+</body>
+</html>

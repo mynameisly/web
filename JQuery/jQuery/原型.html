@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+</head>
+<body>
+    <script>
+        /*
+        function haha(){
+            console.log('haha');
+        }
+        console.log(haha.prototype);
+        console.log(typeof  haha.prototype);//object
+        */
+
+
+        function People(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //构造函数的一个原型，同时也把小红的__proto__指向了这个对象,注意这里的__是两根下划线
+        // 不写下面这三行时候，小明的gender就是undefined.
+        People.prototype = {
+            gender:'male'
+        };
+        var xiaoming = new People('xiaoming',20);
+        console.log(xiaoming);
+        //可以给一个构造函数绑定原型
+        console.log(xiaoming.name);
+        console.log(xiaoming.age);
+        console.log(xiaoming.gender);
+
+
+        var xiaohong = new People('xiaohong',19);//xiaohong   new 了一个People()就绑定了People()的原型
+        console.log(xiaohong);
+        console.log(xiaohong.name);//这个和下面的这两个属性是xiaohong本来就有的
+        console.log(xiaohong.age);
+        console.log(xiaohong.gender);//male    它本身没有gender这个属性，但会到它的原型对象(__proto__)中,原型对象在xiaohong创建的时候就绑定上了自己构造函数的原型
+        console.log(xiaohong.__proto__ == People.prototype);//true
+        console.log(People.prototype);
+    </script>
+</body>
+</html>

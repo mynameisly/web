@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+    <script>
+        /*
+        function People(name , age){
+            this.name = name;
+            this.age = age;
+        }
+        function Student(grade , score) {
+            this.grade = grade;
+            this.score = score;
+        }
+
+        //继承  把子类原型指向父类的对象
+        Student.prototype = new People();
+        Student.prototype.study = function () {
+            console.log('Good good study!');
+        };
+        People.prototype.eat = function () {
+            console.log('chichi');
+        }
+        var xiaoming = new Student('1601',100);
+        console.log(xiaoming);//Student {grade: "1601", score: 100}
+        //自己的原型的方法
+        xiaoming.study();//Good good study!
+        //父类原型的方法
+        xiaoming.eat();//chichi
+
+        console.log(xiaoming.__proto__);//People {name: undefined, age: undefined, study: ƒ}就是19行new出来的People
+        console.log(xiaoming.__proto__.constructor);//ƒ People(name , age){this.name = name;this.age = age;}
+        console.log(xiaoming.__proto__.__proto__);//{eat: ƒ, constructor: ƒ}
+        console.log(xiaoming.__proto__.__proto__.constructor);//ƒ People(name , age){this.name = name;this.age = age;}
+        */
+
+
+        //----------------------------------------------------------------------------
+        //in运算符：判断属性是否是对象的属性，   会在原型链上查找
+        var obj = {
+            name:'xiaoming',
+            age:19
+        };
+        obj.__proto__.gender = 'male';
+        console.log('name' in obj);//true,表示这个属性是不是对象的属性
+        console.log('age' in obj);//true
+        console.log('gender' in obj);//false  写了第47行的语句后，输出为true，因为会在原型链上查找
+
+        for(var k in obj){
+            console.log(k);//name age gender
+        }
+    </script>
+</body>
+</html>

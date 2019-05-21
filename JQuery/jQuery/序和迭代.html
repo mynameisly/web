@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>序和迭代</title>
+    <style>
+        /*二二二*{*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
+        /*div{*/
+            /*width: 600px;*/
+            /*height: 100px;*/
+            /*margin: 100px auto;*/
+            /*border: 1px solid red;*/
+        /*}*/
+        /*p{*/
+            /*width: 80px;*/
+            /*height:80px;*/
+            /*background: skyblue;*/
+            /*float: left;*/
+            /*margin:10px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+    <!--<div>div0</div>-->
+    <!--<div>div1</div>-->
+    <!--<div id="haha">div2</div>-->
+    <!--<div>div3</div>-->
+    <!--<div>div4</div>-->
+    <!--<div>div5</div>-->
+    <!--<div>div6</div>-->
+    <!--<div>-->
+        <!--<p>p1</p>-->
+        <!--<p>p2</p>-->
+        <!--<p>p3</p>-->
+        <!--<span>span1</span>-->
+        <!--<div id="xixi">xixi</div>-->
+    <!--</div>-->
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <!--<script>-->
+        <!--//index()返回的是亲兄弟中的排名，无视选择器怎么选择，也不管是什么元素-->
+        <!--console.log($('#haha').index());//2-->
+        <!--console.log($('#xixi').index());//4-->
+    <!--</script>-->
+
+
+
+    <!----------------------------------------------->
+    <!--二二二<div id="div1">-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+    <!--</div>-->
+    <!--<div id="div2">-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+        <!--<p></p>-->
+    <!--</div>-->
+    <!--p{1}*8之后按Tab键-->
+    <!--<script>-->
+        <!--$('#div1 p').click(function(){-->
+            <!--$('#div2 p').eq($(this).index()).css('background','red');-->
+        <!--})-->
+    <!--</script>-->
+    <!------------------------------------------------------>
+    <p style="background: red">0</p>
+    <p style="background: red">1</p>
+    <p style="background: red">2</p>
+    <p style="background: red">3</p>
+    <p style="background: red">4</p>
+    <p style="background: red">5</p>
+    <p style="background: red">6</p>
+    <p style="background: red">7</p>
+    <script>
+        //each（）就相当于for循环
+        $('p').each(function (i) {
+            // console.log($(this));
+            //width与i成正比
+            $(this).animate({'width':50*(i+2)},1000);
+        });
+
+    </script>
+</body>
+</html>

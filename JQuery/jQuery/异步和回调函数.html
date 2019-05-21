@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步和回调函数</title>
+</head>
+<body>
+    <script>
+        //------------------------------------------------------
+        //回调函数callback()  当什么执行完毕之后，才调用callback（）里面的代码
+        /*
+        var count = 0;
+        var timer =setInterval(function(){
+            count ++;
+            console.log(Math.random());
+            if(count == 10){
+                clearInterval(timer);
+                callback();
+            }
+        });
+
+        function callback(){
+            console.log('输出完毕！');
+        }
+        */
+
+
+        //-----------------------------------------------------
+        //call  apply改变this的指向
+        /*
+        var obj = {
+            'name' : 'zhangsan',
+            'age': 18
+        };
+        function haha(){
+            console.log(this);//这时候的this是window对象
+            console.log(this.name);
+            console.log(this.age);
+        }
+        haha();
+
+        haha.call(obj);使用这种和下一种都是可以的，只是传参数的时候有区别
+        haha.apply(obj);
+        */
+
+        //----------------------------------------------------------
+        /*
+        var obj = {
+            'name' : 'zhangsan',
+            'age': 18
+        }
+        function haha(a,b,c){
+            console.log(this);//这时候的this是window对象//Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
+            console.log(this.name);
+            console.log(this.age);
+            console.log(a+b+c);
+        }
+        // haha();
+        // haha.call(obj);
+        haha.call(obj,10,20,30);//传递参数不使用[]
+        // haha.apply(obj,[10,20,20]);//传递参数使用[]
+        */
+
+
+
+        //-------------------------------------------------------------
+        setTimeout(function(){
+            console.log('今天是19年3月10号');//不是立马输出，而是有延迟
+        },1000)
+
+
+    </script>
+</body>
+</html>

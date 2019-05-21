@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ音乐</title>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"/>
+    <style type="text/css">
+        *{margin:0;padding:0}
+        html,body{width:100%;height:100%;font-size:14px;}
+        .header{width:100%;height:45px;}
+        .header .logo{float:left;margin-left:20px;opacity:0.5;}
+        .header .logo:hover{opacity:1;}
+        .header .logo a{display:inline-block;width:78px;height:21px;background:url("img/logo.png") no-repeat 0 0;background-size:78px 21px;}
+        .header .register{float:right;line-height:45px;}
+        .header .register li{list-style:none;margin-right:20px;color:#ffffff;float:left;cursor:pointer;opacity:0.5}
+        .header .register li:hover{opacity:1;}
+        .content{width:100%;height:800px;}
+        .content .content_in{width:1200px;height:100%;margin:0 auto;}
+        .content_in .content_left{float:left;width:800px;height:100%;}
+        .content_left .content_toolbar{width:100%;height:40px;margin-right: 20px;}
+        .content_toolbar span{display:inline-block;width:122px;height:100%;line-height:40px;text-align:center;border:1px solid #fff;box-sizing:border-box;border-radius:5px;color:#fff;opacity:0.5;}
+        .content_toolbar span:hover{opacity:1;}
+        .content_toolbar span i{display:inline-block;width:18px;height:18px;background:url("img/icon_sprite.png") no-repeat  0 0;margin-right:10px;vertical-align:-5px;}
+        .content_toolbar span:nth-child(1) i{background-position: -60px -20px;}
+        .content_toolbar span:nth-child(2) i{background-position: -20px -20px;}
+        .content_toolbar span:nth-child(3) i{background-position: -40px -240px;}
+        .content_toolbar span:nth-child(4) i{background-position: -100px -20px;}
+        .content_toolbar span:nth-child(5) i{background-position: -40px -300px;}
+        .content_left .content_list{width:100%;height:760px;overflow:auto;}
+        .content_list li{list-style:none;width:100%;height:50px;border-bottom:1px solid rgba(255,255,255,.5);box-sizing:border-box;user-select: none;}
+        .content_list li div{float:left;line-height: 50px;color:rgba(255,255,255,.5);}
+        .content_list .list_check{width:50px;height:100%;text-align:center;}
+        .content_list .list_check i{width:14px;height:14px;display:inline-block;border:1px solid #fff;opacity: 0.5;}
+        .content_list .list_checked i{background:url("img/icon_sprite.png") no-repeat -60px -80px;opacity: 1;}
+        .content_list .list_number{width:20px;height:100%;}
+        .content_list .list_number2{background: url("img/wave.gif") no-repeat 0 20px;color:transparent !important;}
+        .content_list .list_singer{width:20%;height:100%;}
+        .content_list .list_name{width:50%;height:100%;}
+        .list_name .list_menu{margin-top:5px;margin-right:20px;float:right;display:none;}
+        .list_menu a{opacity: 0.5; display:inline-block;width: 36px;height: 36px;background:url("img/icon_list_menu.png") no-repeat 0 0;}
+        .list_menu a:hover{opacity: 1;}
+        .list_menu a:nth-child(1){background-position:-120px 0;}
+        .list_menu a:nth-child(2){background-position:-120px -80px;}
+        .list_menu a:nth-child(3){background-position:-120px -120px;}
+        .list_menu a:nth-child(4){background-position:-120px -40px;}
+        .list_menu .list_menu_play2{background-position: -80px -200px !important;}
+        .content_in .content_right{float:right;width:400px;height:100%;user-select:none;}
+        .content_list .list_time a{opacity: 0.5; display:inline-block;width:36px;height:36px;background:url("img/icon_list_menu.png") no-repeat -120px -160px;float:left;margin-top:5px;display:none;}
+        .content_list .list_time a:hover{opacity: 1;}
+        .footer{width:100%;height:60px;position:absolute;left:0;bottom:0;}
+        .footer .footer_in{width:1200px;height:100%;margin:0 auto;user-select: none;}
+        .footer_in a{display:inline-block;text-decoration:none;color:#fff;background:url("img/player.png") no-repeat 0 0;margin:10px;}
+        .footer_in .music_pre{width:19px;height:20px;background-position: 0 -30px;}
+        .footer_in .music_play{width:21px;height:29px;background-position: 0 0;vertical-align:-5px;}
+        .footer_in .music_play2{width:21px;height:29px;background-position: -30px 0;}
+        .footer_in .music_play3{width:25px;height:19px;background-position: 0 -74px;}
+        .footer_in .music_mode4{width:26px;height:25px;background-position: 0 -232px;}
+        .footer_in .music_next{width:19px;height:20px;background-position: 0 -52px;}
+        .footer_in .music_mode{width:26px;height:25px;background-position: 0 -205px;}
+        .footer_in .music_mode2{height: 20px; background-position: 0 -260px;}
+        .footer_in .music_fav{width:24px;height:21px;background-position: 0 -96px;}
+        .footer_in .music_fav2{height: 23px; background-position: -30px -96px;}
+        .footer_in .music_down{width:22px;height:21px;background-position: 0 -120px;}
+        .footer_in .music_comment{width:24px;height:24px;background-position: 0 -400px;}
+        .footer_in .music_only{width:74px;height:28px;background-position: 0 -281px;}
+        .footer_in .music_only2{background-position: 0 -310px;}
+        .footer_in .music_progress_info{display:inline-block;width:670px;height:40px;position:relative;}
+        .music_progress_info .music_progress_top{width:100%;height:30px;line-height:30px;color:#fff;}
+        .music_progress_top .music_progress_name{float:left;opacity:0.5;}
+        .music_progress_top .music_progress_name:hover{float:left;opacity:1;}
+        .music_progress_top .music_progress_time{float:right;}
+        .music_progress_info .music_progress_bar{width:100%;height:4px;background:rgba(255,255,255,0.5);margin-top:5px;position: relative;}
+        .music_progress_bar .music_progress_line{width:0px;height:100%;background: #ffffff;}
+        .music_progress_bar .music_progress_dot{width:14px;height:14px;border-radius:50%;position:absolute;top:-5px;left:0px;background: #ffffff;}
+        .footer_in .music_voice_info{display:inline-block;width:100px;height:40px;position:relative;}
+        .music_voice_info .music_voice_icon{width:26px;height:21px;background-position:0 -144px;}
+        .music_voice_info .music_voice_icon2{background-position: 0 -182px;}
+        .music_voice_info .music_voice_bar{width:60px;height:4px;background:rgba(255,255,255,.5);position:absolute;top:18px;right:0;}
+        .music_voice_info .music_voice_line{width:70px;height:100%;background:#fff;}
+        .music_voice_info .music_voice_dot{width:14px;height:14px;border-radius:50%;position:relative;top:-5px;left:70px;background:#fff;}
+        ._mCS_1 .mCSB_scrollTools .mCSB_dragger_bar{width:10px;}
+        .content_right .song_info{text-align:center;color:rgba(255,255,255,.5);line-height:30px;}
+        .song_info div a{text-decoration:none;color:#fff;opacity:0.5;}
+        .song_info div a:hover{opacity:1;}
+        .content_right .song_lyric{text-align:center;margin-top:30px;}
+        .content_right .song_lyric li{list-style:none;line-height:30px;color:rgba(255,255,255,.5);font-weight:bold;}
+        .content_right .song_lyric .cur{color:#31c27c;}
+        .song_info .song_info_pic{display:inline-block;width:201px;height:180px;background:url("img/album_cover_player.png") no-repeat 0 0;text-align:left;}
+        .song_info_pic img{width:180px;height:180px;}
+        .mask_bg{position:absolute;top:0;left:0;width:100%;height:100%;background: url("img/lnj.jpg") no-repeat;background-size:cover;filter:blur(100px);z-index:-2;}
+        .mask{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;background:rgba(0,0,0,.35);}
+    </style>
+</head>
+<body>
+   <div class="header">
+       <h1 class="logo"><a href="#"></a></h1>
+       <ul class="register">
+           <li>登录</li>
+           <li>注册</li>
+       </ul>
+   </div>
+   <div class="content">
+       <div class="content_in">
+           <div class="content_left">
+               <div class="content_toolbar">
+                   <span><i></i>收藏</span>
+                   <span><i></i>添加到</span>
+                   <span><i></i>下载</span>
+                   <span><i></i>删除</span>
+                   <span><i></i>清空列表</span>
+               </div>
+               <div class="content_list" data-mcs-theme="minimal-dark">
+                   <ul>
+                       <li class="list_title">
+                           <div class="list_check"><i></i></div>
+                           <div class="list_number"></div>
+                           <div class="list_name">歌曲</div>
+                           <div class="list_singer">歌手</div>
+                           <div class="list_time">时长</div>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+           <div class="content_right">
+               <div class="song_info">
+                   <a href="javascript: ;" class="song_info_pic">
+                       <img src="img/lnj.jpg" alt=""/>
+                   </a>
+                   <div class="song_info_name">歌曲名称：
+                       <a href="javascript:;">充楞定界符看了就</a>
+                   </div>
+                   <div class="song_info_singer">歌手名：
+                       <a href="javascript:;">半阳</a>
+                   </div>
+                   <div class="song_info_ablum">专辑名：
+                       <a href="javascript:;">来到我的世界</a>
+                   </div>
+               </div>
+               <ul class="song_lyric">
+                   <li class="cur">第一条歌词</li>
+                   <li>第二条歌词</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+   <div class="footer">
+       <div class="footer_in">
+           <a href="javascript:;" class="music_pre"></a>
+           <a href="javascript:;" class="music_play"></a>
+           <a href="javascript:;" class="music_next"></a>
+           <div class="music_progress_info">
+               <div class="music_progress_top">
+                   <span class="music_progress_name">从零玩转编程 / LY</span>
+                   <span class="music_progress_time">00:00 / 5:23</span>
+               </div>
+               <div class="music_progress_bar">
+                   <div class="music_progress_line">
+                       <div class="music_progress_dot"></div>
+                   </div>
+               </div>
+           </div>
+           <a href="javascript:;" class="music_mode"></a>
+           <a href="javascript:;" class="music_fav"></a>
+           <a href="javascript:;" class="music_down"></a>
+           <a href="javascript:;" class="music_comment"></a>
+           <a href="javascript:;" class="music_only"></a>
+           <div class="music_voice_info">
+               <a href="javascript:;" class="music_voice_icon"></a>
+               <div class="music_voice_bar">
+                   <div class="music_voice_line">
+                       <div class="music_voice_dot"></div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="mask_bg"></div>
+   <div class="mask"></div>
+   <audio src=""></audio>
+   <script src="js/jquery-1.12.3.min.js"></script>
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/player.js"></script>
+   <script src="js/progress.js"></script>
+   <script>
+        $(function(){
+            //0.自定义滚动条
+            $(".content_list").mCustomScrollbar();
+
+            var $audio = $("audio");
+            var player = new Player($audio);
+            var progress;
+            var voiceprogress;
+
+            //1.加载本地歌曲列表
+            getPlayerList();
+            function getPlayerList(){
+                $.ajax({
+                    url:"./source/musiclist.json",
+                    dataType:"json",
+                    //只要加载成功后就会调用success这个回调函数，把加载的数据通过参数传递给你
+                    success:function(data){
+                        player.musicList = data;
+                        //3.1遍历获取到的数据创建每一条音乐
+                        var $musiclist = $(".content_list ul");
+                        $.each(data, function(index,ele){
+                            var $item = createMusicItem(index , ele);
+                            $musiclist.append($item);
+                        });
+                        initMusicInfo(data[0]);
+                    },
+                    error:function(e){
+                        console.log(e);
+                    }
+                });
+            }
+            //2.初始化歌曲信息
+            function initMusicInfo(music) {
+                //获取对应的元素
+                var $musicImage = $(".song_info_pic img");
+                var $musicName = $(".song_info_name a");
+                var $musicSinger = $(".song_info_singer a");
+                var $musicAblum = $(".song_info_ablum a");
+                var $musicProgressName = $(".music_progress_name");
+                var $musicProgressTime = $(".music_progress_time");
+                var $musicBg = $(".mask_bg");
+
+                //给获取到的元素赋值
+                $musicImage.attr("src",music.pic);
+                $musicName.text(music.name);
+                $musicSinger.text(music.singer);
+                $musicAblum.text(music.id);
+                $musicProgressName.text(music.name+" / "+music.singer);
+                $musicProgressTime.text("00:00 /"+music.time);
+                $musicBg.css("background" , "url('"+music.pic+"')");
+            }
+            //3.初始化进度条
+            initProgress();
+            function initProgress(){
+                var $progressBar = $(".music_progress_bar");
+                var $progressLine = $(".music_progress_line");
+                var $progressDot = $(".music_progress_dot");
+                progress = Progress($progressBar,$progressLine,$progressDot);
+                progress.progressClick(function (value) {
+                    player.musicSeekTo(value);
+                });
+                progress.progressMove(function (value) {
+                    player.musicSeekTo(value);
+                });
+
+                var $voiceBar = $(".music_voice_bar");
+                var $voiceLine = $(".music_voice_line");
+                var $voiceDot = $(".music_voice_dot");
+                voiceprogress = Progress($voiceBar,$voiceLine,$voiceDot);
+                voiceprogress.progressClick(function (value) {
+                    player.musicVoiceSeekTo(value);
+                });
+                voiceprogress.progressMove(function (value) {
+                    player.musicVoiceSeekTo(value);
+                });
+            }
+
+            //2.初始化事件监听
+            initEvents();
+            function initEvents() {
+                //1.监听歌曲的移入移出事件
+                $(".content_list").delegate(".list_music","mouseenter",function(){
+                    //显示字菜单
+                    $(this).find(".list_menu").stop().fadeIn(100);
+                    $(this).find(".list_time a").stop().fadeIn(100);
+                    //隐藏时长
+                    $(this).find(".list_time span").stop().fadeOut(100);
+                });
+                $(".content_list").delegate(".list_music","mouseleave",function(){
+                    //隐藏子菜单
+                    $(this).find(".list_menu").stop().fadeOut(100);
+                    $(this).find(".list_time a").stop().fadeOut(100);
+                    //隐藏时长
+                    $(this).find(".list_time span").stop().fadeIn(100);
+                });
+
+                //2.监听复选框的点击事件
+                $(".content_list").delegate(".list_check","click",function () {
+                    $(this).toggleClass("list_checked");
+                });
+
+                //3.添加子菜单播放按钮的监听
+                var $musicPlay = $(".music_play");
+                $(".content_list").delegate(".list_menu_play","click",function () {
+                    var $item = $(this).parents(".list_music");
+
+                    //3.1切换播放图标
+                    $(this).toggleClass("list_menu_play2");
+                    //3.2复原其他的播放图标
+                    $item.siblings().find(".list_menu_play").removeClass("list_menu_play2");
+                    //3.3同步底部播放按钮
+                    if ($(this).attr("class").indexOf("list_menu_play2") !== -1){
+                        //当前子菜单的播放按钮是播放状态
+                        $musicPlay.toggleClass("music_play2");
+                        //让文字高亮
+                        $item.find("div").css("color","#ffffff");
+                        $item.siblings().find("div").css("color","rgba(255,255,255,.5)");
+                    } else{
+                        //当前子菜单的播放按钮不是播放状态
+                        $musicPlay.removeClass("music_play2");
+                        //让文字不高亮
+                        $item.find("div").css("color","rgba(255,255,255,.5)");
+                    }
+                    //3.4切换序号的状态
+                    $item.find(".list_number").toggleClass("list_number2");
+                    $item.siblings().find(".list_number").removeClass("list_number2");
+
+                    //3.5播放音乐
+                    player.playMusic($item.get(0).index , $item.get(0).music);
+
+                    //3.6切换歌曲信息
+                    initMusicInfo($item.get(0).music);
+                });
+
+                //4.监听底部控制区域播放按钮的点击
+                $musicPlay.click(function () {
+                    //判断有没有播放过音乐
+                    if (player.currentIndex == -1){
+                        //没有播放过音乐
+                        $(".list_music").eq(0).find(".list_menu_play").trigger("click");
+                    } else{
+                        //播放过音乐
+                        $(".list_music").eq(player.currentIndex).find(".list_menu_play").trigger("click");
+                    }
+                });
+
+                //5.监听底部控制区域上一首按钮的点击
+                $(".music_prc").click(function () {
+                    $(".list_music").eq(player.prcIndex()).find(".list_menu_play").trigger("click");
+                    //点击第一首歌就回到最后一首
+                });
+
+                //6.监听底部控制区域下一首按钮的点击
+                $(".music_next").click(function () {
+                    $(".list_music").eq(player.nextIndex()).find(".list_menu_play").trigger("click");
+                    //点击最后一首的下一首就回到第一首
+                });
+
+                //7.监听删除按钮的点击
+                $(".list_menu_del").delegate(".list_menu_del","click",function () {
+                    //找到被点击的音乐
+                    var $item = $(this).parents(".list_music");
+
+                    //判断当前删除的歌曲是否是正在播放的
+                    if ($item.get(0).index == player.currentIndex){
+                        $(".music_next").trigger("click");
+                    }
+                    $item.remove();
+                    player.changeMusic($item.get(0).index);
+
+                    //重新排序,删除歌曲之后每首歌前面的序号重新从1开始排序
+                    $(".list_music").each(function (index , ele) {
+                        ele.index = index;
+                        $(ele).find(".list_number").text(index+1);
+                    })
+                });
+
+                //8.监听当前正在播放的进度
+                player.musicTimeUpdate(function (currentTime , duration , timeStr) {
+                    //同步时间
+                    $(".music_progress_time").text(timeStr);
+                    //同步进度条
+                    var value = currentTime / duration * 100;
+                    progress.setPorgress(value);
+                });
+
+                //9.监听声音按钮的点击
+                $(".music_voice_icon").click(function () {
+                    //切换音乐图标
+                    $(this).toggleClass("music_voice_icon2");
+                    //切换音乐声音
+                    if($(this).attr("class").indexOf("music_voice_icon2") !== -1){
+                        //变为没有声音
+                        player.musicVoiceSeekTo(0);
+                    } else {
+                        //变为有声音
+                        player.musicVoiceSeekTo(1);
+                    }
+                });
+
+
+
+            }
+
+
+            //定义一个方法，创建一条音乐
+            function createMusicItem(index , music){
+                var $item = $("<li class=\"list_music\">\n" +
+                    "<div class=\"list_check\"><i></i></div>\n" +
+                    "<div class=\"list_number\">"+(index+1)+"</div>\n" +
+                    "<div class=\"list_name\">"+music.name+"\n" +
+                    "<div class=\"list_menu\">\n" +
+                    "    <a href=\"javascript:;\" title=\"播放\" class='list_menu_play'></a>\n" +
+                    "    <a href=\"javascript:;\" title=\"添加到歌单\"></a>\n" +
+                    "    <a href=\"javascript:;\" title=\"分享\"></a>\n" +
+                    "    <a href=\"javascript:;\" title=\"\"></a>\n" +
+                    "</div>\n" +
+                    "</div>\n" +
+                    "<div class=\"list_singer\">"+music.singer+"</div>\n" +
+                    "    <div class=\"list_time\">\n" +
+                    "        <span>"+music.time+"</span>\n" +
+                    "        <a href=\"javascript:;\" class='list_menu_del'></a>\n" +
+                    "    </div>\n" +
+                    "</li>");
+                $item.get(0).index = index;
+                $item.get(0).music = music;
+                return $item;
+            };
+
+
+        })
+   </script>
+</body>
+</html>

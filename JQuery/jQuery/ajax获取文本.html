@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用ajax获取文本</title>
+</head>
+<body>
+    <input type="button" id="btn" value="点击获取">
+    <p id="p" style="background: pink"></p>
+    <script>
+        document.getElementById('btn').addEventListener("click",loadText);
+        function loadText(){
+            // console.log('a');
+            //创建XMLHttpRequest对象
+            var xhr = new XMLHttpRequest();
+            // console.log(xhr);
+            xhr.open("GET","sample.txt",true);
+
+            // xhr.onload = function () {
+            //     console.log(this.responseText);
+            // };
+
+            xhr.onreadystatechange = function(){
+                console.log("READYSTATE",xhr.readyState);
+                if(this.status == 200 && this.readyState == 4){
+                    // console.log(this.responseText);
+                    document.getElementById('p').innerHTML = this.responseText;
+                } else if(this.status == 404){
+                    console.log("Not Found!");
+                }
+            };
+
+            //发送请求
+            xhr.send();
+        }
+        //readyState 状态码
+        //0:请求未初始化
+        //1；服务器连接已建立
+        //2：请求已接收
+        //3：请求处理中
+        //4：请求已完成，且响应已就绪
+
+        //HTTP状态码
+        //200--服务器成功返回网页
+        //404--请求的网页不存在
+        //503--服务器暂时不可用
+
+        //把请求到的文本放到HTML中
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分别用js和Jquery实现一个功能</title>
+		<script src="js/jquery.min.js"></script>
+		<!--当页面加载完成时，a标签的背景颜色变为红色，点击的时候a标签的边框变为蓝色.
+			当点击P标签时，弹出标签里面的内容
+			注意：JQuery代码写在bodyl里面安全，不会出错。
+		-->
+		<style>
+			a{
+				text-decoration: none;
+				color: black;
+			}
+		</style>
+		<script>		
+//			window.onload = function (){
+//				var oa = document.getElementsByTagName('a')[0];
+//				oa.style.background = 'red';
+//				oa.onclick = function(){
+//					this.style.border = '2px solid blue';
+//				}
+//			}		
+		</script>
+	</head>
+	<body>
+		<a href="#">我是一个a标签我是一个a标签我是一个a标签</a>
+		<p>这是第一个P标签</p>
+		<p>这是第二个P标签</p>
+		<p>这是第三个P标签</p>
+		<script>
+			$('a').css('background','red').click(function(){
+				$(this).css('border','2px solid blue');
+			});	
+			
+			$('p').click(function(){
+				alert($(this).html());
+			})
+		</script>
+	</body>
+</html>

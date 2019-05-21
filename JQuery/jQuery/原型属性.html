@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型属性constructor</title>
+</head>
+<body>
+    <script>
+        /*
+        function People(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        People.prototype.name = "haha";
+        var xiaoming = new People('xiaoming',18);
+        var xiaogang = new People('xiaogang',20);
+        console.log(xiaoming.age);
+        console.log(xiaogang.age);
+        console.log(xiaoming.prototype);//undefined
+        console.log(xiaogang.prototype);//undefined
+        console.log(xiaoming.__proto__);//Object
+        console.log(People.prototype);//Object
+        console.log(undefined==undefined);//true
+        console.log(People.prototype == xiaoming.__proto__);//true
+        console.log(People.prototype.constructor == xiaoming.constructor);//true
+        console.log(People.prototype.constructor == xiaoming.__proto__.constructor);//true
+        console.log(xiaoming.prototype==xiaogang.prototype);//true
+
+        console.log(xiaoming.constructor);//ƒ People(name,age){this.name = name;this.age = age;}
+        console.log(xiaoming.name);//有自己的属性就用自己的，自己没有的在去原型对象找
+        */
+        //-------------------------------------------------------------------------------------
+
+
+        /*
+        var arr = [1,2,3];
+        console.log(arr.__proto__.constructor);//ƒ Array() { [native code] }
+        console.log(arr.__proto__.__proto__.constructor);//ƒ Object() { [native code] }
+
+        function People(){
+
+        }
+        console.log(People.__proto__.constructor);//ƒ Function() { [native code] }
+        console.log(People.__proto__.__proto__.constructor);//ƒ Object() { [native code] }
+
+        console.log(Function.prototype);//ƒ () { [native code] }
+        console.log(People.__proto__);//ƒ () { [native code] }
+        console.log(Function.prototype == People.__proto__);//true
+        Function.prototype.haha = function(){
+                console.log('haha');
+        }
+        People.haha();//haha
+
+        function Dog(){
+
+        }
+        Dog.haha();//haha
+        function Student() {
+
+        }
+        Student.haha();//haha
+        */
+        //-------------------------------------------------------------------------------------
+
+
+        /*
+        function People(){
+
+        }
+        //直接把People.prototype写成一个对象（把People的原型指向了对象，丢失了constructor）
+        //xiaoming对象要使用constructor属性，在自己的原型对象身上找不到
+        //就沿着原型链往上找到ƒ Object() { [native code] }
+        //补救方法就是加上一个属性
+        People.prototype = {
+            //手动添加constructor属性
+            constructor:People,
+            haha:function(){
+                console.log('haha');
+            }
+        };
+        var xiaoming = new People();
+        console.log(xiaoming.__proto__);//{haha: ƒ}
+        console.log(xiaoming.constructor);//ƒ Object() { [native code] }   添加上constructor后输出ƒ People(){}
+        */
+        //-------------------------------------------------------------------------------------
+
+
+        /*
+        //找出已知数组元素中的最大值
+        var arr = [1,234,521,461245,43,24,88888,666666];
+        var max = -Infinity;//-Infinity是最小的数
+        for(var i = 0 ; i < arr.length ; i++){
+           if (arr[i] > max) {
+               max = arr[i];
+           }
+        }
+        console.log(max);
+        */
+        //-------------------------------------------------------------------------------------
+
+        /*
+        var arr = [1,234,521,461245,43,24,88888,666666];
+        var arr1 = [0,23,666,-224454365,12348888,89,90];
+        Array.prototype.conuntMax = function(){
+            var max = -Infinity;//-Infinity是最小的数
+            for(var i = 0 ; i < this.length ; i++){
+                if (this[i] > max) {
+                    max = this[i];
+                }
+            }
+            return max;
+        }
+        console.log(arr.conuntMax());
+        console.log(arr1.conuntMax());
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用JQuery实现查看修改删除</title>
+	</head>
+	<body>
+		<p><span>我是第</span>一个p<span>标签</span></p>
+		<p class="a">我是第二个p标签</p>
+		<p>我是第三个p标签</p>
+		<p>我是第四个p标签</p>
+		<p>我是第五个p标签</p>
+		<h1>我是h1标签</h1>
+		<h2>我是h2标签</h2>
+		<h3>我是h3标签</h3>
+		<h4>我是h4标签</h4>
+		<h5>我是h5标签</h5>
+		<h6>我是h6标签</h6>
+		<script src="js/jquery.min.js"></script>
+		<script>
+//			$('p :first').css('background','red');
+//			$('p:not(\'.a\')').css('background','red');
+			$('p:last').css('background','red');
+			$('p:even').css('background','green');
+		</script>
+	</body>
+</html>

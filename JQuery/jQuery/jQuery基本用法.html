@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery基本用法</title>
+		<link rel="stylesheet" href="css/jquery-ui.min.css" />
+		<style type="text/css">
+			*{margin:0px;padding:0px;}
+			#box{width:400px;height:400px;border:5px solid skyblue;}
+			#drag{width:100px;height:100px;border:10px solid black;
+				padding: 10px;magin:20px;}
+		</style>
+	</head>400-100-20-10
+	<body>
+		<div id="box">
+			<div id="drag"></div>
+		</div>
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		
+		<!--注意：下面的方法、动作啥的要写在jquery.min.js和jquery.ui.min.js的下面，因为页面加载的顺序是从上到下-->
+		<script>
+			//拖拽
+			//$('#drag').draggable();
+			$('#drag').draggable({
+				//axis:'y',//限制盒子滑动的方向，可以为X轴或者Y轴
+				containment:'parent',//限制小盒子在父盒子中滑动
+				//grid:[100,100]//小盒子的步长
+
+				drag:function(event,ui){
+					// console.log(event,ui);
+					console.log(ui.position);
+					//console.log(ui.offset);
+			}
+			});
+
+			console.log($('#drag').offset().top);
+			console.log($('#drag').offset().left);
+			console.log($('#drag').width());//100
+			console.log($('#drag').innerWidth());//width+padding2 =120
+			console.log($('#drag').outerWidth());//width+padding2+border2 =140
+			console.log($('#drag').outerWidth(true));//width+padding+border+margin =140
+
+		</script>
+	</body>
+</html>

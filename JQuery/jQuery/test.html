@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<style>
+			p{
+				height: 30px;
+				line-height: 30px;
+			}
+			.hide{
+				display: none;
+			}
+			</style>
+		<script src="js/jquery.min.js"></script>
+</head>
+<body>
+ 	<p>啊我耳机阿拉斯分<strong>加的</strong>工爱神的箭佛啊</p>
+	<p>asd路口见公婆哦啊金融四个哦啊接哦如果垃圾</p>
+ 
+ 	<div class="hide">我是你看不阿金的</div>
+	<div id="box">
+		<h3>content:</h3>
+	</div>
+	<script>
+		// alert($('div:hidden').html());
+		//alert($('div:visible').html());
+		/*
+		$(function(){
+			var $box = $("#box"),
+					str = "hello,<b>my name is </b>jQuery";
+					html = $.parseHTML(str);
+					$box.append(html);
+		})*/
+
+		$(function() {
+			var arr = ["a", "b", "c", "d"];
+			var arr1 = $.map(arr, function (value, index) {  //注意回调函数的参数位置和$.each()的不一致
+				console.log(index + value);
+				var val = value.toUpperCase();//可以在回调函数中对成员进行操作，然后将其返回到新的数组中。toUpperCase()方法转换字符为大写。
+				return val;//一定要使用return返回值，否则新数组接受不到
+			});
+			console.log(arr1);
+		})
+	</script>
+ 
+</body>
+</html>

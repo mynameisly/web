@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box" id="box">
+    <div class="box1" id="box1">
+
+    </div>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+        // var box = document.getElementById('box');
+        // $('.box').css('background','red');
+        // jQuery('.box').css('background','blue');
+        //
+        // //这种写法是错误的
+        // // $('.box').style.background = 'pink';
+        // box.style.background = 'pink';//可以这么写
+        //
+        // box.css('background','orange');//: box.css is not a function  at test1.html?_ijt=nanpa6slrv0702g91c9pecg2nk:28
+        //
+        //
+        // //jQuery获取到的元素不是js原生对象，不能直接调用原生js方法
+        // console.log($('.box'));//n.fn.init [div#box.box, prevObject: n.fn.init(1), context: document, selector: ".box"]
+        // 0
+        // :
+        // div#box.box
+        // $('.box')[0].style.background = 'orange';
+
+
+        //$(this)   $(document)   $(window)这三个不加引号
+        //--------------------------------------------
+        //用原生js获取div的宽度,Chrome下面可以，不兼容IE
+       //  var box = document.getElementById('box');
+       // console.log(window.getComputedStyle(box).getPropertyValue('width'));
+
+        //用JQuery获取div的宽度，兼容IE和Chrome
+        // console.log($('.box').css('width'));
+        // alert($('.box').css('width'));
+        // $('.box').css('width','300px');
+        // $('.box').css('width','+=200px');
+
+        // console.log($('.box').css('fontSize'));
+        // console.log($('.box').css('font-size'));
+        //数字可以不加引号，但是其他的要加上引号
+        // $('.box').css({
+        //     'width':200,
+        //     'height':200,
+        //     'background':'#abcdef'
+        // });
+
+
+        //------------------------------------------------
+        //js里面的animate()有5个参数：要移动的元素，目标的json（有两个参数）,到哪个位置，回调函数运动完之后执行
+        //使用JQuery来写,先从左到右，在从上到下，因为JQuery对于同一元素的运动给排队，不同元素不会排队。如果斜着走怎么实现
+        // $('.box').animate({'left':500},2000,function(){
+        //     console.log('1111111111');
+        // });
+        // $('.box').animate({'top':500},2000,function(){
+        //     console.log('32222');
+        // });
+
+        //盒子斜着走
+        // $('.box').animate({'left':500,'top':500},2000);
+
+
+        //不同元素互不影响
+        // $('.box').animate({'left':500,'top':500},2000);
+        // $('.box1').animate({'left':400,'top':300},2000);
+
+
+
+        //--------------------------------------------------
+        //JQuery事假监听.JQuery中额事件所有的都不用加上on;function直接放在括号里面
+        //js里面用onmouseover JQuery用mouseenter
+        //js里面离开用ommouseout   JQuery用mouseleave
+        $('.box').mouseenter(function(){
+            console.log('111');
+        });
+
+        $('.box').mouseleave(function(){
+            console.log('222');
+        });
+
+    </script>
+</body>
+</html>

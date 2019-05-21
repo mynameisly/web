@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>向ul内插入元素</title>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function (){
+				var str = '<li>1</li><li>2</li><li>3</li><script>alert(4)<\/script>';
+				var arr = jQuery.parseHTML(str,document,true);
+				
+				$.each(arr, function(i) {
+					$('ul').append( arr[i] );
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			
+		</ul>
+	</body>
+</html>

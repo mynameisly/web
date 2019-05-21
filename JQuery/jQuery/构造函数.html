@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+</head>
+<body>
+    <script>
+        var xiaoming = {
+            name:"xiaoming",
+            age:18,
+            gerder:'male',
+            sayhi:function(){
+                console.log('hi,我叫'+this.name+'我今年'+this.age+'岁了。');
+            }
+        }
+
+        var zhangdan = {
+            name:"zhandan",
+            age:18,
+            gerder:'female',
+            sayhi:function(){
+                console.log('hi,我叫'+this.name+'我今年'+this.age+'岁了。');
+            }
+        }
+        // xiaoming.sayhi();
+        // zhangdan.sayhi();
+
+        //把具有相同属性的抽象为一个类,构造函数名字大写开头
+        function People(name,age,gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayhi = function(){
+                console.log('hi,我叫'+this.name+'我今年'+this.age+'岁了。');
+            }
+        };
+
+
+        //隐秘的创建一个新的空对象
+        //将这个函数里面的this绑定到刚才创建隐秘新对象上
+        //执行函数里面的语句
+        //返回这个新的函数
+        var xiaoming = new People('xiaoming',19,'male');
+        var zhangsan = new People('zhangsan',30,'female');
+        console.log(xiaoming);
+        xiaoming.sayhi();
+        zhangsan.sayhi();
+
+    </script>
+</body>
+</html>

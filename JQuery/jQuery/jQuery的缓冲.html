@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的缓冲</title>
+    <style>
+        .box{
+            width: 100px;height: 100px;background: skyblue;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/jquery.easie.js"></script>
+
+    <script>
+
+        //网址在    http://jaukia.github.io/easie/
+       // $('.box').animate({'left' : 500},2000,"easieEaseInQuart",function(){});
+       // $(".box").animate({left:200}, "easieEaseInQuint");
+       //$(".box").animate({left:200}, "easieEaseInOut");
+       $(".box").animate({left:200}, "easieLinear");
+    </script>
+</body>
+</html>

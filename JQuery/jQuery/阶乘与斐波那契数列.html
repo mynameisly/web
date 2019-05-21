@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        var foo = function (){
+            console.log('foo1');
+        };
+        foo();
+        var foo = function (){
+            console.log('foo1');
+        };
+        foo();
+        */
+        //输出的是foot1  foot2
+
+
+        /*
+        function foo(){
+            console.log('foo1');
+        }
+        foo();
+        function foo(){
+            console.log('foo2');
+        }
+        foo();
+        */
+
+        //结果是两个foot2，覆盖。js的引擎是一段一段加载的
+
+
+        //水仙花数、回文数、阶乘
+        function factorial(n) {
+            if(n == 1) return n;
+            return n * factorial(n - 1);
+        }
+
+        //斐波那契数列
+        function fibonacci(n){
+            return n < 2 ? n:fibonacci(n-1) * fibonacci(n-2);
+        }
+
+
+        //阶乘比斐波那契数列运行时间多了约10个数量级。斐波那契数列进栈马上就出栈，立马销毁   阶乘因为return n*多少   不能立马销毁
+        //执行上下文堆栈：js代码是从上到下执行的
+        // 可执行代码的类型：全局代码、函数代码、eval代码
+        // 尾递归？
+    </script>
+</body>
+</html>

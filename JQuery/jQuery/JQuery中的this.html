@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery中的this</title>
+</head>
+<body>
+    <div>haahha</div>
+    <script>
+
+        //函数单纯调用，里面的this是window
+        //把函数变成对象的方法，this指的是这个对象
+        //如果在setInterval内，定时调用函数，那函数内部的this是window
+        //把函数绑定成某个元素的事件处理函数，内部的this是触发事件的元素
+        //call   apply可以改变this的指向
+        function haha(){
+            console.log(this);
+        };
+        haha();//输出的是window
+
+        var obj = {
+            name :"xiaoming",
+            xixi : haha
+        }
+
+        obj.xixi();//输出的是{name: "xiaoming", xixi: ƒ}
+
+        // setInterval(haha,1000);//输出的是window
+
+        document.getElementsByTagName('div')[0].onclick = haha;//输出的是div
+
+        haha.call(obj);//指向对象obj
+
+    </script>
+</body>
+</html>
