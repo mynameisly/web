@@ -1,0 +1,112 @@
+/*大家推荐样式开始*/
+.star{
+	width: 100%;
+}
+
+.star_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	transition: all ease-out .3s;
+}
+.star_box img{
+	width: 390px;
+	height: 270px;
+	box-shadow: 0px 0px 8px rgba(0,0,0,.5);
+}
+.star_box .middle{
+	margin: 0 10px;
+}
+.star h2{
+	font-weight: normal;
+	font-size: 30px;
+	text-align: center;
+	padding: 40px 0;
+	letter-spacing: 1px;
+}
+/*大家推荐样式结束*/
+
+/*热卖推荐样式开始*/
+.famous{
+	width: 108%;
+	margin-left: -25px;
+	background-color: #E5E5E5;
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+.wrap{
+	width: 1196px;
+	margin: 0 auto;
+	padding-bottom: 52pc;
+}
+.wrap h2{
+	font-weight: normal;
+	font-size: 30px;
+	text-align: center;
+	padding: 40px 0;
+	letter-spacing: 1px;
+}
+.rm_left{
+	width: 295px;
+	height: 786px;
+	background-color: #FFFFFF;
+	float: left;
+	margin-left: 5px;
+}
+.rm_left>img{
+	margin: 38px 0 0 2px;
+	width: 289px;
+	height: 747px;
+}
+.rm_right{
+	width: 891px;
+	height: 785px;
+	float: left;
+}
+.rm_right>div{
+	width: 290px;
+	height: 390px;
+	background-color: #FFFFFF;
+	float: left;
+	margin-left: 7px;
+}
+.rm_right .one{
+	margin-bottom: 5px;	
+	transition: all ease-in .3s;
+}
+.wrap>.rm_right>.one:hover,.star_box img:hover{
+	box-shadow: 0 15px 30px rgba(0,0,0,.2);
+	transform: translateY(-2px);
+}
+.rm_right .one img{
+	width: 270px;
+	height: 190px;
+	margin: 40px 10px;
+}
+.rm_right .one p{
+	text-align: center;
+}
+.rm_right .one .details{
+	color: #9E9E9E;
+	font-size: 14px;
+	margin: 12px 25px;
+}
+.rm_right .one .price{
+	font-size: 20px;
+	color: #ef4222;
+}
+/*热卖推荐样式结束*/
+.fill{
+	border: 2px solid red;
+	margin-top: 30px;
+	height: 400px;
+}
+@media all and (min-width: 320px) and (max-width: 640px) {
+	.star{width: 50%;}
+	.star h2{margin-right: -360px;}
+	.star_box div:nth-child(1){visibility: hidden;}
+	.famous>.wrap{width: 127%;margin-left: -100px;}
+	.famous>.wrap>.rm_left{display: none;}
+}

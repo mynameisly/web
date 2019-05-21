@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>游成都——濒危动物</title>
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <script src="./js/wow.min.js"></script>
+    <link rel="stylesheet" href="./css/protect.css">
+    <link rel="stylesheet" href="./css/nav.css">
+
+
+    <script type="text/javascript">
+        window.onload = function(){
+            new WOW().init();
+            pubuliu("ulwrap",3,400);
+        };
+        //实现ul下的li瀑布流
+        //cols 表示一行几列，liWidth 表示一列的宽度
+        function pubuliu(ulId,cols,liWidth){
+            var wrap = document.getElementById(ulId);
+            var lis = wrap.getElementsByTagName("li");
+            
+            var li_h = [];
+            for(var i=0; i<lis.length; i++){
+                if(i < cols){
+                    li_h[i] = lis[i].scrollHeight;
+                    //定位元素
+                    lis[i].style.left = i * liWidth + "px";
+                    lis[i].style.top = "0px";
+                }else{
+                    //获取数组最小值
+                    var min_liH = Math.min.apply( Math, li_h );
+                    var key = getKeyByValue(li_h,min_liH);
+                    //重定义最小高度
+                    li_h[key] = min_liH + lis[i].scrollHeight;
+                    
+                    //定位元素
+                    lis[i].style.left = key * liWidth + "px";
+                    lis[i].style.top = min_liH + "px";
+                }
+            }
+        }
+        //根据数组中的值获取索引
+        function getKeyByValue(arr,value){
+            for(var i=0; i<arr.length; i++){
+                if(arr[i] == value){
+                    return i;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 导航栏开始 -->
+    <div id="head"></div>
+    <!-- 导航栏结束 -->
+
+    <!-- 濒危动物主体内容开始 -->
+    <img src="./img/protect/p_banner.jpg" class="img-responsive" alt="爱地球——濒危动物">
+    <div class="container" style="margin-top:100px;">
+        <ul class="wrap clearfix" id="ulwrap">
+            <li class="wow fadeInUp" data-wow-delay=".1s">
+                <img src="./img/protect/p1.jpg" class="img-responsive" alt="藏羚羊" />
+                <span class="deli_txt">
+                    藏羚羊<br/><i>tibetan antelope</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".2s">
+                <img src="./img/protect/p2.jpg" class="img-responsive" alt="棕桐"/>
+                <span class="deli_txt">
+                        棕桐<br/><i>palm tree</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".3s">
+                <img src="./img/protect/p3.jpg" class="img-responsive" alt="白鲸鲨"/>
+                <span class="deli_txt">
+                    白鲸鲨<br/><i>white whale sharks</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".4s">
+                <img src="./img/protect/p4.jpg" class="img-responsive" alt="金丝猴"/>
+                <span class="deli_txt">
+                    金丝猴<br/><i>golden Monkey</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".5s">
+                <img src="./img/protect/p5.jpg" class="img-responsive" alt="非洲象"/>
+                <span class="deli_txt">
+                    非洲象<br/><i>african elephant</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".6s">
+                <img src="./img/protect/p6.jpg" class="img-responsive" alt="大熊猫"/>
+                <span class="deli_txt">
+                    大熊猫<br/><i>panda</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".7s">
+                <img src="./img/protect/p7.jpg" class="img-responsive" alt="美洲豹"/>
+                <span class="deli_txt">
+                    美洲豹<br/><i>jaguar</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".8s">
+                <img src="./img/protect/p8.jpg" class="img-responsive" alt="沙罗"/>
+                <span class="deli_txt">
+                    沙罗<br/><i>Ssra</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".9s">
+                <img src="./img/protect/p9.jpg" class="img-responsive" alt="金丝雀"/>
+                <span class="deli_txt">
+                    金丝雀<br/><i>canary</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay="1s">
+                <img src="./img/protect/p10.jpg" class="img-responsive" alt="华南虎"/>
+                <span class="deli_txt">
+                    华南虎<br/><i>southern china tiger</i>
+                </span>
+            </li>
+
+            <li class="wow fadeInUp" data-wow-delay="1.1s">
+                <img src="./img/protect/p11.jpg" class="img-responsive" alt="雪莲"/>
+                <span class="deli_txt">
+                    雪莲<br/><i>snow lotus</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay="1.2s">
+                <img src="./img/protect/p12.jpg" class="img-responsive" alt="北美羊"/>
+                <span class="deli_txt">
+                    北美羊<br/><i>north american sheep</i>
+                </span>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay="1.3s">
+                <img src="./img/protect/p13.jpg" class="img-responsive" alt="北极狼"/>
+                <span class="deli_txt">
+                    北极狼<br/><i>arctic wolf</i>
+                </span>
+            </li>
+        </ul>
+
+        <div class="clear"></div>
+        <div class="row" style="margin-bottom: 50px;">
+            <div class="col-md-5 col-md-offset-4 btn">
+                <a href="#">更多</a>
+            </div>
+        </div>
+    </div>
+    <!-- 濒危动物主体内容结束 -->
+
+    <!-- 底部开始 -->
+    <div id="foot"></div>
+    <!-- 底部结束 -->
+
+
+    <script src="./js/jquery-1.11.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/navandfoot.js"></script>
+</body>
+</html>

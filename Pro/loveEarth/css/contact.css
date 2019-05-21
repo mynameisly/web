@@ -1,0 +1,149 @@
+body{
+    background: url("../img/contact/contact_bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.contact_us h1{
+    background: url("../img/contact/contact_add.png") no-repeat;
+    background-position-x: right;
+    width: 60%;
+}
+
+.contact_us p{
+    width: 40%;
+    border-top: 5px solid #28a4c9;
+    color: #fff;
+    font-size: 18px;
+}
+
+.formInfo form{
+    width: 80%;
+    margin: 100px 0 0 160px;
+}
+
+.formInfo form input{
+    margin: 18px auto;
+    height: 45px;
+    padding-left: 35px;
+    border: none;
+    border-bottom: 2px solid #fff;
+}
+.formInfo form input:nth-child(1),
+.formInfo form input:nth-child(2){
+    width: 40%;
+}
+.formInfo form input:nth-child(2){
+    margin-left: 18%;
+}
+.formInfo form input:nth-child(3),
+.formInfo form input:nth-child(4),
+.formInfo form input:nth-child(5){
+    width:99%;
+}
+
+.formInfo form input:nth-child(4){
+    height: 100px;
+}
+
+.formInfo form input:nth-child(5){
+    background: #28a4c9;
+    font-weight: bold;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.formInfo form input:nth-child(1){background: url("../img/contact/name.png") no-repeat 10px center;}
+.formInfo form input:nth-child(2),
+.formInfo form input:nth-child(4){background: url("../img/contact/email.png") no-repeat 10px center }
+.formInfo form input:nth-child(3){background: url("../img/contact/obj.png") no-repeat 10px center}
+.formInfo form input:focus{
+    outline: 0;
+}
+
+.con_info{
+    margin: 130px auto;
+    color: #fff;
+}
+
+.con_info p{
+    margin: 30px auto;
+    font-size: 18px;
+}
+
+.con_info .writeDown,h3{
+    font-weight: bold;
+}
+
+.news{
+    margin: 100px;
+    height: 600px;
+}
+
+.news h2{
+    padding-left: 40px;
+    background: url(../img/contact/contact_add.png) no-repeat;
+    background-position-x: left;
+    width: 50%;
+}
+
+.news .news_left p{
+    padding: 30px 0;
+    margin-left: 40px;
+}
+
+.news .news_left .intro{
+    width: 41%;
+    border-top: 5px solid #28a4c9;
+}
+
+.news .news_left form input{
+    background: url("../img/contact/email.png") no-repeat 10px center;
+    width: 99%;
+    padding-left: 35px;
+    height: 50px;
+    border: none;
+    border-bottom: 5px solid #000;
+    color: #fff;
+    margin-left: 40px;
+}
+
+.news .news_right input{
+    width: 28%;
+    margin-top: 190px;
+    height: 50px;
+    background-color: #28a4c9;
+    border: none;
+    float: left;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.news .news_right .plan{
+    width: 55%;
+    float: right;
+    height: 300px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    padding: 30px 0 30px 40px;
+    background: #abcdef;
+}
+
+.news .news_right .plan a{
+    text-decoration: none;
+    width: 50%;
+    margin-top: 40px;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+}
+

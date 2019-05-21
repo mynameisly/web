@@ -1,0 +1,305 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.banner{
+	position: relative;
+	
+	width: 100%;
+	height: 780px;
+	background: url(../img/3.png);
+}
+.banner .wirte{
+	left: 200px;
+	top: 100px;
+	position: absolute;
+	/*margin-left: 20px;*/
+	font-size: 45px;
+	color: white;
+}
+.banner .search{
+	position: absolute;
+	left: 40%;
+	top: 52%;
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	/*margin-top: 200px;*/
+}
+.daren{
+	margin-top: 50px;
+}
+.daren .daren1{
+	position: relative;
+}
+.daren .zouzou{
+	position: absolute;
+	width: 337px;
+	height: 50px;
+	/*background-color: red;*/
+	background-color: rgba(0,0,0,0.5);
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	bottom: 0px;
+}
+.daren .daren2{
+	position: relative;
+}
+.daren .aisen{
+	position: absolute;
+	width: 337px;
+	height: 50px;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	bottom: 0px;
+}
+.daren .daren3{
+	position: relative;
+}
+.daren .nana{
+	position: absolute;
+	width: 337px;
+	height: 50px;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	bottom: 0px;
+}
+.daren h2{
+	text-align: center;
+}
+.daren .line{
+	position: relative;
+	margin-top: 20px;
+	margin-left: 15%;
+	height: 30px;
+	width: 68%;
+	text-align: center;
+	/*background-color: deepskyblue;*/
+}
+
+/*.daren .line hr{
+	width: 30%;
+	height: 2px;
+	background-color: green;
+}*/
+
+.daren .line .line_1{
+	position: absolute;
+	top: 11px;
+	/*margin-top: 15px;*/
+	height: 2px;
+	width: 42%;
+	background-color: darkgrey;
+}
+
+.daren .line .line_text1{
+	position: absolute;
+	left: 44%;
+	width: 15%;
+	height: 30px;
+	text-align: center;
+	color: darkgray;
+}
+
+.daren .line .line_2{
+	position: absolute;
+	top: 11px;
+	left: 61%;
+	/*margin-top: 15px;*/
+	height: 2px;
+	width: 42%;
+	background-color: darkgray;
+}
+
+
+
+.daren .container{
+	margin-top: 60px;
+}
+
+
+
+.share{
+	margin-top: 50px;
+}
+.share h2{
+	text-align: center;
+}
+
+.share .line{
+	position: relative;
+	margin-top: 20px;
+	margin-left: 15%;
+	height: 30px;
+	width: 68%;
+	text-align: center;
+	/*background-color: deepskyblue;*/
+}
+.share .line .line_3{
+	position: absolute;
+	top: 11px;
+	/*margin-top: 15px;*/
+	height: 2px;
+	width: 41%;
+	background-color: darkgrey;
+}
+
+.share .line .line_text2{
+	position: absolute;
+	left: 44%;
+	width: 17%;
+	height: 30px;
+	text-align: center;
+	color: darkgray;
+}
+
+.share .line .line_4{
+	position: absolute;
+	top: 11px;
+	left: 63%;
+	/*margin-top: 15px;*/
+	height: 2px;
+	width: 35%;
+	background-color: darkgray;
+}
+
+
+
+
+.share .container{
+	margin-top: 60px;
+}
+
+.share .share1_1{
+	width: 340px;
+	height: 300px;
+	/*background-color: red;*/
+	background-color: rgba(0,0,0,0.2);
+}
+.share .share1_1 img{
+	margin-left: 0px;
+	width: 300px;
+}
+
+.share .share1_2{
+	/*margin-left: 20px;*/
+	margin-top: 20px;
+	width: 340px;
+	height: 310px;
+	/*background-color: green;*/
+	background-color: rgba(0,0,0,0.2);
+}
+
+.share .share1_2 img{
+	width: 300px;
+}
+.share .container .share2 img{
+	width: 700px;
+}
+
+
+.share .share2{
+	position: relative;
+}
+.share2 .share_text1{
+	font-size: 25px;
+	position: absolute;
+	color: white;
+	left: 30px;
+	top: 35px;
+}
+
+.share2 .share_text2{
+	position: absolute;
+	left: 30px;
+	top: 120px;
+	font-size: 20px;
+	color: white;
+	background-color: paleturquoise;
+	width: 100px;
+	height: 30px;
+	/*border-radius: 4px;*/
+	border-radius: 8px;
+	text-align: center;
+}
+
+.share2 .line_7{
+	width: 150px;
+	height: 2px;
+	position: absolute;
+	left: 150px;
+	top: 135px;
+	background-color: white;
+}
+.share2 .share_text3{
+	position: absolute;
+	font-size: 25px;
+	color: white;
+	left: 330px;
+	top: 120px;
+}
+
+
+.under{
+	margin-top: 50px;
+}
+
+.under h2{
+	text-align: center;
+}
+
+
+.under .line{
+	position: relative;
+	margin-top: 20px;
+	margin-left: 15%;
+	height: 30px;
+	width: 68%;
+	text-align: center;
+	/*background-color: deepskyblue;*/
+}
+.under .line .line_5{
+	position: absolute;
+	top: 11px;
+	/*margin-top: 15px;*/
+	height: 2px;
+	width: 41%;
+	background-color: darkgrey;
+}
+
+.under .line .line_text3{
+	position: absolute;
+	left: 44%;
+	width: 17%;
+	height: 30px;
+	text-align: center;
+	color: darkgray;
+}
+
+.under .line .line_6{
+	position: absolute;
+	top: 11px;
+	left: 63%;
+	/*margin-top: 15px;*/
+	height: 2px;
+	width: 35%;
+	background-color: darkgray;
+}
+
+
+.under .name li{
+	margin-left: 100px;
+	text-align: center;
+	/*float: left;*/
+	display: inline-block;
+	list-style: none;
+	margin-right: 4%;
+	margin-top: 60px;
+	font-size: 25px;
+}

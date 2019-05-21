@@ -1,0 +1,58 @@
+.his_left h2{
+    width: 30%;
+    letter-spacing: 9px;
+    font-weight: bold;
+    margin-bottom: 110px;
+    border-bottom: 4px solid #ee7600;
+}
+
+.his_left .his_txt{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.his_rg{
+    width: 75%;
+    margin-top: 55px;
+    height: 490px;
+}
+
+.museum{
+    padding: 0;
+    margin: 50px auto;
+    position: relative;
+}
+
+.museum .museum_txt{
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    text-align: right;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    padding-right: 20px;
+    bottom: 72px;
+    background: rgba(0,0,0,.6);
+    margin: 20px auto;
+}
+
+.museum .museum_intro{
+    margin: 20px auto;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.museum img, .his_img img{
+    transition: all ease-out .3s;
+    box-shadow: 1px 0px 10px grey;
+}
+
+.his_img{
+    margin-bottom: 50px;
+}
+
+.museum img:hover, .his_img img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 20px #f5ead6;
+}

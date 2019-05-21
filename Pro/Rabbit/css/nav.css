@@ -1,0 +1,39 @@
+/*导航*/
+.navbar-nav > li > a{
+    height: 80px;
+    padding-top: 29px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navbar{
+    /*border-bottom: 5px solid #000;*/
+    color: #000 !important;
+    box-shadow:0 10px 20px #000 ;
+}
+
+.navbar-nav > li > a{
+    color: #000 !important;
+}
+
+.navbar-default{
+    background: #fff;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #555;
+    background-color: #fff;
+}
+
+#bs-example-navbar-collapse-1 a:hover {
+    /*border-bottom: 5px solid #000;*/
+    box-shadow:0 10px 20px #000 ;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+        margin-left: 21px;
+    }
+}

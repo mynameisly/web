@@ -1,0 +1,371 @@
+.trip_left h2{
+    width: 72%;
+    letter-spacing: 9px;
+    font-weight: bold;
+    margin-top: 0px;
+    border-bottom: 4px solid #ee7600;
+}
+
+.trip_left .left_txt{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.trip_rg{
+    position: relative;
+}
+
+.trip_rg .rg_txt{
+    width: 96.5%;
+    position: absolute;
+    right: 16px;
+    bottom: -10px;
+    height: 50px;
+    text-align: right;
+    font-size: 16px;
+    padding-right: 20px;
+    line-height: 50px;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+}
+
+/* 出行方式开始开始 */
+.ways, .recom, .hotel{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.guide{
+    border-bottom: 2px solid gainsboro;
+    margin: 20px auto;
+}
+
+.guide li a{
+    color: #000;
+    z-index: 99;
+    padding: 0px 70px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.guide li{
+    color: #000;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+
+.guide li:hover, .nav>li:visited{
+    background-color: #ee7600;
+    color: #fff;
+}
+
+/* 目的地样式开始 */
+.search_pannel{
+    margin-top: 90px;
+    border: 6px solid #ee7600;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.depart{
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+.depart .depart_pannel{
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+    width: 200%;
+    left: 0;
+    border: 2px solid gainsboro;
+    background: #fff;
+}
+
+/* 热门出发地样式开始 */
+.letter-item_hot{
+    height: 110px;
+}
+
+.letter-item_hot .letter_hot{
+    display: block;
+    margin: -14px auto;
+    padding-left: 18px;
+    color: #ee7600;
+    font-weight: bold;
+}
+    
+.letter-item_hot .depart_port_hot{
+    float: left;
+    width: 98%;
+    margin-left: 4px;
+    height: 84px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.letter-item_hot .depart_port_hot li{
+	float: left;
+    margin: -5px 14px -20px 15px;
+}
+/* 热门出发地样式结束 */
+
+.depart_pannel .letter-item{
+    float: left;
+    margin-left: 4px;
+    width: 98%;
+    height: 22px;
+    line-height: 56px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.depart_pannel .letter-item .letter{
+    display: block;
+    color: #ee7600;
+    float: left;
+    padding-left: 16px;
+    line-height: 24px;
+    width: 16%;
+}
+
+.depart_pannel .letter-item .depart_port{
+    float: left;
+    height: 18px;
+}
+
+.depart_pannel .letter-item .depart_port li{
+    float: left;
+    margin: -16px 14px -20px 15px;
+}
+
+.nav>li>a:hover, .nav>li>a:visited {
+    border: none;
+}
+
+.search_icon{
+    height: 50px;
+    text-align: center;
+    background-color: #ee7600;
+}
+.search_main{
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+.search{
+    height: 50px;
+    text-align: center;
+    background-color: #ee7600;
+}
+
+.search:hover{
+    background-color: #d67618;
+}
+/* 目的地样式结束 */
+/* 出行方式样式结束 */
+
+/*推荐出行样式开始*/
+.recom1{
+	border: 1px solid #ee7600;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.recom1 .recom1_left{
+	height: 80px;
+}
+
+.recom1 .recom1_left .recom1_content{
+    height: 80px;
+}
+.recom1 .recom1_left .sign{
+    display: block;
+    width: 26%;
+    margin-left: -18px;
+    height: 76px;
+    text-align: center;
+    line-height: 76px;
+    font-size: 20px;
+    float: left;
+    font-weight: bold;
+    color: #ee7600;
+}
+
+.recom1 .recom1_left .port{
+    margin-top: -10px;
+    line-height: 28px;
+    display: block;
+    font-size: 16px;
+}
+
+.recom1 .recom1_rg{
+	height: 80px;
+}
+
+.recom1 .recom1_rg .see,
+.rem .rem_price .see{
+    text-align: center;
+    line-height: 45px;
+    height: 45px;
+    margin: 20px auto;
+    border-radius:10px;
+    font-size: 16px;
+    background-color: #ee7600;
+    transition: all ease-out 0.3s;
+    cursor: pointer;
+}
+
+.recom1 .recom1_rg .see:hover,
+.rem .rem_price .see:hover{
+    background-color: #d67618;
+    transform: translateY(-2px);
+}
+/*推荐出行样式结束*/
+
+/* 酒店预订样式开始 */
+.check_info{
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.check_info .check_in{
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.check_info .check_in:active,
+.check_info .check_in:visited{
+    border: 2px solid #ee7600;
+}
+.check_info .check_out{
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.check_info .check_num{
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.check_info .check{
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ee7600;
+    border: 1px solid gray;
+}
+
+.check_info .check_in .glyphicon,
+.check_info .check_out .glyphicon,
+.check_info .check_num .glyphicon{
+    font-size: 20px;
+    float: right;
+    line-height: 40px;
+}
+/* 酒店预订样式结束 */
+
+/* 推荐酒店样式开始 */
+.rem{
+    /* border: 1px solid red; */
+    height: 253px;
+    font-size: 16px;
+}
+
+.rem .rem_hotel{
+    /* border: 2px solid black; */
+    height: 253px;
+    position: relative;
+    transition: all ease-out 0.4s;
+}
+
+.rem .rem_hotel:hover .imgmask{
+    width: 91%;
+    height: 101%;
+    transition: all ease-out 0.4s;
+    position: absolute;
+    bottom: 0;
+    left: 14px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 120px;
+    text-align: center;
+    background-color: rgba(0,0,0,.7);
+}
+
+.rem .rem_hotel .imgmask .welcome{
+    color: #fff;
+}
+
+.rem .rem_hotel .imgmask .book{
+    border: 2px solid #fff;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.rem .rem_info{
+    /* border: 2px dotted green; */
+    height: 253px;
+    border: 1px solid gainsboro;
+}
+
+.rem .rem_info:hover,
+.rem .rem_price:hover{
+    box-shadow: 3px 5px 5px gainsboro;
+    transform: translateY(-2px);
+    transition: all ease-in 0.3s;
+}
+
+.rem .rem_info .info_title{
+    /* border: 1px solid; */
+    line-height: 50px;
+    font-weight: bold;
+    color: #ee7600;
+    letter-spacing: 2px;
+}
+
+.rem .rem_info .info_main{
+    line-height: 35px;
+}
+
+.rem  .rem_price{
+    /* border: 2px dotted blue; */
+    height: 253px;
+    border: 1px solid gainsboro;
+}
+
+.rem  .rem_price .price{
+    margin-top: 60px;
+    text-align: center;
+    padding-left: 0;
+    display: block;
+}
+
+.rem  .rem_price .price del{
+    font-weight: bold;
+    color: gray;
+    font-size: 24px;
+}
+
+.rem  .rem_price .price span{
+    font-weight: bold;
+    font-size: 20px;
+    color: #ee7600;
+}
+/* 推荐酒店样式结束 */

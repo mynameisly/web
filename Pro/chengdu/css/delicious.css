@@ -1,0 +1,88 @@
+/* 美食搜索框样式开始 */
+.down img{
+    width: 10%;
+    transition: all ease-out 0.3s;
+}
+
+.down img:hover{
+    transform: translateY(10px);
+}
+.search{
+    margin: 80px auto;
+}
+.search input{
+    width: 100%;
+    height: 40px;
+    margin-left: -25px;
+    border-radius: 10px;
+    border: 2px solid #ee7600;
+    text-align: center;
+    background: url(../images/idx_img/deli.png) no-repeat;
+    background-size: 30px;
+    background-position: right;
+}
+/* 美食搜索框样式结束 */
+
+/* 美食主体样式开始 */
+ul.wrap{
+    width:1200px;
+    margin:0 auto;
+    position:relative; /* 相对定位 */
+}
+ul.wrap li{
+    width:400px;
+    float:left;
+    list-style: none;
+    position:absolute; /* 绝对定位 */
+}
+ul.wrap li img{
+    /* 计算好长度 */
+    width:364px;
+    border:2px solid #bdbdbd;
+    padding:10px;
+    margin:4px;
+}
+
+ul.wrap li .deli_txt{
+    display: block;
+    background: #ee7600;
+    color: #fff;
+    width: 85%;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+}
+
+ul.wrap li .deli_txt i{
+    font-size: 14px;
+}
+
+.clear{
+    clear: both;
+    width: 100%;
+    height: 2000px;
+    /* border: 2px solid blue; */
+}
+
+.btn{
+    width: 31%;
+    height: 50px;
+    margin-left: 36%;
+    background: #ee7600;
+}
+
+.btn a{
+    height: 50px;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 10px;
+    color: #fff;
+} 
+
+/* 美食主体样式结束 */

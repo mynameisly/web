@@ -1,0 +1,65 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.banner{
+	width: 100%;
+	margin-top: 100px;
+}
+.banner img{
+	width: 100%;
+}
+.container .row{
+	margin-top: 60px !important;
+	margin-bottom: 60px !important;
+	width: 80%;
+	/*float: left;*/
+	margin: 0 auto;
+	/*height: 500px;*/
+	/*border: 2px solid black;*/
+}
+.container .row .dufutitle{
+	/*border: 2px solid palevioletred;*/
+	margin: 0 auto;
+	float: left;
+	padding: 0;
+	/*height: 200px;*/
+}
+.container .row .dufutitle img{
+	width: 60%;
+}
+.container .row .dufutext{
+	/*margin-top: 10% !important;*/
+	line-height: 200%;
+	/*border: 2px solid green;*/
+	width: 64%;
+	/*padding: 0;*/
+	margin: 0 auto;
+	float: left;
+	font-size: 18px;
+	font-family: "楷体";
+}
+.container .dufu_read{
+	margin: 0 auto;
+}
+.container .dufu_read img,
+.container .dufu_door img,
+.container .dufu_house img{
+	width: 100%;
+	transition: all ease-out .3s;
+	box-shadow: 5px 5px 5px grey;
+}
+
+.container .dufu_read img:hover,
+.container .dufu_door img:hover,
+.container .dufu_house img:hover{
+	transform: translateY(-3px);
+}
+.container .dufu_door{
+	margin: 0 auto;
+}
+
+.container .dufu_house{
+	margin: 0 auto;
+}
+

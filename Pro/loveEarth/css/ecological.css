@@ -1,0 +1,316 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+/*banner开始*/
+.banner{
+	margin: 0 auto;
+	position: relative;
+}
+.banner .search{
+	position: absolute;
+	left: 30%;
+	top: 30%;
+	font-size: 20px;
+	border-style: double;
+	width: 45%;
+	height: 40px;
+	border-radius: 8px;
+}
+.banner .search .text_one{
+	/*width: 60%;*/
+	margin-top: 5px;
+	margin-left: 1%;
+	/*background-color: yellow;*/
+	float: left;
+}
+.banner .search img{
+	float: right;
+	margin-top: 5px;
+}
+.banner .text_two{
+	position: absolute;
+	left: 40%;
+	top: 35%;
+	width: 20%;
+	height: 15%;
+	/*background-color: yellow;*/
+	text-align: center;
+	font-size: 26px;
+}
+.transparent{
+	width: 100%;
+	margin-top: -200px;
+}
+.transparent .ecology{
+	margin-left: 7%;
+	position: relative;
+    height: 400px;
+    float: left;
+    width: 25%;
+	background-color: rgba(0,0,0,0.4);
+}
+.transparent .ecology .ecology_name img{
+	/*text-align: center;*/
+	display: table-cell;
+	margin-top: 20px;
+	/*margin-left: 32%;*/
+	margin: 0 auto;
+}
+.transparent .ecology_name h2{
+	text-align: center;
+	color: white;
+}
+.transparent .ecology_name{
+	position: absolute;
+	top: 2%;
+	margin-top: 20px;
+}
+.transparent .ecology .ecology_name .text_ecology{
+	color: white;
+	width: 80%;
+	/*text-align: center;*/
+	/*text-align: center;*/
+	margin: 0 auto;
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+
+.transparent .photo{
+	margin-left: 6%;
+	float: left;
+	position: relative;
+    height: 400px;
+    width: 25%;
+	background-color: rgba(0,0,0,0.4);
+}
+.transparent .photo .photograph img{
+	/*text-align: center;*/
+	display: table-cell;
+	margin-top: 35px;
+	margin: 0 auto;
+}
+.transparent .photograph h2{
+	text-align: center;
+	color: white;
+}
+.transparent .photograph{
+	position: absolute;
+	top: 2%;
+	margin-top: 20px;
+}
+.transparent .photo .photograph .text_phoyo{
+	color: white;
+	width: 80%;
+	/*text-align: center;*/
+	/*text-align: center;*/
+	margin: 0 auto;
+	line-height: 180%;
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+
+.transparent .animal{
+	margin-left: 6%;
+	float: left;
+	position: relative;
+    height: 400px;
+    width: 25%;
+	background-color: rgba(0,0,0,0.4);
+}
+.transparent .animal .animal_name img{
+	/*text-align: center;*/
+	display: table-cell;
+	margin-top: 30px;
+	margin: 0 auto;
+}
+.transparent .animal_name h2{
+	text-align: center;
+	color: white;
+}
+.transparent .animal_name{
+	position: absolute;
+	top: 2%;
+	margin-top: 20px;
+}
+.transparent .animal .animal_name .text_animal{
+	color: white;
+	width: 80%;
+	line-height: 180%;
+	/*text-align: center;*/
+	/*text-align: center;*/
+	margin: 0 auto;
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+<!--banner结束-->
+
+
+
+
+
+/*生态污染开始*/
+
+.contaminsted{
+	
+	background-color: green; 
+	margin-top: 500px;
+	float: left;
+}
+
+
+.contaminsted .title_contaminsted{
+	width: 30%;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+.contaminsted h1{
+	text-align: center;
+}
+.contaminsted .title_contaminsted .line_contaminsted{
+	width: 30%;
+	height: 5px;
+	margin: 0 auto;
+	margin-top: -3px;
+	background-color: #8C8C8C;
+}
+
+
+
+/*.contaminsted h1{
+	margin: 0 auto;
+}*/
+.tab{
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 60%;
+	height: 500px;
+	/*border: 5px solid black;*/
+}
+.tab .tab_picture{
+	width: 100%;
+	margin: 0 auto;
+	/*width: 100%;
+	height: 200px;*/
+	/*border: 2px solid yellow;*/
+}
+
+.tab .tab_picture img{
+	cursor: pointer;
+	float: left;
+	margin-left: 11%;
+}
+.tab .tab_title,.tab .tab_main{
+	list-style: none;
+	float: left;
+	color: #fff;
+	font-size: 20px;
+}
+
+.tab .tab_title{
+	width: 100%;
+	
+	/*width: 100%;
+	height: 200px;*/
+	/*border: 2px solid blue;*/
+}
+
+.tab .tab_title li{
+	color: #000000;
+	margin-top: 20px;
+	cursor: pointer;
+	float: left;
+	margin-left: 10%;
+}
+/*.tab .tab_title li.current{*/
+	/*border-bottom: 4px solid gray;*/
+/*}*/
+.tab .tab_title li:hover{
+	border-bottom: 4px solid gray;
+}
+.tab .tab_title .active{
+	/*color: red;*/
+	border-bottom: 4px solid gray;
+	font-weight: bolder;
+
+}
+
+.tab .tab_main{
+	
+	-webkit-box-shadow: #666 0px 0px 20px;
+	box-shadow: #666 0px 0px 20px;
+	background-color: white;
+	margin-left: 10%;
+	margin-top: 3%;
+	line-height: 200%;
+	width: 80%;
+	height: 270px;
+	color: #000000;
+	/*border: 2px solid red;*/
+	/*background-color: palevioletred;*/
+	position: relative;
+}
+
+.tab .tab_main li.active{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.tab .tab_main li:first-child{
+	display: block;
+}
+
+.tab .tab_main li{
+	display: none;
+	padding: 24px;
+}
+/*生态污染结束*/
+
+
+
+/*优美环境开始*/
+.graceful{
+	height: 600px;
+	margin-top: 50px;
+	/*background-color: palevioletred;*/
+}
+.graceful .title{
+	width: 30%;
+	margin: 0 auto;
+	/*background-color: yellow;*/
+}
+.graceful h1{
+	text-align: center;
+}
+.graceful .title .line_color{
+	width: 30%;
+	height: 5px;
+	margin: 0 auto;
+	margin-top: -3px;
+	background-color: #8C8C8C;
+}
+.graceful .picture_graceful{
+	margin-top: 50px;
+	position: relative;
+}
+.graceful .picture_graceful .he{
+	position: absolute;
+	left: 10%;
+	z-index: 1;
+	top: 80px;
+	width: 30%;
+}
+.graceful .picture_graceful .qingting{
+	position: absolute;
+	left: 33%;
+	z-index: 2;
+	width: 30%;
+}
+.graceful .picture_graceful .heshui{
+	position: absolute;
+	right: 10%;
+	top: 80px;
+	z-index: 1;
+	width: 30%;
+}

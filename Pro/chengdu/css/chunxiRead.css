@@ -1,0 +1,59 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.banner{
+	width: 100%;
+	margin-top: 100px;
+}
+.banner img{
+	width: 100%;
+}
+.container .row{
+	margin-top: 60px !important;
+	margin-bottom: 60px !important;
+	width: 80%;
+	margin: 0 auto;
+}
+.container .row .chunxititle{
+	margin: 0 auto;
+	float: left;
+	padding: 0;
+	/*height: 200px;*/
+}
+.container .row .chunxititle img{
+	width: 48%;
+}
+.container .row .chunxitext{
+	line-height: 200%;
+	width: 64%;
+	/*padding: 0;*/
+	margin: 0 auto;
+	float: left;
+	font-size: 18px;
+	font-family: "楷体";
+}
+.container .chunxi_read{
+	margin: 0 auto;
+}
+.container .chunxi_read img,
+.container .chunxi_night img,
+.container .chunxi_house img{
+	width: 100%;
+	transition: all ease-out .3s;
+	box-shadow: 5px 5px 5px grey;
+}
+
+.container .chunxi_read img:hover,
+.container .chunxi_night img:hover,
+.container .chunxi_house img:hover{
+	transform: translateY(-3px);
+}
+.container .chunxi_night{
+	margin: 0 auto;
+}
+
+.container .chunxi_house{
+	margin: 0 auto;
+}
+

@@ -1,0 +1,54 @@
+.wrapper {
+	position: relative;
+	max-width: 840px;
+	width: 100%;
+	padding: 0 50px;
+	margin: 0 auto;
+}
+
+/*.codrops-top {*/
+	/*line-height: 24px;*/
+	/*font-size: 11px;*/
+	/*background: #fff;*/
+	/*background: rgba(255, 255, 255, 0.8);*/
+	/*text-transform: uppercase;*/
+	/*z-index: 9999;*/
+	/*position: relative;*/
+	/*font-family: Cambria, Georgia, serif;*/
+	/*box-shadow: 1px 0px 2px rgba(0,0,0,0.2);*/
+/*}*/
+
+/*.codrops-top a {*/
+	/*padding: 0px 10px;*/
+	/*letter-spacing: 1px;*/
+	/*color: #333;*/
+	/*display: inline-block;*/
+/*}*/
+
+/*.codrops-top a:hover {*/
+	/*background: rgba(255,255,255,0.6);*/
+/*}*/
+
+/*.codrops-top span.right {*/
+	/*float: right;*/
+/*}*/
+
+/*.codrops-top span.right a {*/
+	/*float: left;*/
+	/*display: block;*/
+/*}*/
+
+
+/*p.info {*/
+	/*font-family: "Volkhov", serif;*/
+	/*font-style: italic;*/
+	/*color: #997f5a;*/
+	/*text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);*/
+	/*padding: 20px;*/
+	/*display: block;*/
+	/*clear: both;*/
+	/*text-align: center;*/
+	/*width: 100%;*/
+	/*max-wdith: 440px;*/
+	/*margin: 0 auto;*/
+/*}*/

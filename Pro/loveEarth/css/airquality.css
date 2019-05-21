@@ -1,0 +1,281 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.head_frame{
+	width: 25%;
+	background-color: #1B6D85;
+	margin-left: 3%;
+	margin-top: 40%;
+	font-size: 20px;
+}
+.container .a_left img{
+	width: 100%;
+}
+
+
+.container .a_left .middle_frame{
+	background-color: rgba(255,255,255,0.2);
+}
+
+.container .a_left .middle_frame .food{
+	margin-top: 30px;
+}
+.container .a_left .middle_frame .food .food_title{
+	width: 100%;
+	height: 70px;
+}
+.container .a_left .food .food_title h2{
+	float: left;
+	width: 26%;
+	margin-left: 4%;
+}
+.container .a_left .food .food_title h5{
+	float: left;
+	margin-top: 33px;
+	font-size: 18px;
+	color: rgba(0,0,0, 0.5);
+	height: 20px;
+	width: 20%;
+}
+.container .a_left .food .food_main{
+	width: 100%;
+	height: 260px;
+}
+.container .a_left .food .food_main .picture_food{
+	height: 200px;
+	margin-top: 30px;
+	width: 40%;
+	position: relative;
+	float: left;
+}
+.container .a_left .food .food_main .picture_food img{
+	width: 100%;
+	margin-left: 5%;
+}
+.container .a_left .food .food_main .picture_food .picture_textone{
+	position: absolute;
+	bottom: 0;
+	font-size: 20px;
+	margin-left: 5%;
+	color: white;
+	text-align: center;
+	opacity: 0.6;
+	background-color: rgba(0,0,0, 0.7);
+	width: 100%;
+	height: 35px;
+}
+.container .a_left .food_text{
+	width: 50%;
+	margin-top: 30px;
+	float: right;
+}
+.container .a_left .food_text .text_one{
+	font-size: 25px;
+	color:black;
+}
+.container .a_left .food_text .text_two{
+	margin-top: 10px;
+	width: 90%;
+	color: rgba(0,0,0, 0.5);
+}
+.container .a_left .food_text .text_three{
+	font-size: 14px;
+	margin-top: 17px;
+	margin-left: 2px;
+	color: rgba(0,0,0, 0.5);
+}
+
+
+
+.container .a_left .middle_frame .motion{
+	margin-top: 20px;
+}
+
+.container .a_left .middle_frame .motion .motion_title{
+	width: 100%;
+	height: 70px;
+}
+.container .a_left .motion .motion_title h2{
+	float: left;
+	width: 26%;
+	margin-left: 4%;
+}
+.container .a_left .motion .motion_title h5{
+	float: left;
+	margin-top: 33px;
+	font-size: 18px;
+	color: rgba(0,0,0, 0.5);
+	height: 20px;
+	width: 20%;
+}
+.container .a_left .motion .motion_main{
+	width: 100%;
+	height: 260px;
+}
+.container .a_left .motion .motion_main .picture_motion{
+	height: 200px;
+	margin-top: 30px;
+	width: 40%;
+	position: relative;
+	float: left;
+}
+.container .a_left .motion .motion_main .picture_motion img{
+	width: 100%;
+	margin-left: 5%;
+}
+.container .a_left .motion .motion_main .picture_motion .picture_texttwo{
+	position: absolute;
+	bottom: 5px;
+	font-size: 20px;
+	margin-left: 5%;
+	color: white;
+	opacity: 0.6;
+	text-align: center;
+	background-color: rgba(0,0,0, 0.7);
+	width: 100%;
+	height: 35px;
+}
+.container .a_left .motion_text{
+	width: 50%;
+	margin-top: 5px;
+	float: right;
+}
+.container .a_left .motion_text .text_four{
+	font-size: 25px;
+	color: black;
+}
+.container .a_left .motion_text .text_five{
+	margin-top: 10px;
+	width: 90%;
+	color: rgba(0,0,0, 0.5);
+}
+.container .a_left .motion_text .text_six{
+	font-size: 14px;
+	margin-top: 17px;
+	margin-left: 2px;
+	color: rgba(0,0,0, 0.5);
+}
+
+
+
+.a_right{
+	margin-top: 50px;
+}
+.a_right .right_information{
+	height: 370px;
+	width: 100%;
+}
+.a_right .yuan1{
+	
+	float: left;
+	margin-top: 50px;
+}
+.a_right .yuan1 img{
+	height: 60%;
+	width: 70%;
+}
+.a_right .right_information .information_one{
+	margin-top: 50px;
+	float: left;
+	position: relative;
+	margin-left: 3%;
+	width: 80%;
+	height: 60px;
+}
+.a_right .right_information .information_one img{
+	width: 106%;
+}
+
+.a_right .right_information .information_one .information_title{
+	position: absolute;
+	left: 10%;
+	top: 20%;
+	float: left;
+	color: white;
+	font-size: 25px;
+}
+
+
+.a_right  .right_information .information_text{
+	margin-top: 30px;
+	color: rgba(0,0,0, 0.5);
+	font-size: 15px;
+	width: 120%;
+	height: 50px;
+}
+
+
+.a_right .ency_one{
+	position: relative;
+	width: 100%;
+	height: 230px;
+}
+
+.a_right .ency_one .ency_title{
+	position: absolute;
+	left: 15%;
+	top: 5%;
+	float: left;
+	color: white;
+	font-size: 25px;
+}
+
+.a_right .ency_one .ency_text{
+	margin-top: 10px;
+	color: rgba(0,0,0, 0.5);
+	font-size: 15px;
+	width: 100%;
+	height: 80px;
+}
+.a_right .ency_one .ency_textone{
+	width: 100%;
+	margin-top: 5px;
+	color: rgba(0,0,0, 0.5);
+	font-size: 15px;
+	height: 70px;
+}
+
+.a_right .special{
+	width: 100%;
+	position: relative;
+	height: 80px;
+}
+.a_right .special .special_title{
+	position: absolute;
+	left: 15%;
+	top: 18%;
+	float: left;
+	color: white;
+	font-size: 25px;
+}
+
+
+
+
+
+/*轮播*/
+#myCarousel{
+	width: 80%;
+    margin: 0 auto;
+}
+    
+ #myCarousel .carousel-inner .item img{
+ 	width: 100%;
+ }
+
+#myCarousel .left,
+#myCarousel .right{
+	height: 200px;
+}
+
+.carousel-indicators {
+    top: 170px;
+   	left: 40%;
+}
+
+ #myCarousel a img{
+ 	position: absolute;
+ 	top: 45%;
+ 	right: 4px;
+ }

@@ -1,0 +1,23 @@
+.footer{
+    background: #000;
+    margin-top: 150px;
+}
+.footer img{
+    vertical-align: -5px ;
+}
+
+.footer span{
+    margin-left: 3%;
+    display: inline-block;
+    height:60px;
+    width: 15%;
+}
+
+.footer div{
+    display: inline-block;
+    text-align: center;
+    width: 65%;
+    padding: 0;
+    color: #fff;
+    margin: 35px 0;
+}

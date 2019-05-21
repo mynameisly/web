@@ -1,0 +1,31 @@
+.row {
+  margin: 0;
+}
+
+.form-control{
+  margin: 10px auto;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+
+.signOut:hover{
+  background-color: rgba(0,0,0,.9);
+}
+
+.nav-item{
+  line-height: 60px;
+}
+
+.nav>li>a {
+  padding: 10px 0px;
+  font-size: 20px;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+  margin-top: 50px;
+  margin-left: 16px;
+  width: 98%;
+}

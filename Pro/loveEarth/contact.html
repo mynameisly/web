@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>爱地球——联系我们</title>
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/nav.css">
+</head>
+<body>
+    <!-- 导航栏开始 -->
+    <div id="head"></div>
+    <!-- 导航栏结束 -->
+    <div class="container-fluid" style="margin-top: 130px">
+        <div class="row contact_us">
+            <div class="col-sm-3 col-sm-offset-1">
+                <h1>联系我们</h1>
+                <p>SAY  HI</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="app">
+                    <div data-v-de1b2cde="">
+                        <div data-v-02dc3e6e="" data-v-de1b2cde="" class="location-panel">
+                            <div data-v-8c280b04="" data-v-02dc3e6e="" class="location-current">
+                                <div id="allmap" style="width: 100%;height: 350px;border: 1px solid #cccccc"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row formInfo">
+            <div class="col-sm-6">
+                <form action="" method="post">
+                    <input type="text" placeholder="你的名字">
+                    <input type="text" placeholder="你的电子邮件">
+                    <input type="text" placeholder="对象">
+                    <input type="text" placeholder="消息……">
+                    <input type="submit" value="发送">
+                </form>
+            </div>
+
+            <div class="col-sm-6 con_info">
+                <h3>联系信息</h3>
+                <p class="writeDown">写下你想对我们所说的内容，我们将通过邮件或电话回访的形式回复你的问题。<br/>现在就来跟我们交流一下吧！</p>
+                <p>地址：四川省成都市武侯区爱地球公益项目中心<br/>
+                    TEL：+86 124-556-780<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+86 028 124-566-780<br/>
+                    邮箱：email@loveearth.org
+                </p>
+                <div>
+                    <img src="./img/contact/linkedin.png" alt="">
+                    <img src="./img/contact/yt.png" alt="">
+                    <img src="./img/contact/insta.png" alt="">
+                    <img src="./img/contact/tw.png" alt="">
+                    <img src="./img/contact/fb.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row news">
+            <div class="col-sm-6 news_left">
+                <h2>消息灵通<br/>订阅我们的时事通讯</h2>
+                <p class="intro">为您推送最新的环保资讯</p>
+                <form action="" method="post">
+                    <input type="text" placeholder="你的电子邮件">
+                </form>
+                <p>请相信我们，我们永远不会给您发送垃圾邮件</p>
+            </div>
+
+            <div class="col-sm-6 news_right">
+                <input type="submit" value="发送">
+                <div class="plan">
+                    <p>你也想加入公益计划？<br />让我们一起工作</p>
+                    <a href="#">取得联系</a>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 col-lg-offset-8" style="padding-top: 50px;">
+                        <div>
+                            <img src="./img/contact/linkedin.png" alt="">
+                            <img src="./img/contact/yt.png" alt="">
+                            <img src="./img/contact/insta.png" alt="">
+                            <img src="./img/contact/tw.png" alt="">
+                            <img src="./img/contact/fb.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部开始 -->
+    <div id="foot"></div>
+    <!-- 底部结束 -->
+
+    <script src="./js/jquery-1.11.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/navandfoot.js"></script>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Ngb6B8rQuVDb61QFsIGu9XRGuOyAygzY"></script>
+    <script type="text/javascript">
+        //定位成功事件
+        //var myKeys=[];
+        var myKeys='';
+        var lng='';         //精度
+        var lat='';         //纬度
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+        var point = new BMap.Point(108.95,34.27);
+        map.centerAndZoom(point,12);
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r){console.log(r.point)
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                var mk = new BMap.Marker(r.point);
+                map.addOverlay(mk);//标出所在地
+                map.panTo(r.point);//地图中心移动
+                //alert('您的位置：'+r.point.lng+','+r.point.lat);
+                lng=r.point.lng;
+                lat=r.point.lat;
+                var point = new BMap.Point(r.point.lng,r.point.lat);    //用所定位的经纬度查找所在地省市街道等信息
+                var gc = new BMap.Geocoder();
+                gc.getLocation(point, function(rs){
+                    var addComp = rs.addressComponents;
+                    console.log(rs.address);//地址信息
+                    //myKeys = [rs.address];     当有其他信息时，可以定义成数组
+                    myKeys = rs.address;
+                    //alert(myKeys);         //弹出所在地址
+                    var local = new BMap.LocalSearch(map, {
+                        renderOptions:{map:map,panel:"r-result"},
+                        pageCapacity:3
+                    });
+                    local.searchInBounds(myKeys, map.getBounds());
+                });
+            }else {
+                alert('failed'+this.getStatus());
+            }
+        },{enableHighAccuracy: true})
+
+        /**
+         * 保存
+         */
+        function add(){
+            //alert(myKeys);
+            $.ajax({
+                type: 'GET',
+                url: '<%=request.getContextPath()%>/customer/map/save',
+                dataType: 'json',
+                data: {'address':myKeys,'lng':lng,'lat':lat},
+                success : function(res){
+                    // 添加文字说明
+                    alert(res);
+                }
+
+            });
+        }
+
+        //实时刷新
+        function refresh(){
+            window.location.href="<%=request.getContextPath()%>/customer/map/index";
+        }
+
+    </script>
+</body>
+</html>

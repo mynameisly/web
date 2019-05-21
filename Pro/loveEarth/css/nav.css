@@ -1,0 +1,77 @@
+.row{
+	margin: 0;
+}
+
+/* 导航样式开始 */
+.navbar{ 
+    margin: 0;
+    background: #eee;
+    border: none;
+    box-shadow: 5px 3px 5px grey;
+}
+
+.idx_logo{
+    margin-right: 50px;
+    padding-top:15px;
+}
+
+.idx_logo img{
+    width: 60px;
+    height: 30px;
+}
+
+.navbar .navbar-nav li{
+    margin-right: 9px;
+}
+
+.navbar .navbar-nav li:first-child:hover{
+    border-bottom: none;
+}
+
+.nav>li>a:hover, .nav>li>a:visited{
+    background-color: #a0d1b5;
+    border: none;
+}
+
+/* 清除导航条LOGO的悬停颜色 */
+.nav .idx_logo:hover{
+    background-color: #eee;
+    cursor: default;
+}
+
+/* 清除输入框的点击后的默认边框颜色 */
+.form-control:focus, .form-control:hover {
+    border: 2px solid #a0d1b5;
+    box-shadow: none;
+}
+.navbar .navbar-nav li a{
+    font-size: 18px;
+    color: #000;
+    height: 70px;
+    line-height: 45px;
+}
+
+.navbar-right{
+    padding-top: 12px;
+}
+
+.glyphicon {
+    top: 7px;
+    font-size: 22px;
+    cursor: pointer;
+}
+/* 导航样式结束 */
+
+/* 底部样式开始 */
+.foot{
+    margin-top: 50px;
+    padding: 20px 0 20px 0;
+    background-color: #a0d1b5;
+}
+
+.foot img{
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+}
+/* 底部样式结束 */

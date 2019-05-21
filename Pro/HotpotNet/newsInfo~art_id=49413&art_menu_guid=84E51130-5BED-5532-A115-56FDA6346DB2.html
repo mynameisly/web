@@ -1,0 +1,673 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit"/> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>调味品商城</title>
+
+<link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="public/stylesheets/iconfont.css" />
+<link rel="stylesheet" href="public/stylesheets/main.css" />
+<link rel="stylesheet" href="public/bower_components/video.js/dist/video-js.min.css" />
+<link rel="stylesheet" href="public/bower_components/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="public/bower_components/summernote/dist/summernote.css" />
+<link rel="stylesheet" href="public/bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+<link rel="stylesheet" href="public/bower_components/swiper/dist/css/swiper.min.css" />
+<link rel="stylesheet" href="public/bower_components/lavalamp/jquery.lavalamp.css" />
+<link rel="stylesheet" href="public/bower_components/carousel-3d/dist/styles/jquery.carousel-3d.default.css" /><script type="text/javascript" src="public/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="public/bower_components/jquery.cookie/jquery.cookie.js"></script>
+<script type="text/javascript" src="public/bower_components/jQuery-ajaxTransport-XDomainRequest/jQuery.XDomainRequest.js"></script>
+<script type="text/javascript" src="public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/bower_components/art-template/art-template.js"></script>
+<script type="text/javascript" src="public/bower_components/video.js/dist/video.min.js"></script>
+<script type="text/javascript" src="public/bower_components/identity-code-valid/idCard.js"></script>
+<script type="text/javascript" src="public/javascripts/patch/img-res-patch.js"></script>
+<script type="text/javascript" src="public/javascripts/core/loadModuleDataFromServer.js"></script>
+<script type="text/javascript" src="public/javascripts/template.js"></script>
+<script type="text/javascript" src="public/javascripts/midway.js"></script>
+<script type="text/javascript" src="public/bower_components/paginator/bootstrap-paginator.js"></script>
+<script type="text/javascript" src="public/bower_components/jquery-edslider/jquery-edslider.js"></script>
+<script type="text/javascript" src="public/bower_components/summernote/dist/summernote.min.js"></script>
+<script type="text/javascript" src="public/bower_components/summernote/lang/summernote-zh-CN.js"></script>
+<script type="text/javascript" src="public/bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="public/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="public/bower_components/jquery-file-upload/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="public/bower_components/jquery-file-upload/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="public/bower_components/jquery-file-upload/jquery.fileupload.js"></script>
+<script type="text/javascript" src="public/bower_components/swiper/dist/js/swiper.js"></script>
+<script type="text/javascript" src="public/bower_components/lavalamp/jquery.lavalamp.min.js"></script>
+<script type="text/javascript" src="public/bower_components/flip/dist/jquery.flip.min.js"></script>
+<script type="text/javascript" src="public/bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+<script type="text/javascript" src="public/bower_components/waitForImages/dist/jquery.waitforimages.min.js"></script>
+<script type="text/javascript" src="public/bower_components/carousel-3d/dist/jquery.carousel-3d.min.js"></script>
+<script type="text/javascript" src="public/bower_components/jquery.SuperSlide.2.1.2/jquery.SuperSlide.2.1.2.min.js"></script>
+<script type="text/javascript" src="public/bower_components/baidu-share/baidu.share.js"></script>
+<script type="text/javascript">(function () { if (!window.lanh) window.lanh = {}; window.lanh = $.extend(true, window.lanh, { apiHost: "http://service.zgtwpsc.cn:80/", client_type:"web",kid:"339518912",customExtend:{"resRule":"{kid}_shop_ilhjy_cn","resolveTemplateSyntax":true,"msiteRedirect":true}}); })();</script> </head>
+<!--<script type="text/javascript" src="/public/js/jquery-1.11.1.min.js"></script>-->
+<script type="text/javascript" src="public/js/main.js"></script>
+<!--首页访问统计-->
+<script type="text/javascript" src="public/js/stat_visit.js"></script>
+<!--首页访问统计end-->
+<script type="text/javascript" src="public/js/indexBanner.js"></script>
+<link type="text/css" rel="stylesheet" href="public/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="public/css/main.css" />
+
+<!--关键字-->
+<script type="text/javascript" src="public/js/jquery.fullPage.js"></script>
+<script type='text/javascript'>
+
+$(document).ready(function(){
+	$("#demosMenu").change(function(){
+	  window.location.href = $(this).find("option:selected").attr("id") + 'http://www.zgtwpsc.cn/.html';
+	});
+});
+
+</script>
+
+
+
+<link rel="stylesheet" href="public/css/common.css"/>
+<link rel="stylesheet" href="public/css/animate.min.css" />
+
+<script type="text/javascript" src="public/js/jquery.SuperSlide.2.1.1.js"></script><!--js动画-->
+
+
+  <script>
+var wow = new WOW({
+    boxClass: 'wow',
+    animateClass: 'animated',
+    offset: 0,
+    mobile: true,
+    live: true
+});
+wow.init();
+</script>
+
+<body>
+
+
+<!-- Copyright � 2005. Spidersoft Ltd -->
+<style>
+A.applink:hover {border: 2px dotted #DCE6F4;padding:2px;background-color:#ffff00;color:green;text-decoration:none}
+A.applink       {border: 2px dotted #DCE6F4;padding:2px;color:#2F5BFF;background:transparent;text-decoration:none}
+A.info          {color:#2F5BFF;background:transparent;text-decoration:none}
+A.info:hover    {color:green;background:transparent;text-decoration:underline}
+</style>
+<div style='BORDER: 1px solid #DCE6F4; MARGIN-TOP: 20px; MARGIN-BOTTOM: 20px; MARGIN-LEFT: 5px; MARGIN-RIGHT: 5px; PADDING: 5px; BACKGROUND-COLOR: #eef8ff;line-height:180%; COLOR: #000000; font-family: Arial; font-size: 8pt; width=100%; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr="#FFFFFFFF", EndColorStr="#F2F5FAFF");'>
+This page was saved using <a class="applink" href="http://www.spidersoft.com"><b>WebZIP 7.0.3.1030</b></a> <a class="applink" href="http://www.spidersoft.com"><b>offline browser</b></a>  on  12/16/18 16:24:53.<br>
+<b>Address:</b> <a class="info" href="http://www.zgtwpsc.cn/newsInfo?art_id=49413&art_menu_guid=84E51130-5BED-5532-A115-56FDA6346DB2">http://www.zgtwpsc.cn/newsInfo?art_id=49413&art_menu_guid=84E51130-5BED-5532-A115-56FDA6346DB2</a><br>
+<b>Title:</b> 调味品商城 &nbsp;&bull;&nbsp; <b>Size:</b> 25008<br></div>
+<!-- /Copyright � 2005. Spidersoft Ltd -->
+
+
+
+
+
+
+<div class="g-doc">
+	<!--header start-->
+    <div class="g-head">
+       
+         <div class="ydsz_nav">
+              <div class="ydsz_nav_kd">
+              
+                   <div class="logo1">
+                   			<a href="www.zgtwpsc.html"><img src="http://cdn.ilhjy.cn/339518912_shop_ilhjy_cn/public_html/runtime/uploads/d8be706f7530a7ed4c8b46010c1737b6.png" title="" alt=""></a>
+                   </div>
+                   
+                   <div class="ggy">
+                   			<h1>中国调味品商城.手机</h1>
+                            <span>您的满意是我们最大的愿望</span>
+                   </div>
+                   
+                      <!-- DataConfig
+    [{
+        "path": "/service/cms_api/contact.html",
+        "method": "get",
+        "objName": "contacts"
+    }]
+-->
+                    <div class="dianhua">
+                    <h1>全国服务热线：</h1>
+                	<span>13808714925</span>
+                	</div>
+                    
+                       <!-- DataConfig
+    [{
+        "path": "/service/cms_api/site_info.html",
+        "method": "get",
+        "objName": "site_info"
+    },{
+        "path": "/service/cms_menu/list.html",
+        "method": "get",
+        "queryString": [],
+        "objName": "cms_menu"
+    }]
+-->            
+                     <!--daohang-->
+				<div class="daohang">
+                		 <ul id="nav" class="nav clearfix">
+                                   <li class="nLi on">
+				<h3><a href="www.zgtwpsc.html">网站首页</a></h3>
+			</li>
+            
+            
+               
+                 
+			<li class="nLi">
+				<h3>
+                
+                  <!--指定顶级栏目使用模板--> 
+          <!--关于我们--><a href="newsList~menu_id=17124&menu_guid=CA4B0753-78B9-A560-81B6-3FEEF804C6EA.html"> 
+          <!--经营项目-->
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+          
+          关于我们</a> 
+                </h3>
+                
+                 
+                <ul class="sub">
+                 <!--二级--> 
+              
+						 <li>
+                
+         <!--关于我们--><a href="newsList~menu_id=17130&menu_guid=D1846A3B-ED36-6229-5FE1-505E47DDC0EA.html"> 
+          <!--经营项目-->
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+              . 公司简介</a>
+              
+              
+             </li>
+        
+                    </ul>
+                 
+                      
+                  </li>    
+                            
+                
+                 
+			<li class="nLi">
+				<h3>
+                
+                  <!--指定顶级栏目使用模板--> 
+          <!--关于我们--> 
+          <!--经营项目-->
+          <!--案例展示-->
+          <!--新闻动态--><a href="newsList~menu_id=17125&menu_guid=EB2C4170-646B-7AE7-6CE9-3D05C5F50EDF.html">
+          <!--服务优势-->
+        
+          <!--联系方式-->
+          
+          新闻资讯</a> 
+                </h3>
+                
+                 
+                <ul class="sub">
+                 <!--二级--> 
+              
+						 <li>
+                
+         <!--关于我们--> 
+          <!--经营项目-->
+          <!--案例展示-->
+          <!--新闻动态--><a href="newsList~menu_id=17162&menu_guid=F4B27439-AB14-BFD1-BE28-B81C1F34B38B.html">
+          <!--服务优势-->
+        
+          <!--联系方式-->
+              . 行业新闻</a>
+              
+              
+             </li>
+        
+						 <li>
+                
+         <!--关于我们--> 
+          <!--经营项目-->
+          <!--案例展示-->
+          <!--新闻动态--><a href="newsList~menu_id=17163&menu_guid=84E51130-5BED-5532-A115-56FDA6346DB2.html">
+          <!--服务优势-->
+        
+          <!--联系方式-->
+              . 公司新闻</a>
+              
+              
+             </li>
+        
+                    </ul>
+                 
+                      
+                  </li>    
+                            
+                
+                 
+			<li class="nLi">
+				<h3>
+                
+                  <!--指定顶级栏目使用模板--> 
+          <!--关于我们--> 
+          <!--经营项目--><a href="productCh~menu_id=17126.html">
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+          
+          产品展示</a> 
+                </h3>
+                
+                 
+                <ul class="sub">
+                 <!--二级--> 
+              
+						 <li>
+                
+         <!--关于我们--> 
+          <!--经营项目--><a href="productList~menu_id=17158&menu_guid=B8C5FC62-EA2C-5150-173B-1CD8BC14ED88.html">
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+              . 麻辣蘸水系列</a>
+              
+              
+             </li>
+        
+						 <li>
+                
+         <!--关于我们--> 
+          <!--经营项目--><a href="productList~menu_id=17159&menu_guid=D32A7A38-DF24-C86F-F8DA-B38A274305C3.html">
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+              . 鸡精鸡粉系列</a>
+              
+              
+             </li>
+        
+						 <li>
+                
+         <!--关于我们--> 
+          <!--经营项目--><a href="productList~menu_id=17160&menu_guid=4D3D5307-7BA4-7D25-D8AD-C9D8B0EFDD66.html">
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+              . 火锅底料系列</a>
+              
+              
+             </li>
+        
+						 <li>
+                
+         <!--关于我们--> 
+          <!--经营项目--><a href="productList~menu_id=17161&menu_guid=459CCE75-8897-21F7-8344-7D23A2957622.html">
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+              . 香辛料系列</a>
+              
+              
+             </li>
+        
+						 <li>
+                
+         <!--关于我们--> 
+          <!--经营项目--><a href="productList~menu_id=36987&menu_guid=6DAA2BB4-AC0E-008F-0D6C-E9C83D09F71B.html">
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+              . 调味料系列</a>
+              
+              
+             </li>
+        
+                    </ul>
+                 
+                      
+                  </li>    
+                            
+                
+                 
+			<li class="nLi">
+				<h3>
+                
+                  <!--指定顶级栏目使用模板--> 
+          <!--关于我们--> 
+          <!--经营项目-->
+          <!--案例展示--><a href="solutionList~menu_id=17127&menu_guid=D87CD4E2-3044-7C65-05F3-17F71AD21EDC.html">
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式-->
+          
+          基地展示</a> 
+                </h3>
+                
+                        
+                
+                 
+			<li class="nLi">
+				<h3>
+                
+                  <!--指定顶级栏目使用模板--> 
+          <!--关于我们--> 
+          <!--经营项目-->
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势--><a href="newsList~menu_id=17128&menu_guid=78A99D1E-F363-01B7-3CBE-3DDB594A2288.html">
+        
+          <!--联系方式-->
+          
+          核心优势</a> 
+                </h3>
+                
+                        
+                
+                 
+			<li class="nLi">
+				<h3>
+                
+                  <!--指定顶级栏目使用模板--> 
+          <!--关于我们--> 
+          <!--经营项目-->
+          <!--案例展示-->
+          <!--新闻动态-->
+          <!--服务优势-->
+        
+          <!--联系方式--><a href="contact~menu_id=17129&menu_guid=7AE20190-36E5-7A62-E24E-3DFFD079E976.html">
+          
+          联系我们</a> 
+                </h3>
+                
+                        
+                
+                
+                
+                                    
+                                </ul>
+                                <script id="jsID" type="text/javascript">
+                                    
+                                    jQuery("#nav").slide({ 
+                                        type:"menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
+                                        titCell:".nLi", //鼠标触发对象
+                                        targetCell:".sub", //titCell里面包含的要显示/消失的对象
+                                        effect:"slideDown", //targetCell下拉效果
+                                        delayTime:300 , //效果时间
+                                        triggerTime:0, //鼠标延迟触发时间（默认150）
+                                        returnDefault:true //鼠标移走后返回默认状态，例如默认频道是"预告片"，鼠标移走后会返回"预告片"（默认false）
+                                    });
+                                </script>
+                		
+                </div>
+                <!--daohang-->
+                    
+              </div>
+         </div>
+    </div>
+    
+    
+    
+
+<!-- DataConfig 栏目列表
+    [{
+        "path": "/service/cms_article/list.html",
+        "method": "get",
+        "queryString": ["menu_id=1389"],
+        "objName": "news_Recommend"
+    },{
+        "path": "/service/cms_article/detail.html",
+        "method": "post",
+        "queryString": ["art_id=<%=art_id%>"],
+        "objName": "newsInfo"
+    },{
+      "path": "/service/cms_ad/list.html",
+      "method": "get",
+      "queryString": ["adp_id=9366"],
+      "objName": "newad_list"
+}]
+-->
+<!--面包屑导航-->
+<div class="InBanner">
+	<div class="img">
+    	
+    		
+    			<a >
+                	<img src="http://cdn.ilhjy.cn/339518912_shop_ilhjy_cn/public_html/runtime/uploads/47e5b98cf210d814911af3b2e3a181f0.jpg" alt="">
+                </a>
+    		
+    	
+    </div>
+    
+   
+
+    <div class="crumb">
+        <div class="crumbBox clearfix">
+            <h4><!--面包屑导航-->
+<!-- DataConfig
+  [{
+      "path": "/service/cms_menu/details.html",
+      "method": "post",
+      "postData": {
+                "guid_list": "<%=art_menu_guid%>"
+            },
+      "objName": "Crumbs"
+  }]
+-->
+				
+        			
+                    	
+        					
+                            	
+          							
+                                
+        					
+        				
+                    
+          				公司新闻
+        			
+        		</h4>
+            <div class="crumbInfo">
+            	<a href="index.html">首页</a>
+                
+            	
+                
+            	
+<!--面包屑导航-->
+<!-- DataConfig
+  [{
+      "path": "/service/cms_menu/details.html",
+      "method": "post",
+      "postData": {
+                "guid_list": "<%=art_menu_guid%>"
+            },
+      "objName": "Crumbs"
+  }]
+-->
+				
+        			
+                    	
+        					
+                            	
+                                	<span>&gt;</span>
+          							<a href="newsList~menu_id=17125.html">新闻资讯</a>
+                                
+        					
+        				
+                        <span>&gt;</span>
+          				<a>公司新闻</a>
+        			
+        		
+            </div>
+        </div>
+    </div>
+</div>
+<!--面包屑导航-->
+
+
+<!--产品模块列表-->
+<div class="content">
+	<div class="conWidth">
+        <div class="newsList clearfix">
+			<!--左边新闻列表-->
+            <div class="news_fl news_fl1">
+            	<div class="newsCon">
+                
+    		
+					<h3>哪些调味品影响药效</h3>
+                    <div class="Info"><span>时间：2017-04-14 18:10:39</span><span>作者：</span></div>
+                    <div class="newsConBox">
+                    	<p><p>&nbsp;生活中我们离不开油盐酱醋等调味品。这些调味品是我们日常饮食中常有的调味品。最近英国赫特福德郡药物学研究中心发现，许多调味品会影响药物的疗效。下面跟我们调味品生产厂一起来了解一下吧！<br/></p><p>&nbsp;有些植物类食油，如橄榄油等可增强降脂药物的效果；动物油，如猪油、羊油、鸡油等可增强体内脂肪储存，而降低某些治疗药物及降脂药物的功效。食物中的油脂能降低某些抗生素的药效，如能使四环素、强力霉素降低药效分别为50%和20%。</p><p>&nbsp;吃盐过多可导致高血压，因此食盐可降低降压药、利尿药、肾上腺皮质激素等药物的疗效。所以在服用降压药、利尿药、肾上腺皮质激素等药物时，病人应尽量少吃盐。</p><p>&nbsp;酱含有大量的钙、镁离子，若在服用四环素族抗生素药物时，大量食用了酱，酱中的金属离子将与四环素族抗生素络合，形成的络合物不易被胃肠道吸收，会降低其抗菌效果。此外，在服用优降宁等药物治疗心血管疾病时，不要吃酱油，否则会引起恶心、呕吐等副作用，不仅降低药物效果，还会加重患者痛苦。</p><p>&nbsp;醋的pH值在7.0以下，呈酸性，若与碳酸氢钠、氢氧化铝、胰酶素、胃舒平等碱性药物同服，可因酸碱中和而降低药效。此外，在服磺胺类药物时应忌食醋，因为磺胺类药物在酸性条件下溶解度降低，可在尿路中形成磺胺结晶，产生尿闭和血尿等损害。</p><p>&nbsp;食用碱是厨房中常用的作料之一，呈碱性。因酸碱中和作用，会使酸性药物药效降低，故不能和酸性药物(如胃蛋白酶、稀盐酸等)合用。</p><p>&nbsp;有些人吃中药汤剂怕苦，常加糖调味。其实，吃中药不能滥加糖，因为糖会抑制某些退热药的疗效，干扰维生素在人体内的吸收。如中药的化学成分很复杂，其中的蛋白质可与含铁、钙等元素和其他杂质较多的红糖起化学反应，使药剂中的某些有效成分凝固、变性。这样不但会影响药效，而且还可能危害健康。</p><p>&nbsp;酒料是生活中常用的作料之一。酒能引起血管扩张，与降血压药，如利血平、心痛定等同用易出现低血压，严重时可危及生命。酒能增强降血糖药物的作用，引起低血糖。酒还会增加机体对地高辛等药物的敏感性，导致洋地黄中毒。酒可加重水杨酸类解热镇痛药的副作用，引起胃肠道不良反应，如诱发溃疡或引起急性出血性胃炎等。因此，在服用上述药物时，尽量少用料酒，更不能饮酒。</p><p><br/></p></p>
+                        <img src="">
+                        
+                    </div>
+				
+                </div>
+            </div>
+			<!--左边新闻列表-->
+
+			<!--右边新闻列表-->
+            <!--<div class="news_rl">
+                <h2>新闻推荐</h2>
+                <ul>
+                  
+                    
+                </ul>
+            </div>        -->
+			<!--右边新闻列表-->
+        </div>
+    </div>
+</div>
+<!--产品模块列表-->
+<!-- DataConfig
+    [{
+        "path": "/service/cms_api/site_icp.html",
+        "method": "get",
+        "objName": "icp"
+    },{
+        "path": "/service/cms_api/site_info.html",
+        "method": "get",
+        "objName": "site_info"
+    },{
+        "path": "/service/cms_menu/list.html",
+        "method": "get",
+        "queryString": [],
+        "objName": "cms_menu"
+    },{
+        "path": "/service/cms_api/contact.html",
+        "method": "get",
+        "objName": "contact"
+    }
+    ]
+-->
+<!--底部-->
+
+
+
+<div class="dibu">
+		
+        
+        <div class="dibu1">
+        		<div class="logo2">
+                	<a href="www.zgtwpsc.html"><img  src="public/images/logo.png"/></a>
+                </div>
+                
+                 <!-- DataConfig
+                    [{
+                        
+                        "path": "/service/cms_api/contact.html",
+                        "method": "get",
+                        "objName": "contacts"
+                    }]
+                -->
+                
+                <div class="lianxi">
+                			<p>地址：昆明市官渡区大板桥镇板桥村委会四甲村</p> 
+						<p>联系电话：13808714925</p>
+                        <p>手机：0871-65618420</p>
+						<p>全国销售热线：0871-65618420</p>    
+                        
+						<p>电子邮箱：1215465488@qq.com</p>
+                        	<p>   <span>版权所有©2017 调味品商城</span>&nbsp;&nbsp;&nbsp;<span><a href="http://www.miitbeian.gov.cn/" target="_blank">滇ICP备17001339号-1</a></span>
+                  
+                  &nbsp;&nbsp;&nbsp;<a href="http://www.ilanhai.cn/" target="_blank">技术支持：蓝-海-基-业</a></p>
+                </div>
+                
+                <div class="ewm">
+                		  <!-- DataConfig  广告位
+                                                                        [{
+                                                                              "path": "/service/cms_ad/list.html",
+                                                                              "method": "get",
+                                                                              "queryString": ["adp_id=9367"],
+                                                                              "objName": "ad_list1"
+                                                                        }]
+                                                                        -->
+                                                                        <!--幻灯-->
+                                                                                
+                                                                                   
+                                                                            
+                                                                          <img src="http://cdn.ilhjy.cn/339518912_shop_ilhjy_cn/public_html/runtime/uploads/89b0586249ac034ce30fefc54995c997.jpg">
+                                                                            
+                                                                            
+                        <span>扫一扫微信二维码</span>
+                </div>
+        </div>
+</div>
+
+    
+    
+</div>
+<!--侧边工具-->
+<div id="sideTool"> 
+	<a href="message.html" class="icon011">
+		<i></i>
+		<aside>在线留言</aside>
+	</a>
+ 
+  <div class=" icon03"> <i></i>
+    <span>联系我们</span>
+    <div class="footCont"> 
+      <p class="phone">0871-65618420</p>
+      
+      <p class="mail"><a href="mailto:1215465488@qq.com">1215465488@qq.com</a></p>
+    </div>
+  </div>
+  <a class="icon02 goTop" href="javascript:;"> <i></i>
+  <span>返回顶部</span>
+  </a> </div>
+<!--侧边工具-->
+<!--运营分析-->
+<!-- DataConfig
+    [{
+        "path": "/service/cms_api/site_info.html",
+        "method": "get",
+        "objName": "pageResult",
+        "version":"2.2"
+    }]
+--> 
+<div style="display:none;">
+
+</div>
+<!--运营分析end-->
+
+
+
+</body>
+</html>
+</html>

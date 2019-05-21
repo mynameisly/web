@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美食</title>
+		<meta name="viewport" content="width=divice-width" initial-scale="1.0" />
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/美食.css" />
+		<link type="text/css" rel="stylesheet" href="css/reset.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<!--导航开始-->
+		<div class="navbar navbar-fixed-top" role="navigation">
+	        <div class="container">
+	            <div class="collapse navbar-collapse" id="navbar-main">
+	               	<ul class="nav navbar-nav">
+	               		<li class="active">
+	               			<a href="index.html">首页</a>
+           				</li>
+           				
+           				<li role="presentation">
+           					<a href="风景文化.html">风景文化</a>
+           				</li>
+           				  				
+           				<li role="presentation">
+           					<a href="历史文化.html">历史文化</a>
+           				</li>         				
+           				
+           				<li role="presentation">
+           					<a href="美食.html">美食</a>
+           				</li>
+	            	</ul>
+	            </div>
+	            <div class="navbar-inner">
+		        	<form class="navbar-form pull-left">
+	        			<input type="text" class="inp" placeholder="请输入关键字"/>
+	        			<input type="text" class="btn btn-default" value="搜索" />
+		        	</form>
+		        </div>
+		        <div class="login pull-right">
+		        	<a href="Login.html">登录</a>
+		        	<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+		        	<a href="register.html">注册</a>
+		        </div>
+	        </div> 	                    	        
+	    </div>
+		<!--导航结束-->
+		
+		<!--美食攻略开始-->
+		<div class="container" id="food">
+			<div class="row">
+				<div class="col-lg-4">
+					<h2 class="strategy">
+						<i></i>
+					   	<a href="">重庆美食攻略</a> 
+					</h2>
+					<ul>
+						<li>
+							<a href="#">
+								<em class="i_ls"></em>
+								<h3>重庆人气美食街区TOP5</h3>
+								<i class="i_arr"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="i_ls"></em>
+								<h3>吃货在好吃街必尝小吃店</h3>
+								<i class="i_arr"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="i_ls"></em>
+								<h3>磁器口绝不可错过的美味小馆</h3>								
+								<i class="i_arr"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="i_ls"></em>
+								<h3>最地道的江湖火锅人气榜单</h3>
+								<i class="i_arr"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="i_ls"></em>
+								<h3>重庆十大火锅品牌排行</h3>
+								<i class="i_arr"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<em class="i_ls"></em>
+								<h3>值得造访的重庆菜经典代表</h3>
+								<i class="i_arr"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-8">
+					<div class="carousel slide" data-ride="carousel" data-interal="1000">
+						<!--<ol class="carousel-indicators">
+							<li data-target="#lunbo" data-slide-to="0" class="active"></li>
+							<li data-target="#lunbo" data-slide-to="1"></li>
+							<li data-target="#lunbo" data-slide-to="2"></li>
+							<li data-target="#lunbo" data-slide-to="3"></li>
+							<li data-target="#lunbo" data-slide-to="4"></li>
+						</ol>  -->
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="img/美食1.jpeg">
+								<div class="carousel-caption">
+									<h3>重庆人气美食街区TOP5</h3>
+									<p>重庆小吃比较集中的在解放碑、洪崖洞、磁器口一带，种类很多。交通方便，都是游客去得多，各...</p>
+								</div>
+							</div>
+							
+							<div class="item">
+								<img src="img/美食2.jpeg"/>
+								<div class="carousel-caption">
+									<h3>吃货在好吃街必尝小吃店</h3>
+									<p>八一路好吃街因靠近解放碑，人流量不断，在重庆市人气最火爆的美食街榜单内绝对名列前茅，也...</p>
+								</div>
+							</div>
+							
+							<div class="item">
+								<img src="img/美食3.jpeg">
+								<div class="carousel-caption">
+									<h3>磁器口绝不可错过的美味小馆</h3>
+									<p>千年古镇磁器口，大多本地人去都不是为了观光，都是冲着毛血旺和鸡杂去的。游玩离开时，你一...</p>
+								</div>
+							</div>
+							
+							<div class="item">
+								<img src="img/美食4.jpeg"/>
+								<div class="carousel-caption">
+									<h3>最地道的江湖火锅人气榜单</h3>
+									<p>重庆最受欢迎的地道老火锅，不在高堂雅苑，而是分散在主城各区大大小小的街巷里，红亮的辣椒...</p>
+								</div>
+							</div>
+							
+							<div class="item">
+								<img src="img/美食5.jpeg"/>
+								<div class="carousel-caption">
+									<h3>重庆十大火锅品牌排行</h3>
+									<p>重庆火锅品牌繁多，市内随处可见众多连锁分店。若初到重庆，不敢轻易尝试环境与卫生欠缺的江...</p>
+								</div>
+							</div>
+							
+							<div class="item">
+								<img src="img/美食6.jpeg"/>
+								<div class="carousel-caption">
+									<h3>值得造访的重庆菜经典代表</h3>
+									<p>重庆菜即渝菜，属四大菜系川菜系，其具有麻辣酸香的特点，尤以麻辣为重。到了重庆，吃过火锅...</p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+		<!--美食攻略结束-->
+		
+		<!--特色美食开始-->
+		<div class="container" id="spe">
+			<div class="row">
+				<div class="col-lg-4">
+					<h2>
+						<i></i>
+						<a href="">重庆特色美食排行</a>
+					</h2>
+					<ul>
+						<li>
+							<a href="#" title="火锅">
+								<span class="img">
+									<em class="r_num">1</em>
+								</span>
+								<h3>火锅</h3>
+								<span class="trend">
+									<i></i>
+									'2916'
+								</span>
+								
+							</a>
+						</li>
+						<li>
+							<a href="#" title="小面">
+								<span class="img">
+									<em class="r_num">2</em>
+								</span>
+								<h3>小面</h3>
+								<span class="trend">
+									<i></i>
+									'2239'
+								</span>
+								
+							</a>
+						</li>
+						<li>
+							<a href="#" title="酸辣粉">
+								<span class="img">
+									<em class="r_num">3</em>
+								</span>
+								<h3>酸辣粉</h3>
+								<span class="trend">
+									<i></i>
+									'1670'
+								</span>
+								
+							</a>
+						</li>
+						<li>
+							<a href="#" title="豆花">
+								<span class="img">
+									<em class="r_num">4</em>
+								</span>
+								<h3>豆花</h3>
+								<span class="trend">
+									<i></i>
+									'1245'
+								</span>
+								
+							</a>
+						</li>
+						<li>
+							<a href="#" title="泉水鸡">
+								<span class="img">
+									<em class="r_num">5</em>
+								</span>
+								<h3>泉水鸡</h3>
+								<span class="trend">
+									<i></i>
+									'925'
+								</span>
+								
+							</a>
+						</li>
+						<li>
+							<a href="#" title="水煮鱼">
+								<span class="img">
+									<em class="r_num">6</em>
+								</span>
+								<h3>水煮鱼</h3>
+								<span class="trend">
+									<i></i>
+									'772'
+								</span>
+								
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-8">
+					<ul class="poi_list">
+						<li class="item clearfix">
+							<span class="tu">
+								<a href="" target="_blank">
+									<img src="img/美食攻1.jpeg"/>
+								</a>
+							</span>
+							<div class="grade">
+								<div class="rank_star">
+									<span class="star5"></span>
+									<em>5.0</em>
+								</div>
+								<p class="rev_num">
+									<em>975</em>"条用户好评"
+								</p>
+							</div>
+							<div class="title">
+								<h3>
+									<a href="" target="_blank">头号喜辣(洋河店)</a>
+								</h3>
+							</div>
+							<div class="rev_info">
+								<a href="" target="_blank" rel="nofollow">
+									<img src="img/点评.jpeg" width="16px" height="16px" />偷偷
+								</a>的最新点评
+								<div class="rev_txt">
+									<p>“火锅总体来说不错，生意蛮好的，人均100,红糖糍粑很好吃！其他的才也都很新鲜，非常美味！环境哥服务也都没德说，总体很满意！...”</p>
+								</div>
+							</div>
+						</li>
+						
+						<li class="item clearfix">
+							<span class="tu">
+								<a href="" target="_blank">
+									<img src="img/美食攻1.jpeg"/>
+								</a>
+							</span>
+							<div class="grade">
+								<div class="rank_star">
+									<span class="star5"></span>
+									<em>5.0</em>
+								</div>
+								<p class="rev_num">
+									<em>975</em>"条用户好评"
+								</p>
+							</div>
+							<div class="title">
+								<h3>
+									<a href="" target="_blank">头号喜辣(洋河店)</a>
+								</h3>
+							</div>
+							<div class="rev_info">
+								<a href="" target="_blank" rel="nofollow">
+									<img src="img/点评.jpeg" width="16px" height="16px" />偷偷
+								</a>的最新点评
+								<div class="rev_txt">
+									<p>“火锅总体来说不错，生意蛮好的，人均100,红糖糍粑很好吃！其他的才也都很新鲜，非常美味！环境哥服务也都没德说，总体很满意！...”</p>
+								</div>
+							</div>
+						</li>
+						<li class="item clearfix">
+							<span class="tu">
+								<a href="" target="_blank">
+									<img src="img/美食攻1.jpeg"/>
+								</a>
+							</span>
+							<div class="grade">
+								<div class="rank_star">
+									<span class="star5"></span>
+									<em>5.0</em>
+								</div>
+								<p class="rev_num">
+									<em>975</em>"条用户好评"
+								</p>
+							</div>
+							<div class="title">
+								<h3>
+									<a href="" target="_blank">头号喜辣(洋河店)</a>
+								</h3>
+							</div>
+							<div class="rev_info">
+								<a href="" target="_blank" rel="nofollow">
+									<img src="img/点评.jpeg" width="16px" height="16px" />偷偷
+								</a>的最新点评
+								<div class="rev_txt">
+									<p>“火锅总体来说不错，生意蛮好的，人均100,红糖糍粑很好吃！其他的才也都很新鲜，非常美味！环境哥服务也都没德说，总体很满意！...”</p>
+								</div>
+							</div>
+						</li>
+						<li class="item clearfix">
+							<span class="tu">
+								<a href="" target="_blank">
+									<img src="img/美食攻1.jpeg"/>
+								</a>
+							</span>
+							<div class="grade">
+								<div class="rank_star">
+									<span class="star5"></span>
+									<em>5.0</em>
+								</div>
+								<p class="rev_num">
+									<em>975</em>"条用户好评"
+								</p>
+							</div>
+							<div class="title">
+								<h3>
+									<a href="" target="_blank">头号喜辣(洋河店)</a>
+								</h3>
+							</div>
+							<div class="rev_info">
+								<a href="" target="_blank" rel="nofollow">
+									<img src="img/点评.jpeg" width="16px" height="16px" />偷偷
+								</a>的最新点评
+								<div class="rev_txt">
+									<p>“火锅总体来说不错，生意蛮好的，人均100,红糖糍粑很好吃！其他的才也都很新鲜，非常美味！环境哥服务也都没德说，总体很满意！...”</p>
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--特色美食结束-->
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>钵钵鸡</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/potChicken.css" />
+		<link rel="stylesheet" href="../css/nav.css">
+		<link rel="stylesheet" type="text/css" href="../css/swiper.main.css"/>
+		<style>
+			.swiper-slide {
+		      background-position: center;
+		      background-size: cover;
+		      width: 300px;
+		      height: 300px;
+		
+		    }
+		    .swiper-container { width: 100%; padding-top: 50px; padding-bottom: 50px; }
+			.swiper-pagination-bullet-active {
+				opacity: 1;
+				background: #ee7600;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏开始 -->
+		<div id="head"></div>
+		<!-- 导航栏结束 -->
+
+		<div class="container">
+			<div class="row boboji">
+				<h2>钵钵鸡</h2>
+				<div class="boboji_text">钵钵鸡是一种四川传统名小吃，起源于乐山，属于川菜系。从清代流传至今已有上百年的历史。是以陶器钵盛放配以麻辣为主的佐料，加上多种调料的去骨鸡片拌和而成。有皮脆肉嫩，麻辣鲜香，甜咸适中的特色。吃奶汤面时配以钵钵鸡，别具风格。1990年获成都市个体名小吃优质奖，1991年被成都市人民政府命名为优质名小吃。</div>
+				<div class="boboji_text">比较出名的如：钵客藤椒钵钵鸡、祥和祥钵钵鸡；钵钵鸡一听其名，就觉得很新奇，“钵钵”其实就是瓦罐，钵外面是画着红黄相间的瓷质龙纹，钵内盛放配以麻辣为主的佐料，菜品在特珠殊加工后用签串制，晾冷浸于各种口味的佐料中，食用时自取自食，除味道悠长外更添情趣盎然。</div>
+			</div>
+			<div class="row you_like">
+				<h2>猜你喜欢</h2>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d1.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d2.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d3.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d4.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d5.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d6.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d7.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d8.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d9.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d10.jpg)"></div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 底部开始 -->
+		<div id="foot"></div>
+		<!-- 底部结束 -->
+
+
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/navandfoot.js"></script>
+	</body>
+	<script src="../js/swiper.js"></script>
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+	
+</html>

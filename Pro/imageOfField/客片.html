@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>客片</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/客片.css"/>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<!--顶部雪花开始-->
+		<div class="snow-container">
+			<div class="snow foreground"></div>
+			<div class="snow foreground layered"></div>
+			<div class="snow middleground"></div>
+			<div class="snow middleground layered"></div>
+			<div class="snow background"></div>
+			<div class="snow background layered"></div>
+		</div>
+		<!--顶部雪花结束-->
+		
+		<!--导航开始-->
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<ul class="nav navbar-nav navbar-inverse">
+					<li><a href="index.html">首页</a></li>
+					<li class="active"><a href="#">客片</a></li>
+					<li><a href="#">样片</a></li>
+					<li><a href="微电影.html">微电影</a></li>
+					<li><a href="#">活动</a></li>
+				</ul>
+			</div>	
+		</nav>
+		<!--导航结束-->
+		
+		<!--最新客片开始-->
+		<div class="container">
+			<p class="h2">Latest&nbsp;&nbsp;Couples</p>
+			<p class="h4">
+				we&nbsp;&nbsp;are&nbsp;&nbsp;getting&nbsp;&nbsp;married
+			</p>
+		</div>
+		<div id="single-quad" class="carousel slide" data-ride="carousel" data-shift="1">
+            <div class="carousel-inner">
+                <ul class="row item active">
+                    <li class="col-xs-3 one">
+                        <img src="img/couple1.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 two">
+                       <img src="img/couple2.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 three">
+                    	<img src="img/couple3.jpg" class="img-responsive">
+                    </li>
+                    <li class="col-xs-3 four">
+                    <img src="img/couple4.jpg" class="img-responsive"/>
+                    </li>
+                </ul>                     
+            </div>
+            <a class="carousel-control left" href="#single-quad" data-slide="prev">Previous</a>
+            <a class="carousel-control right" href="#single-quad" data-slide="next">Next</a>
+        	</div>
+        </div>
+		<!--最新客片结束-->
+		<!--经典客片开始-->
+		<div class="container">
+			<p class="h2">Classic&nbsp;&nbsp;Couples</p>
+			<p class="h4">
+				One&nbsp;&nbsp;life&nbsp;,&nbsp;one&nbsp;&nbsp;couple
+			</p>
+		</div>
+		<div class="classic">
+			<div class="cla_box1">
+				<img src="img/cla1.jpg" />
+				<img src="img/cla2.jpeg" />
+				<img src="img/cla3.jpg" />
+				<img src="img/cla4.jpg" />
+			</div>
+		</div>
+		<div class="classic">
+			<div class="cla_box2">
+				<img src="img/cla5.jpg" />
+				<img src="img/cla6.jpeg" />
+				<img src="img/cla7.jpg" />
+				<img src="img/cla8.jpg" />
+			</div>
+		</div>
+		<div class="classic">
+			<div class="cla_box3">
+				<img src="img/cla9.jpg" />
+				<img src="img/cla10.jpg" />
+				<img src="img/cla11.jpg" />
+				<img src="img/cla12.jpg" />
+			</div>
+		</div>
+		<div class="classic">
+			<div class="cla_box4">
+				<img src="img/cla13.jpg" />
+				<img src="img/cla14.jpg" />
+				<img src="img/cla15.jpg" />
+				<img src="img/cla16.gif" />
+			</div>
+		</div>
+		<!--经典客片结束-->
+		
+		
+		<!--不一样滴风采开始-->
+		<div class="diff">
+			<p class="h1">GLOBAL TRAVEL PHOTOGRAPHY</p>
+			<p class="h4">
+				FRIEND IS WHO CAN GIVE YOU STRENGTH AT LAST LOVE IS A LAMP,
+				WHILE FRIENDSHIP IS THE SHADOW.WHEN WHE LAMP IS OFF.YOU WILL
+			</p>
+			<img src="img/客片banner.jpg" />
+		</div>
+		<!--不一样滴风采结束-->
+		<script>
+			$(.classic).next().nextAll().animate({
+				'transform':'rotate(90deg)'
+			},1000);
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/客片.js"></script>
+	</body>
+</html>

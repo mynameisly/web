@@ -1,0 +1,30 @@
+a{
+    color: #ee7600;
+    color: #000;
+}
+
+a:focus{
+    text-decoration: none;
+}
+
+h2{
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #ee7600;
+}
+
+.col-md-4{
+    margin: 0;
+}
+
+ul{
+    padding: 0px;
+}
+
+li{
+    list-style: none;
+}

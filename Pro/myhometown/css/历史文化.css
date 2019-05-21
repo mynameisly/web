@@ -1,0 +1,309 @@
+body{background-color: #ffdead;}
+a{color: #000000;}
+a:hover{color: #9a0109;}
+.navbar{
+	background-color: #ff9d00;
+}
+.navbar-nav{
+	font-size: 20px;
+	margin-bottom: 0;
+	background-color: #;
+}
+.collapse{
+	float: left;
+}
+.navbar-form{
+	outline: 2px solid gainsboro;
+}
+.inp{
+	padding: 0 2%;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+	width: 350px;
+    height: 34px;
+    opacity: 0.8;
+}
+.inp:focus{
+	opacity: 1;
+}
+.btn{
+	width: 70px;
+}
+.login{
+	width: 200px;
+	height: 50px;
+}
+.login>a,.login>span{
+	color: #000000;
+	font-size: 20px;
+    font-weight: 400;
+    line-height: 2.428571;
+}
+.login>a:hover{
+	color: #FFFFFF;
+}
+
+.container>.row{
+	margin-top: 120px;
+}
+@media only screen and (max-width: 1663px) {
+	#fixedwarp{
+		display: none;
+	}
+}
+#fixedwarp{
+    position: fixed;
+    top: 200px;
+    left: 80px;
+}
+#fixedwarp>.fixtopbox{
+	width: 100px;
+    height: 493px;
+    background: url(../img/nav_left.gif);
+}
+#fixedwarp>.fixtopbox>.navlink{
+	padding-top: 120px;
+    height: 348px;
+}
+#fixedwarp>.fixtopbox>.navlink>li{
+	width: 100px;
+	height: 45px;
+	margin-left: -40px;
+	line-height: 45px;
+	text-align: center;
+	list-style: none;
+}
+#fixedwarp>.fixtopbox>.navlink a{
+	height: 45px;
+    display: block;
+    color: rgb(72, 38, 0);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Microsoft Yahei", 微软雅黑;
+    line-height: 45px;
+    text-shadow: rgb(231, 231, 231) 1px 1px 1px;
+    text-size-adjust: 100%;
+}
+#fixedwarp>.fixtopbox>.navlink a:hover{
+	color: #ac5a02;
+    text-decoration: none;
+    background: url(../img/nav_left_li.gif) 22px 43px no-repeat;
+}
+#fixedwarp>.fixtopbox>.gotop{
+	width: 60px;
+	height: 20px;
+	margin: 118px 0 0 23px;
+}
+#fixedwarp>.fixtopbox>.gotop>a{
+	color: #e79025;
+    font-size: 12px;
+    text-align: center;
+}
+.container>.row{
+	background-color: rgb(230,223,198);
+}
+.container>.row>.his>.stit,
+.container>.row>.col-lg-3>.bomb,
+.container>.row>.col-lg-4>.tragedy,
+.container>.row>.col-lg-5>.struggle,
+.container>.row>.col-lg-8>.cate{
+	height: 20px;
+    line-height: 18px;
+    margin-bottom: 14px;
+    padding-left: 7px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    border-left: 2px solid #9a0109;
+}
+.container>.row>.his>.fame{
+	float: left;
+	width: 188px;
+    height: 124px;
+}
+.container>.row>.his>.fame>a,
+.container>.row>.col-lg-3>.fame>a,
+.container>.row>.col-lg-4>.fame>a{
+	position: relative;
+    display: block;
+    width: 188px;
+    height: 124px;
+}
+.container>.row>.his>.fame>a>img,
+.container>.row>.col-lg-3>.fame>a>img,
+.container>.row>.col-lg-4>.fame>a>img{
+	width: 140%;
+	height: 140px;
+}
+.container>.row>.his>.fame>a>span,
+.container>.row>.col-lg-3>.fame>a>span,
+.container>.row>.col-lg-4>.fame>a>span{
+	position: absolute;
+    width: 140%;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 14px;
+    color: #FFF;
+    background: #000;
+    left: 0;
+    bottom: -16px;
+    overflow: hidden;
+    filter: alpha(opacity=60);
+    -ms-filter: "alpha(opacity=60)";
+    opacity: .6;
+    cursor: pointer;
+}
+.container>.row>.his>.intro{
+	float: right;
+	width: 54%;
+}
+.container>.row>.his>.intro li{
+	line-height: 28px;	
+}
+
+.container>.row>.ba1>.intro,
+.container>.row>.ba3>.intro{
+	margin: 20px 0 0 -25px;
+}
+.container>.row>.ba2>.str_img{
+	width: 100%;
+	height: 120px;
+	display: flex;
+	justify-content: space-between;
+}
+.container>.row>.ba2>.str_img>img{
+	width: 30%;
+	height: 120px;
+}
+/*舌尖上的重庆样式开始*/
+.container>.row>.col-lg-8,
+.container>.row>.ba3{
+	height: 333px;
+}
+.container>.row>.del>.cate_box>ul{
+	width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 22px;
+    padding: 0;
+}
+.container>.row>.del>.cate_box>ul>li{
+	float: left;
+    width: 20%;
+    list-style: none;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    border-right: #eeeeee solid 2px;
+    padding: 6px 0;
+}
+.container>.row>.del>.cate_box>ul>li:hover a{
+	color: #c07529;
+	text-decoration: none;
+}
+.container>.row>.del>.cate_box>ul>li:hover{
+	border-bottom: 2px solid #c07529;
+}
+.container>.row>.del>.detail{
+	width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+.container>.row>.del>.detail>ul{
+	width: 25%;
+	height: 100%;
+	float: left;
+	border-right: 2px dotted #FFFFFF;
+}
+.container>.row>.del>.detail>ul>li{
+	list-style: none;
+	line-height: 50px;
+	width: 66%;
+	height: 50px;
+}
+.container>.row>.del>.detail>ul>li:nth-child(1):hover div .snack{
+	display: block;
+}
+.container>.row>.del>.detail>ul>li>a{
+	display: block;
+	width: 100%;
+	font-size: 20px;
+	height: 90%;
+	text-align: center;
+	text-decoration: none;
+	background-color: #F4A460;
+}
+.container>.row>.del>.detail>ul>li>a:hover{
+	color: #FFFFFF;
+	background-color: #FF8C00;
+	text-decoration: underline;
+}
+.container>.row>.del>.detail>.de_intro{
+	float: left;
+	width: 75%;
+	height: 200px;
+}
+.container>.row>.del>.detail>.de_intro>.de{
+	float: left;
+    overflow: hidden;
+    height: auto;
+}
+.container>.row>.del>.detail>.de_intro>.de>ul{
+	width: 100%;
+	height: 200px;
+	padding: 0 0 0 23px;
+}
+.container>.row>.del>.detail>.de_intro>.de>ul>li{
+	margin: 3% 0 0 0;
+	width: 20%;
+	height: 40px;
+	float: left;
+	list-style: none;
+}
+.container>.row>.del>.detail>.de_intro>.snack{
+	
+}
+.container>.row>.read>.online{
+	background: url(../img/title_bg.gif) repeat scroll 0 0;
+    color: #F6E8B2;
+    height: 27px;
+    line-height: 27px;
+    overflow: hidden;
+    padding: 0 10px;
+    margin: 15px 0;
+}
+.container>.row>.read>.online>h3{
+	float: left;
+	margin: 7px 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+.container>.row>.read>.online>h3>a{
+	color: #F6E8B2;
+    text-decoration: none;
+}   
+.container>.row>.read>.online>.more{
+	float: right;
+    font-size: 12px;
+    cursor: pointer;
+}
+.container>.row>.read>.line_img{
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+}
+.container>.row>.read>.line_img>img{
+	width: 45%;
+	height: 100px;
+}
+/*舌尖上的重庆样式结束*/
+
+/*当屏幕小于640px时，影藏停靠的导航*/
+@media only screen and (min-width: 100px) and (max-width: 640px) {
+	#fixedwarp{
+		display: none;
+	}
+}

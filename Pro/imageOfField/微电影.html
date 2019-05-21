@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>微电影</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/微电影.css" />
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<!--头部视频开始-->
+		<div class="video">
+			<video src="img/微电影.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+			<!--视频悬浮文字介绍-->
+			<div class="intro">
+				<p class="h1">CHOOSE US,YOU ARE THE STARS</p>
+				<p class="h4">					
+					FIND THE SHADOW EVERYWHERE.FRIEND IS WHO CAN GIVE YOU STRENGTH AT LAST.<br/>
+					I'LL TAKE A STORY FOR YOU
+				</p>
+			</div>
+		</div>
+		<!--头部视频结束-->
+		
+		<!--导航开始-->
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<ul class="nav navbar-nav navbar-inverse">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="客片.html">客片</a></li>
+					<li><a href="#">样片</a></li>
+					<li class="active"><a href="#">微电影</a></li>
+					<li><a href="#">活动</a></li>
+				</ul>
+			</div>	
+		</nav>
+		<!--导航结束-->
+		
+		<!--无缝滑动开始-->
+		<div id="huad">
+			<ul>
+				<li><img src="img/cla15.jpg"/></li>
+				<li><img src="img/cla9.jpg"/></li>
+				<li><img src="img/cla12.jpg"/></li>
+				<li><img src="img/cla6.jpeg"/></li>
+			</ul>
+		</div>
+		<!--无缝滑动结束-->
+		
+		
+		<!--明星视频开始-->
+		<div class="star">
+			<p class="h1">CHOOSE US,YOU ARE THE STARS</p>
+			<p class="h4">
+				FIND THE SHADOW EVERYWHERE.FRIEND IS WHO CAN GIVE YOU STRENGTH AT LAST<br />
+				WHILE FRIENDSHIP IS THE SHADOW.WHEN WHE LAMP IS OFF.YOU WILL<br />	
+			</p>
+			<div class="star_box">
+				<a href="###"><img src="img/star1.jpg" /></a>
+				<a href="###"><img src="img/star2.jpg" /></a>
+			</div>
+		</div>
+		<!--明星视频结束-->
+		
+		<!--大麦影像开始-->
+		<div class="film">
+			<p class="h1">DEMO   FILM   大麦影像</p>
+			<p class="h4">
+				EVERYONE  TAKE  ACTION  WITH DREAM  AND  STRONG  WITH  REASON,
+				IF THEN HEART HAS NO PLACE TO<br />
+				PERCH ON , YOU WILL ALWAYS BE ADEIFTER NO MATTER YOU AGE
+			</p>
+			<div class="film_box">
+				<a href="###">
+					<img src="img/film1.jpg"/>
+					<span class="film_anniu1"></span>
+				</a>
+				<a href="###">
+					<img src="img/film2.jpg"/>
+					<span class="film_anniu2"></span>
+				</a>
+			</div>
+			<div class="film_intro1">
+				<div class="film_line"></div>
+				<p class="time">2018.Apr.18</p>
+				<p class="name">[厦门旅拍花絮]遇见恋之夏</p>
+				<p class="you">YUANYE PHOTO WEDDING STUDIOS</p>
+			</div>
+			<div class="film_intro2">
+				<div class="film_line"></div>
+				<p class="time">2018.Apr.18</p>
+				<p class="name">[厦门旅拍花絮]遇见恋之夏</p>
+				<p class="you">YUANYE PHOTO WEDDING STUDIOS</p>
+			</div>
+		</div>
+		<!--大麦影像结束-->
+		<script>
+			window.onload = function(){
+				var aHuad = document.getElementById('huad');
+				var aUl = aHuad.getElementsByTagName('ul')[0];
+				var aLi = aUl.getElementsByTagName('li');
+				
+				aUl.innerHTML = aUl.innerHTML+aUl.innerHTML;
+				aUl.style.width = aLi[0].offsetWidth*aLi.length+'px';
+				
+				setInterval(function (){
+					if(aUl.offsetLeft<-aUl.offsetWidth/5){//有待优化中…………
+						aUl.style.left ='0';
+					}
+//					if(aUl.offsetLeft>0){
+//						aUl.style.left = -aUl.offsetWidth/4+'px';
+//					}
+					aUl.style.left = aUl.offsetLeft-1+'px';
+				},20);
+			};
+		</script>
+		<script src="js/jquery.min.js"></script>
+	</body>
+</html>

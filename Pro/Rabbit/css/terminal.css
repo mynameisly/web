@@ -1,0 +1,157 @@
+a{
+  color: #000 !important;
+}
+li:hover{
+    cursor: pointer;
+}
+li{
+    list-style-type: none;
+}
+/*轮播上的圆点*/
+#arousel-example-generic .carousel-indicators .active{
+
+}
+/*搜索框*/
+#input-text{
+  width: 40%;
+  height: 50px;
+  border:2px solid #fff;
+ background-color: rgba(0,0,0,0.5);
+  border-radius: 30px;
+  position: absolute;
+  top: 300px;
+  left: 30%;
+  z-index: 1;
+  font-size: 20px;
+  color: #fff;
+  text-indent: 2em;
+}
+#sear{
+  width: 4%;
+  height: 50px;
+  background: none;
+  background-image: url(../img/terminal/search.png);
+  background-size: 100% 100%;
+  border: none;
+  position: absolute;
+  top: 300px;
+  left: 70%;
+  z-index: 1;
+}
+input{
+    outline: none
+;
+}
+/*热门城市推荐*/
+
+#city h1,#termin h1,#country h1{
+  text-align:center ;
+}
+
+#city ul{
+  width: 65%;
+  margin: 40px auto;
+}
+
+#city ul li,#termin ul li,#country ul li{
+  display: inline;
+  font-size: 28px;
+  text-align: center;
+  margin-left: 25px;
+  opacity: 0.7;
+}
+
+#city ul .active,#termin ul .active,#country ul .active{
+  border-bottom: 5px solid #000;
+  opacity: 1;
+}
+
+#city #container-flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 40px auto;
+}
+
+#city #container-flex p{
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#city #container-flex a{
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+#city #container-flex #flex-itemone{
+  flex: 2;
+}
+#city #container-flex #flex-itemtwo{
+  flex:2;
+}
+#city #container-flex #flex-itemthree{
+  flex: 2;
+}
+
+#termin{
+  margin-top: 70px;
+}
+
+#termin #f{
+  width:55%;
+  margin: 40px auto;
+}
+
+#termin-img ul img{
+  height: 95%;
+  width: 100%;
+}
+
+#termin-img span img{
+  height: 97.5%;
+  width: 100%;
+}
+
+#termin-img span{
+  display:inline-block;
+  position: absolute;
+  width: 20%;
+  height: 500px;
+  margin-left: 10%;
+  color: #fff;
+}
+
+#termin-img span p{
+  line-height: 25px;
+}
+#termin #i{
+  width: 70%;
+  margin-left: 30%;
+}
+
+#termin-img ul li {
+  display: inline-block;
+  height: 250px;
+  width: 26%;
+}
+
+#country ul{
+  width: 57%;
+  margin:  40px auto;
+}
+
+/*图片上面的字*/
+#termin #termin-img span #p-tit{
+  margin-top: -480px;
+}
+.countrylist .one li,.countrylist .two li,.countrylist .three li{
+    margin-top: 5px;
+    font-size: 18px;
+}
+.countrylist span{
+    font-size: 16px;
+    opacity: 0.7;
+    margin-left: 5px;
+}

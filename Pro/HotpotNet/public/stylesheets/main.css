@@ -1,0 +1,73 @@
+﻿html{
+    position: relative;
+}
+html, body {
+    font-family: 微软雅黑;
+    color: #4c4c4c;
+}
+
+body{
+    font-size: 12px;
+}
+* {
+    outline: none;
+}
+
+a, a:hover, a:active, a:link, a:visited {
+        color: #222222;
+    text-decoration: none;
+}
+
+ul, menu, dir {
+    -webkit-padding-start: 0px;
+}
+
+input {
+    outline: none;
+}
+
+body.no-scroll{
+    overflow: hidden!important;
+}
+.h1, .h2, .h3, h1, h2, h3{
+        margin: 0 0 .6em;
+}
+
+#messageTip.message-tip{
+    position: fixed;
+    z-index: 2147483647;
+    width: 200px;
+    height: 50px;
+    border: 1px solid #f7f7f7;
+    border-radius: 4px;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, .16);
+    text-align: center;
+    background-color: #fff;
+    right: 15%;
+    top: 45%;
+}
+#messageTip.message-tip .message-content{
+     width: 200px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    overflow: hidden;
+    color: #000;
+    word-break: break-all;
+}
+
+#message-alert{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+}
+#message-alert>.alert{
+        width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.amap-sug-result{
+    z-index: 999999 !important;
+}

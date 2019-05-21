@@ -1,0 +1,585 @@
+/*banner开始*/
+.banner{
+	width: 99%;
+}
+.banner .row{
+	height: 100%;
+	display: table;
+}
+.banner .main_picture{
+	padding: 0;
+	/*display: table-cell;*/
+}
+.banner img{
+	width: 100%;
+	margin-left: 0;
+	float: left;
+}
+.banner .jump{
+	display: table-cell;
+	/*width: 20%;*/
+	background-color: #FFA500;
+	float: left;
+	height: 100%;
+	/*height: 899.94px;*/
+}
+.banner .jump .hot{
+	width: 60%;
+	height: 50px;
+	/*border: 2px solid #000000;*/
+	margin: 0 auto;
+	margin-top: 80%;
+}
+
+
+.banner .jump .hot .hot_picture{
+	
+	width: 20%;
+	height: 90%;
+	/*border: 1px solid #31B0D5;*/
+	float: left;
+}
+.banner .jump .hot img{
+	width: 60%;
+}
+
+.banner .jump .hot .hot_text a{
+	text-align: center;
+	width: 80%;
+	/*text-decoration: none;*/
+	height: 90%;
+	color: white;
+	float: left;
+	/*border: 1px solid palevioletred;*/
+	font-size: 28px;
+	
+}
+
+
+.banner .jump .strategy{
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 47%;
+}
+
+.banner .jump .strategy .strategy_picture{
+	
+	width: 20%;
+	height: 90%;
+	/*border: 1px solid #31B0D5;*/
+	float: left;
+}
+.banner .jump .strategy img{
+	width: 50%;
+	/*margin: 0 auto;*/
+	margin: 10%;
+}
+
+.banner .jump .strategy .strategy_text a{
+	text-align: center;
+	width: 80%;
+	/*text-decoration: none;*/
+	height: 90%;
+	color: white;
+	float: left;
+	/*border: 1px solid palevioletred;*/
+	font-size: 28px;
+	
+}
+
+
+.banner .jump .tips{
+	width: 60%;
+	height: 50px;
+	/*border: 2px solid #000000;*/
+	margin: 0 auto;
+	margin-top: 16%;
+}
+
+
+.banner .jump .tips .tips_picture{
+	
+	width: 20%;
+	height: 90%;
+	/*border: 1px solid #31B0D5;*/
+	float: left;
+}
+.banner .jump .tips img{
+	width: 90%;
+}
+
+.banner .jump .tips .tips_text a{
+	text-align: center;
+	width: 80%;
+	/*text-decoration: none;*/
+	height: 90%;
+	color: white;
+	float: left;
+	/*border: 1px solid palevioletred;*/
+	font-size: 28px;
+	
+}
+/*banner结束*/
+
+
+
+
+.container .hot_spots{
+	/*top: 200px;*/
+	height: 570px;
+	width: 80%;
+	/*margin-top: 5%;*/
+	margin: 0 auto;
+	/*border: 2px solid#000000;*/
+}
+
+.hot_spots .hot_spots_title{
+	width: 100%;
+	height: 10%;
+}
+
+.hot_spots .hot_spots_title h2{
+	width: 80%;
+	/*border: 2px solid#F0AD4E;*/
+	/* float: left; */
+}
+.hot_spots .hot_spots_title h2 img{
+	width: 3%;
+}
+.hot_spots .hot_spots_title .more{
+	cursor: pointer;
+	color: #EE7600;
+	font-size: 18px;
+	float: right;
+	/*border: 2px solid seagreen;*/
+	margin-top: -3%;
+}
+
+
+
+.hot_spots .hot_huanlegu{
+	/*border: 2px solid gray;*/
+	transition: all ease-out .3s;
+}
+
+.hot_spots .hot_huanlegu:hover{
+	transform: translateY(-3px);
+}
+
+.hot_spots .hot_huanlegu img{
+	width: 100%;
+}
+.hot_spots .hot_huanlegu .huanlegu_text{
+	/*border: 2px solid green;*/
+	background-color: #f3b54c;
+	/*position: relative;*/
+	height: 160px;
+}
+.hot_spots .hot_huanlegu .huanlegu_text .huanlegu_title{
+	font-size: 28px;
+	width: 90%;
+	margin: 0 auto;
+	color: white;
+	/*border: 1px solid #000000;*/
+}
+.hot_spots .hot_huanlegu .huanlegu_text img{
+	width: 8%;
+}
+.hot_spots .hot_huanlegu .huanlegu_text .huanlegu_introduce{
+	width: 90%;
+	color: white;
+	margin: 0 auto;
+	line-height: 20px;
+	font-size: 12px;
+}
+.hot_spots .hot_huanlegu .huanlegu_text .huanlegu_bottom {
+	width: 90%;
+	margin-top: 120px;
+	height: 30px;
+	margin: 0 auto;
+	margin-left: 5%;
+	margin-top: 12%;
+	float: left;
+}
+.hot_spots .hot_huanlegu .huanlegu_text .huanlegu_bottom .huanlegu_browse{
+	width: 30%;
+	/*border: 2px solid slateblue;*/
+	color: white;
+	float: left;
+	font-size: 16px;
+}
+.hot_spots .hot_huanlegu .huanlegu_bottom .huanlegu_details{
+	width: 30;
+	background-color: white;
+	width: 14%;
+	float: right;
+	/*margin: 0 auto;*/
+	text-align: center;
+	border-radius: 4px;
+	font-size: 16px;
+	margin-top: 1%;
+	/*border: 2px solid blue;*/
+	color: #000000;
+}
+
+
+
+.hot_spots .hot_jinligujie{
+	/*border: 2px solid gray;*/
+	transition: all ease-out .3s;
+}
+
+.hot_spots .hot_jinligujie:hover{
+	transform: translateY(-3px);
+}
+.hot_spots .hot_jinligujie img{
+	width: 100%;
+}
+.hot_spots .hot_jinligujie .jinligujie_text{
+	/*border: 2px solid green;*/
+	background-color: #f3b54c;
+	/*position: relative;*/
+	height: 160px;
+}
+.hot_spots .hot_jinligujie .jinligujie_text .jinligujie_title{
+	font-size: 28px;
+	width: 90%;
+	margin: 0 auto;
+	color: white;
+	/*border: 1px solid #000000;*/
+}
+.hot_spots .hot_jinligujie .jinligujie_text img{
+	width: 8%;
+}
+.hot_spots .hot_jinligujie .jinligujie_text .jinligujie_introduce{
+	width: 90%;
+	color: white;
+	margin: 0 auto;
+	line-height: 20px;
+	font-size: 12px;
+}
+.hot_spots .hot_jinligujie .jinligujie_text .jinligujie_bottom {
+	width: 90%;
+	height: 30px;
+	margin: 0 auto;
+	margin-top: 34px;
+	margin-left: 5%;
+	float: left;
+}
+.hot_spots .hot_jinligujie .jinligujie_text .jinligujie_bottom .jinligujie_browse{
+	width: 30%;
+	/*border: 2px solid slateblue;*/
+	color: white;
+	float: left;
+	font-size: 16px;
+}
+.hot_spots .hot_jinligujie .jinligujie_bottom .jinligujie_details{
+	width: 30;
+	background-color: white;
+	width: 14%;
+	float: right;
+	/*margin: 0 auto;*/
+	text-align: center;
+	border-radius: 4px;
+	margin-top: 1%;
+	font-size: 16px;
+	/*border: 2px solid blue;*/
+	color: #000000;
+}
+
+
+.hot_spots .hot_tianfu{
+	/*border: 2px solid gray;*/
+	transition: all ease-out .3s;
+}
+.hot_spots .hot_tianfu:hover{
+	transform: translateY(-3px);
+}
+.hot_spots .hot_tianfu img{
+	width: 100%;
+}
+.hot_spots .hot_tianfu .tianfu_text{
+	/*position: relative;*/
+	/*border: 2px solid green;*/
+	background-color: #f3b54c;
+	height: 160px;
+}
+.hot_spots .hot_tianfu .tianfu_text .tianfu_title{
+	font-size: 28px;
+	width: 90%;
+	margin: 0 auto;
+	color: white;
+	/*border: 1px solid #000000;*/
+}
+.hot_spots .hot_tianfu .tianfu_text img{
+	width: 6%;
+}
+.hot_spots .hot_tianfu .tianfu_text .tianfu_introduce{
+	width: 90%;
+	color: white;
+	margin: 0 auto;
+	line-height: 20px;
+	font-size: 12px;
+}
+.hot_spots .hot_tianfu .tianfu_text .tianfu_bottom {
+	width: 90%;
+	/*position: absolute;*/
+	margin-top: 34px !important;
+	/*border: 2px solid red;*/
+	height: 30px;
+	margin: 0 auto;
+	/*margin-top: 8%;*/
+	/*float: left;*/
+}
+.hot_spots .hot_tianfu .tianfu_text .tianfu_bottom .tianfu_browse{
+	width: 30%;
+	/*border: 2px solid slateblue;*/
+	color: white;
+	float: left;
+	font-size: 16px;
+}
+.hot_spots .hot_tianfu .tianfu_bottom .tianfu_details{
+	width: 30;
+	background-color: white;
+	width: 14%;
+	float: right;
+	/*margin: 0 auto;*/
+	text-align: center;
+	border-radius: 4px;
+	margin-top: 1%;
+	font-size: 16px;
+	/*border: 2px solid blue;*/
+	color: #000000;
+}
+
+
+/*游玩攻略开始*/
+.container .paly_strategy .row{
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+	display: table;
+}
+
+.container .paly_strategy{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.paly_strategy .paly_strategy_title{
+	width: 100%;
+	height: 10%;
+}
+
+.paly_strategy .paly_strategy_title h2{
+	width: 80%;
+	float: left;
+}
+.paly_strategy .paly_strategy_title h2 img{
+	width: 3%;
+}
+.paly_strategy .paly_strategy_title .paly_strategy_more{
+	cursor: pointer;
+	color: #EE7600;
+	font-size: 18px;
+	float: right;
+	/*border: 2px solid seagreen;*/
+	margin-top: 2%;
+}
+
+
+.paly_strategy .play_poor_travel{
+	/*border: 2px solid red;*/
+	/*width: 100%;*/
+	/*height: 680px;*/
+	padding: 0;
+	position: relative;
+}
+
+
+
+.paly_strategy .play_poor_travel .play_read img{
+	width: 100%;
+	transition: all ease-out .3s;
+    box-shadow: 1px 0px 10px grey;
+}
+
+.paly_strategy .play_poor_travel .play_read img:hover{
+	transform: translateY(-3px);
+}
+
+.paly_strategy .play_poor_travel .play_read .play_read_text{
+	font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    line-height: 50px;
+    padding-left: 10px;
+    height: 50px;
+    background: rgba(0,0,0,0.7);
+}
+
+
+.paly_strategy .play_register{
+	/*border: 2px solid palevioletred;*/
+	/*height: 670px;*/
+	height: 100%;
+	background-color: #f3b54c;
+	display: table-cell;
+}
+
+.paly_strategy .play_register .play_picture{
+	width: 86%;
+	height: 10%;
+	/*border: 2px solid green;*/
+	margin: 0 auto;
+	margin-top: 20%;
+}
+.paly_strategy .play_register .play_picture img{
+	width: 20%;
+	float: right;
+	
+}
+
+.paly_strategy .play_register .strategy_input{
+	border-radius: 6px;
+	width: 86%;
+	margin: 0 auto;
+	background-color: white;
+	color: #f3b54c;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 14%;
+}
+
+.paly_strategy .play_register .daren_input{
+	border-radius: 6px;
+	width: 86%;
+	margin: 0 auto;
+	background-color: white;
+	color: #f3b54c;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 18%;
+}	
+
+
+.paly_strategy .play_register .join_you{
+	border-radius: 6px;
+	width: 86%;
+	margin: 0 auto;
+	margin-top: 18%;
+	background-color: white;
+	/*border: 2px solid green;*/
+	height: 44%;
+}	
+
+.paly_strategy .play_register .join_you .join_your{
+	font-size: 20px;
+	width: 100%;
+	/*height: 50px;*/
+	color: #f3b54c;
+	text-align: center;
+	/*border: 2px solid green;*/
+}
+.paly_strategy .play_register .join_you .join_name{
+	color: #f3b54c;
+	margin: 0 auto;
+	font-size: 18px;
+	width: 90%;
+	margin-top: 14%;
+	border-bottom: 5px solid #F3B54C;
+}
+.paly_strategy .play_register .join_you .join_phone{
+	color: #f3b54c;
+	margin: 0 auto;
+	width: 90%;
+	font-size: 18px;
+	margin-top: 14%;
+	border-bottom: 5px solid #F3B54C;
+}
+.paly_strategy .play_register .join_you .join_register{
+	margin: 0 auto;
+	width: 96%;
+	font-size: 18px;
+	float: left;
+	margin-top: 22%;
+	/*border: 2px solid blue;*/
+}
+.paly_strategy .play_register .join_you .join_register span{
+	/*width: 48% !important;*/
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+	float: right;
+	border-radius: 6px;
+	background-color: #F3B54C;
+	color: white;
+}
+
+/*游玩攻略结束*/
+.play_tippp{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.play_tippp .row{
+	display: table;
+	height: 100%;
+}
+
+.container .play_tippp_title{
+	/*float: left;*/
+	width: 80%;
+	margin-top: 50%;
+	margin: 0 auto;
+	height: 10%;
+}
+
+    
+.play_tippp .play_tippp_title h2{
+	width: 80%;
+	/*border: 2px solid#F0AD4E;*/
+	/*float: left;*/
+}
+.play_tippp .play_tippp_title h2 img{
+	width: 5%;
+}
+.play_tippp .row{
+	width: 80%;
+	margin: 0 auto;
+}
+.play_tippp .tips_left{
+	height: 100%;
+	display: table-cell;
+	padding: 0;
+	/*border: 2px solid #000000;*/
+}
+.play_tippp  .tips_left img{
+	width: 100%;
+	transition: all ease-out .3s;
+    box-shadow: 1px 0px 10px grey;
+}
+
+.play_tippp  .tips_left img:hover{
+	transform: translateY(-3px);
+}
+.play_tippp .tips_right ol{
+	padding: 0;
+}
+.play_tippp .tips_right ol li{
+	width: 123%;
+    font-size: 20px;
+	margin-top: 1%;
+	cursor: pointer;
+    list-style: none;
+    line-height: 40px;
+    /* border: 1px solid; */
+}
+.play_tippp .tips_right ol li .right_browse{
+	float: right;
+	color: #F3B54C;
+}
+.play_tippp .tips_right ol li .right_browse img{
+	width: 20%;
+}

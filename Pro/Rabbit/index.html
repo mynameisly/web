@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <style>
+        .idx_left,.idx_right{position: absolute;width: 15%;font-size: 20px;color: #fff;text-align: center;text-shadow: 0 1px 2px rgba(0,0,0,.6);
+        background-color: rgba(0,0,0,0);filter: alpha(opacity=50);opacity: .5;}
+        .idx_left{top: 30%;left: 0;}
+        .idx_right{top: 30%;right: 0;transform: rotateY(180deg);}
+        .carousel-indicators{width:20%;bottom: 10px;}
+        .carousel-indicators li{width:25px; color: #a5a5a5;font-size: 18px;border: none;}
+        /*.recom,.news,.community,.des{margin: 0 80px;}*/
+        .recom .col-sm-3,.recom .col-md-3{padding:16px;height: 250px;box-shadow: 0px 0px 5px rgba(0,0,0,.3);}
+        .recom .col-sm-3 img,.recom .col-md-3 img{width:100%;}
+        .recom_title_china,.recom_title_eng,.new_title_china,.new_title_eng,.community_title_china,.community_title_eng{text-align: center;color: #a5a5a5;}
+        .recom_title_china,.new_title_china,.community_title_china{margin-top: 50px;}
+        .recom_title_eng,.new_title_eng,.community_title_eng{margin-bottom: 50px;}
+        .recom_title_line{width:120px;height: 6px;background: #a5a5a5;}
+        .new_title_line,.community_title_line{width:80px;height: 6px;background: #a5a5a5;}
+        .recom .recom_intro{width:100%;height: 90px;position: relative;}
+        .recom .recom_intro .recom_left,.recom .recom_intro .recom_right{color: #a5a5a5;position:absolute;}
+        .recom .recom_intro .recom_left{display: block; float: left;margin-bottom: 10px;left:0px;bottom:0px;}
+        .recom .recom_intro .recom_right{display: block; float: right;margin-bottom: 10px;right:0px;bottom:0px;}
+        @media (min-width:320px) and (max-width:766px) {
+            .recom .col-sm-3, .recom .col-md-3{height: 330px;}
+        }
+        .news .news_left{position: relative;}
+        .news .news_left img{width:100%;}
+        .news .news_left .news_lf_content{position: absolute;bottom: 0;width:95%;height: 40px;line-height:40px;background-color: rgba(0,0,0,.3);text-align: center;color: #fff;}
+        .news .news_right .news_rg_top{margin-bottom: 68px;}
+        .news .news_right .news_rg_top,
+        .news .news_right .news_rg_bottom{width:100%;height:180px;position:relative;}
+        .news .news_right .news_rg_top img,
+        .news .news_right .news_rg_bottom img{width:50%;height: 148px;float: left;}
+        .news .news_right .news_rg_top .news_rg_content,
+        .news .news_right .news_rg_bottom .news_rg_content{width:50%;height: 146px; float: right;color: #a5a5a5;padding: 10px;}
+        .news .news_right .news_rg_top .news_empty,
+        .news .news_right .news_rg_bottom .news_empty{width:100%;height: 20px;background: #a5a5a5;position:absolute;bottom: 12px;}
+        .destination_title_china{text-align: left;color: #a5a5a5;margin-top: 50px;}
+        .destination_title_eng{width:50%; margin-bottom: 50px;color: #a5a5a5;clear: both;}
+        .destination_title_line{float:left;width:80px;height: 6px;background: #a5a5a5;}
+        .des_more{float: right;margin-top: -70px;display: block;color: #a5a5a5;font-size: 16px;}
+        .des .des_content{height: 300px;}
+        .des .des_top,.des .des_bottom{padding: 0;}
+        .des .des_top:nth-child(2) .des_content,
+        .des .des_bottom:nth-child(1) .des_content,
+        .des .des_bottom:nth-child(3) .des_content{font-size: 34px;color: #fff;line-height: 300px;text-align: center;}
+        .des .des_top:nth-child(2) .des_content{background-color: #54c4c8;}
+        .des .des_bottom:nth-child(1) .des_content{background-color: #94a4b0;}
+        .des .des_bottom:nth-child(3) .des_content{background-color: #c4a65e;}
+        .des .des_top .des_content img,
+        .des .des_bottom .des_content img{width:100%;height: 300px;}
+        .community .com_left{padding: 0;position: relative;}
+        .community .com_left img{width:100%;}
+        .community .com_left .com_lf_content{position: absolute;bottom: 18px;width:96%;margin-left:6px;height: 40px;line-height:40px;background-color: rgba(0,0,0,.8);text-align: center;color: #fff;}
+        .community .com_left .com_lf_content .diary{font-size: 18px;}
+        .community .com_right p{color: #000;font-size: 18px;margin: 10px 20px;}
+        .community .com_right .com_right_lf{width:50%;height: 300px;float: left;}
+        .community .com_right .com_right_rg{width:50%;height: 300px;float: right;}
+        .community .com_right .com_right_lf span,
+        .community .com_right .com_right_rg span{display: block;height: 50px;background-color: #919191;border-radius: 10px;font-size: 18px;
+            width: 80%;margin: 55px auto;color: #fff;text-align: center;line-height: 50px;}
+    </style>
+</head>
+<body>
+<div id="head"></div>
+    <div class="container">
+        <div id="carousel" class="carousel slide">
+            <!-- 指示器 -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="">01&nbsp;/</li>
+                <li data-target="#carousel-example-generic" data-slide-to="1">02&nbsp;/</li>
+                <li data-target="#carousel-example-generic" data-slide-to="2">03&nbsp;/</li>
+                <li data-target="#carousel-example-generic" data-slide-to="3">04&nbsp;/</li>
+                <li data-target="#carousel-example-generic" data-slide-to="4">05&nbsp;/</li>
+            </ol>
+
+            <!-- 轮播图片及说明文字 -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="img/indexImg/idx_banner.png" alt="图片1">
+                </div>
+                <!--<div class="item">-->
+                    <!--<img src="indexImg/idx_banner.png" alt="图片2">-->
+                <!--</div>-->
+            </div>
+        </div>
+
+        <!-- 控制按钮：左右切换 -->
+        <a class="idx_left" href="#carousel" role="button" data-slide="prev">
+            <img src="img/indexImg/idx_left.png" alt="">
+        </a>
+        <a class="idx_right" href="#carousel" role="button" data-slide="next">
+            <img src="img/indexImg/idx_left.png" alt="">
+        </a>
+
+        <!--今日推荐开始-->
+        <h2 class="recom_title_china">今日推荐</h2>
+        <hr class="recom_title_line">
+        <h3 class="recom_title_eng">Recommended</h3>
+
+        <div class="row recom">
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <img src="img/indexImg/idx_recom1.jpg" alt="">
+                <div class="recom_intro">
+                    <div class="recom_intro_title">【美西字驾】雪色中的瑰丽|驰骋戈壁，拥抱新年</div>
+                    <span class="recom_left">Glocal环球土著</span>
+                    <span class="recom_right">17336人浏览过</span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <img src="img/indexImg/idx_recom2.jpg" alt="">
+                <div class="recom_intro">
+                    <div class="recom_intro_title">夏木尼，小王子的玫瑰城市</div>
+                    <span class="recom_left">Letu乐小兔</span>
+                    <span class="recom_right">285933人浏览过</span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <img src="img/indexImg/idx_recom3.jpg" alt="">
+                <div class="recom_intro">
+                    <div class="recom_intro_title">越南之旅（河内-岘港-美奈-芽庄-胡志明市）</div>
+                    <span class="recom_left">海蛎生煎</span>
+                    <span class="recom_right">1256人浏览过</span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <img src="img/indexImg/idx_recom4.jpg" alt="">
+                <div class="recom_intro">
+                    <div class="recom_intro_title">香港迪士尼乐园1日/2日电子门票（即定即用/扫码入园/可选餐券/无需打印/保证入园）</div>
+                    <span class="recom_left">乐途商城</span>
+                    <span class="recom_right">15336人浏览过</span>
+                </div>
+            </div>
+            <!--</div>-->
+            <!--<div class="row recom">-->
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <img src="img/indexImg/idx_recom5.jpg" alt="">
+                <div class="recom_intro">
+                    <div class="recom_intro_title">第一个去香港，一定要了解的30个问题！</div>
+                    <span class="recom_left">乐兔兔君</span>
+                    <span class="recom_right">122458人浏览过</span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <img src="img/indexImg/idx_recom8.jpg" alt="">
+                <div class="recom_intro">
+                    <div class="recom_intro_title">在夜市的灯光晃了眼（卢森堡）</div>
+                    <span class="recom_left">Letu乐小兔</span>
+                    <span class="recom_right">28993人浏览过</span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <img src="img/indexImg/idx_recom7.jpg" alt="">
+                <div class="recom_intro">
+                    <div class="recom_intro_title">巴黎圣母院，洗涤心灵的圣地</div>
+                    <span class="recom_left">海蛎生煎</span>
+                    <span class="recom_right">1256人浏览过</span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <img src="img/indexImg/idx_recom6.jpg" alt="">
+                <div class="recom_intro">
+                    <div class="recom_intro_title">快乐冰岛，欢迎你的加入</div>
+                    <span class="recom_left">乐途商城</span>
+                    <span class="recom_right">1533人浏览过</span>
+                </div>
+            </div>
+        </div>
+        <!--今日推荐结束-->
+
+        <!--资讯开始-->
+        <h2 class="new_title_china">资&nbsp;&nbsp;讯</h2>
+        <hr class="new_title_line">
+        <h3 class="new_title_eng">New</h3>
+        <div class="row news">
+            <div class="col-sm-6 news_left">
+                <img src="img/indexImg/idx_news1.jpg" alt="">
+                <div class="news_lf_content">
+                    马尔代夫今日至3月6号，游客享受八折优惠。活动期间，凭借身份证就...
+                </div>
+            </div>
+            <div class="col-sm-6 news_right">
+                <div class="news_rg_top">
+                    <img src="img/indexImg/idx_news2.jpg" alt="">
+                    <div class="news_rg_content">
+                        现日本樱花季正当时，据统计超过500万海外游客专程为了观赏樱花进入日本旅行，樱花季的总体经济效应达到人命币400亿元。
+                        日本各大商场琳琅满目的樱花主题商品...
+                    </div>
+                    <div class="news_empty"></div>
+                </div>
+                <div class="news_rg_bottom">
+                    <img src="img/indexImg/idx_news3.jpg" alt="">
+                    <div class="news_rg_content">
+                        据外媒报道，泰国部分地区干旱情况越来越严重，而泰国新年“泼水节”又即将到来，许多僧侣和自热保育人士纷纷呼吁城市居民，
+                        在这个传统的节日...
+                    </div>
+                    <div class="news_empty"></div>
+                </div>
+            </div>
+        </div>
+        <!--资讯结束-->
+
+        <!--目的地开始-->
+        <div class="des">
+            <h2 class="destination_title_china">目的地</h2>
+            <hr class="destination_title_line">
+            <h3 class="destination_title_eng">Destination</h3>
+            <div class="des_more">西藏|云南|台湾|冰岛|更多</div>
+        </div>
+        <div class="row des">
+
+            <div class="col-sm-4 des_top">
+                <div class="des_content">
+                    <img src="img/indexImg/idx_des1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-sm-4 des_top">
+                <div class="des_content">九寨沟</div>
+            </div>
+            <div class="col-sm-4 des_top">
+                <div class="des_content">
+                    <img src="img/indexImg/idx_des2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row des">
+            <div class="col-sm-4 des_bottom">
+                <div class="des_content">云南</div>
+            </div>
+            <div class="col-sm-4 des_bottom">
+                <div class="des_content">
+                    <img src="img/indexImg/idx_des3.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-4 des_bottom">
+                <div class="des_content">西藏</div>
+            </div>
+        </div>
+        <!--目的地结束-->
+
+        <!--社区开始-->
+        <h2 class="community_title_china">社&nbsp;&nbsp;区</h2>
+        <hr class="community_title_line">
+        <h3 class="community_title_eng">Community</h3>
+        <div class="row community">
+            <div class="col-sm-7 com_left">
+                <img src="img/indexImg/idx_com.png" alt="">
+                <div class="com_lf_content">
+                    <span class="diary">我的踏青日记</span>--天空久久
+                </div>
+            </div>
+            <div class="col-sm-5 com_right">
+                <p>分享你走过的足迹，留下更多记忆</p>
+                <div class="com_right_lf">
+                    <span>日记</span>
+                    <span>照片欣赏</span>
+                    <span>交友</span>
+                </div>
+                <div class="com_right_rg">
+                    <span>微博</span>
+                    <span>旅游动态</span>
+                    <span>更多</span>
+                </div>
+            </div>
+        </div>
+        <!--社区结束-->
+    </div>
+<div id="foot"></div>
+</body>
+</html>

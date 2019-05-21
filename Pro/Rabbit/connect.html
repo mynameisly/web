@@ -1,0 +1,160 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Ngb6B8rQuVDb61QFsIGu9XRGuOyAygzY"></script>
+    <link rel="stylesheet" href="css/connect.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+
+<title>connect</title>
+</head>
+<body>
+<!--头部-->
+<div id="head"></div>
+<!--banner图-->
+<div id="banner">
+    <img src="img/connect/con-banner.png" alt="">
+    <span>联系我们<br/>CONNECT US</span>
+</div>
+
+<div id="letu-tra">
+    <img src="img/brands.png" alt="">
+    <p>乐兔旅游，您身边的旅游咨询顾问！<br/>分享游记，帮您规划旅游路线，<br/>社区交流，等您来体验......</p>
+    <p>16/5000
+        Letu travel, your side of the <br>
+        tourism consultants!Share travel notes to help you plan your Community<br>
+        communication, waiting for you to experience...
+    </p>
+    <ul>
+        <li><img src="img/connect/letu-traphone.png" alt=""></li>
+        <li><img src="img/connect/letu-trasite.png" alt=""></li>
+        <li><img src="img/connect/letu_tramessage.png" alt=""></li>
+        <div style="clear:both;"></div>
+    </ul>
+</div>
+
+<div id="app">
+    <div data-v-de1b2cde="">
+        <div data-v-02dc3e6e="" data-v-de1b2cde="" class="location-panel">
+            <div data-v-8c280b04="" data-v-02dc3e6e="" class="location-current">
+                <div id="allmap" style="width: 100%;height: 260px;border: 1px solid #cccccc"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="message" class="container">
+    <div id="message-img" class="col-sm-2"><img src="img/connect/phone.png" alt=""></div>
+    <div id="message-font" class="col-sm-2"><p>获取更多资讯 <br>或提出建议与反馈 <br>请留下您的联系方式 <br>NEED TO YOUR MODE
+    </p></div>
+    <div class="col-sm-8" id="message-input">
+        <form action="">
+            <input type="text" placeholder="你的邮箱">
+            <input type="text" placeholder="你的电子邮件">
+            <input type="text" placeholder="你的号码">
+            <p style="color: #fff;"><img src="img/connect/liuyan.png">留言</p>
+            <textarea  style="height: 80px">
+            </textarea>
+        </form>
+        <span id="eixt"></span>
+        <button id="subm">提交</button>
+    </div>
+</div>
+
+<div class="container" id="conntct">
+    <div class="col-sm-4">
+        <div id="connect-icon">
+            <img src="img/connect/conncctus.png" alt="" >
+            <p>欢迎各位有志之士向我们公司投递简历</p>
+        </div>
+        <ul>
+            <li ><img src="img/connect/qq.png" alt="" ></li>
+            <li><img src="img/connect/wechat.png" alt="" ></li>
+            <li><img src="img/connect/weibo.png" alt="" ></li>
+        </ul>
+    </div>
+    <div class="col-sm-2"><img src="img/connect/QRcodeone.png" alt="" >扫码投递简历</div>
+    <div class="col-sm-2"><img src="img/connect/QRcodetwo.png" alt="">扫码关注公众号</div>
+    <div class="col-sm-4"><img src="img/connect/map.png" alt=""></div>
+</div>
+
+<div id="foot"></div>
+<script type="text/javascript">
+    //定位成功事件
+    //var myKeys=[];
+    var myKeys='';
+    var lng='';         //精度
+    var lat='';         //纬度
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+    var point = new BMap.Point(108.95,34.27);
+    map.centerAndZoom(point,12);
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function(r){console.log(r.point)
+        if(this.getStatus() == BMAP_STATUS_SUCCESS){
+            var mk = new BMap.Marker(r.point);
+            map.addOverlay(mk);//标出所在地
+            map.panTo(r.point);//地图中心移动
+            //alert('您的位置：'+r.point.lng+','+r.point.lat);
+            lng=r.point.lng;
+            lat=r.point.lat;
+            var point = new BMap.Point(r.point.lng,r.point.lat);    //用所定位的经纬度查找所在地省市街道等信息
+            var gc = new BMap.Geocoder();
+            gc.getLocation(point, function(rs){
+                var addComp = rs.addressComponents;
+                console.log(rs.address);//地址信息
+                //myKeys = [rs.address];     当有其他信息时，可以定义成数组
+                myKeys = rs.address;
+                //alert(myKeys);         //弹出所在地址
+                var local = new BMap.LocalSearch(map, {
+                    renderOptions:{map:map,panel:"r-result"},
+                    pageCapacity:3
+                });
+                local.searchInBounds(myKeys, map.getBounds());
+            });
+        }else {
+            alert('failed'+this.getStatus());
+        }
+    },{enableHighAccuracy: true})
+
+    /**
+     * 保存
+     */
+    function add(){
+        //alert(myKeys);
+        $.ajax({
+            type: 'GET',
+            url: '<%=request.getContextPath()%>/customer/map/save',
+            dataType: 'json',
+            data: {'address':myKeys,'lng':lng,'lat':lat},
+            success : function(res){
+                // 添加文字说明
+                alert(res);
+            }
+
+        });
+    }
+
+    //实时刷新
+    function refresh(){
+        window.location.href="<%=request.getContextPath()%>/customer/map/index";
+    }
+
+</script>
+
+</body>
+</html>

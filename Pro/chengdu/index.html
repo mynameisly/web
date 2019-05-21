@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>游成都</title>
+    <link rel="icon" href="./images/idx_img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/animate.css">
+    <script src="./js/wow.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/idx.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <style>
+        .carousel-fade .carousel-inner .item {
+            opacity: 0.7;
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            -ms-transition-property: opacity;
+            -o-transition-property: opacity;
+            transition-property: opacity;
+        }
+
+        .carousel-fade .carousel-inner .active {
+            opacity: 1;
+        }
+
+        .carousel-fade .carousel-inner .active.left,
+        .carousel-fade .carousel-inner .active.right {
+            left: 0;
+            opacity: 0;
+        }
+
+        .carousel-fade .carousel-inner .next.left,
+        .carousel-fade .carousel-inner .prev.right {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            new WOW().init();
+        };
+    </script>
+</head>
+<body>
+    <!-- 导航栏开始 -->
+    <div id="head"></div>
+    <!-- 导航栏结束 -->
+
+    <!-- 轮播开始 -->
+    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel"  data-interval="2000">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <a href="./pages/scenicSpot.html">
+                    <img src="./images/idx_img/idx_banner1.jpg" alt="Third slide">
+                </a>
+            </div>
+            <div class="item">
+                <a href="./pages/delicious.html">
+                    <img src="./images/idx_img/idx_banner3.jpg" alt="Second slide">
+                </a>
+            </div>
+            <div class="item">
+                <a href="./pages/trip.html">
+                    <img src="./images/idx_img/idx_banner2.jpg" alt="First slide">
+                </a>
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="idx_left" href="#myCarousel" data-slide="prev"> 
+            <img src="./images/idx_img/idx_left.png" alt="">
+        </a>
+        <a class="idx_rg" href="#myCarousel" data-slide="next"> 
+            <img src="./images/idx_img/idx_rg.png" alt="">
+        </a>
+    </div>
+    <!-- 轮播结束 -->
+
+    <!-- 主体内容开始 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 down animated fadeInDown">
+                <img src="./images/idx_img/idx_bottom.png" class="center-block" alt="向下滑动">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 attra">
+                <h2><a href="./pages/scenicSpot.html">景点</a></h2>
+                <h3>attractions</h3>
+                <div class="row idx_attra">
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".1s">
+                        <a href="./pages/DuFuRoom.html">
+                            <img src="./images/idx_img/idx1.jpg" class="img-responsive" alt="宽窄巷子">
+                        </a>
+                        <p class="txt">
+                            <span class="attra_title">宽窄巷子</span><br/>
+                            <span class="attra_txt">成都三大历史文化名城保护街区</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".2s">
+                        <a href="./pages/ChunXiRead.html">
+                            <img src="./images/idx_img/idx5.jpg" class="img-responsive" alt="春熙路">
+                        </a>
+                        <p class="txt">
+                            <span class="attra_title">春熙路</span><br/>
+                            <span class="attra_txt">成都主城区三大商业街区之一</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".3s">
+                        <a href="./pages/DuFuRoom.html">
+                            <img src="./images/idx_img/idx6.jpg" class="img-responsive" alt="杜甫草堂">
+                        </a>
+                        <p class="txt">
+                            <span class="attra_title">杜甫草堂</span><br/>
+                            <span class="attra_txt">中国唐代诗人杜甫流寓成都的故居</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row idx_attra wow fadeInUp" data-wow-delay=".6s">
+                    <div class="col-md-4">
+                        <img src="./images/idx_img/idx4.jpg" class="img-responsive" alt="武侯祠">
+                        <p class="txt">
+                            <span class="attra_title">武侯祠</span><br/>
+                            <span class="attra_txt">全世界影响最大的三国遗迹博物馆</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".5s">
+                        <img src="./images/idx_img/idx2.jpg" class="img-responsive" alt="东郊记忆">
+                        <p class="txt">
+                            <span class="attra_title">东郊记忆</span><br/>
+                            <span class="attra_txt">工业遗存和文化创意结合的新型旅游景区</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".6s">
+                        <img src="./images/idx_img/idx3.jpg" class="img-responsive" alt="洛带古镇">
+                        <p class="txt">
+                            <span class="attra_title">洛带古镇</span><br/>
+                            <span class="attra_txt">四川省打造“两湖一山”</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2 more wow fadeIn" data-wow-duration="2s" data-wow-delay="1.1s">
+                <a href="./pages/scenicSpot.html">更多</a>
+                <p class="hot">热度排行</p>
+                <ul class="rank">
+                    <li class="icon">NO1.春熙路<i class="first">75412</i></li>
+                    <li class="icon">NO2.宽窄巷子<i>69978</i></li>
+                    <li class="icon">NO3.四川大学<i>65784</i></li>
+                    <li>NO4.杜甫草堂</li>
+                    <li>NO5.洛带古镇</li>
+                    <li>NO6.锦里古镇</li>
+                    <li>NO7.青龙湖</li>
+                    <li>NO8.荷花池</li>
+                    <li>NO9.熊猫基地</li>
+                </ul>
+                <p class="comment">参与评论</p>
+                <form action="" method="">
+                    <input type="text" placeholder="请输入你的手机号">
+                    <input type="text" placeholder="地点">
+                    <div class="star"></div>
+                    <input type="submit" value="提交">
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 deli">
+                <h2><a href="./pages/delicious.html">美食</a></h2>
+                <h3>delicious</h3>
+            </div>
+            <div class="col-md-2 deli_more">
+                <a href="./pages/scenicSpot.html">更多</a>
+            </div>
+        </div>
+
+        <div class="row deli">
+            <a href="./pages/potchicken.html">
+                <div class="col-md-4 wow fadeInUp" data-wow-delay=".8s">
+                    <img src="./images/idx_img/idx_delicious1.jpg" class="img-responsive" alt="钵钵鸡是一种四川传统名小吃……">
+                </div>
+
+                <div class="col-md-2 chicken_txt wow fadeIn" data-wow-duration="2s" data-wow-delay=".9s">
+                    <p class="del_title">钵钵鸡</p>
+                    <p class="del_txt">
+                        钵钵鸡是一种四川传统名小吃起源于乐山属于川系。清代流传至今已有上百年的历史。是以陶器钵盛放配以麻辣为主的佐料，加上多种调料的去骨鸡片拌和而成。有皮脆肉嫩，麻辣鲜香，甜咸适中的特色。吃奶汤面时配以钵钵鸡，别具风格。1990年获成都市个体名小吃优质奖，1991年被成都市人民政府命名为优质名小吃。
+                    </p>
+                    <div class="good">
+                        <span>1520</span>
+                        <a href="#" class="details">详情</a>
+                    </div>
+                </div>
+            </a>
+
+            <div class="col-md-4 wow fadeInUp" data-wow-delay=".8s">
+                <img src="./images/idx_img/idx_delicious2.jpg" class="img-responsive" alt="钵钵鸡是一种四川传统名小吃……">
+            </div>
+
+            <div class="col-md-2 chicken_txt wow fadeIn"data-wow-duration="2s" data-wow-delay="1.1s">
+                <p class="del_title">火锅</p>
+                <p class="del_txt">
+                    四川火锅，即四川的特色火锅，发源地为长江之滨”酒城“泸州的小米滩（现高坝二五厂），是将瓦罐中盛水（汤），配以辣椒、花椒、牛油、色拉油、郫县豆瓣、白酒、醪糟等配料一起熬制，完毕后在沸腾的汤料中添加肉或者蔬菜进去即可。四川火锅表现了中国烹饪的包容性，在制作配料上以”厚味重油“著称，鲜香味美，制作精细，口味大众化。
+                </p>
+                <div class="good">
+                    <span>890</span>
+                    <a href="#" class="details">详情</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row travel">
+            <div class="col-md-12">
+                <h2><a href="./pages/trip.html">出行</a></h2>
+                <h3>travel</h3>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <a href="./pages/hotel.html">
+                    <img src="./images/idx_img/home.png" class="img-responsive wow flipOutY" data-wow-delay="1.2s" alt="酒店">
+                    <span>酒店<br/>hotel</span>
+                </a>
+            </div>
+            <div class="col-md-3 car">
+                <img src="./images/idx_img/car.png" class="img-responsive wow flipOutY" data-wow-delay="2s" alt="交通">
+                <span>交通<br/>travel</span>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <img src="./images/idx_img/lunch.png" class="img-responsive wow flipOutY" data-wow-delay="2.8s" style="width: 93%;" alt="饭店">
+                <span>饭店<br/>restaurant</span>
+            </div>
+            <div class="col-md-1 col-md-offset-5 tra_more">
+                <a href="./pages/trip.html">更多</a>
+            </div>
+        </div>
+
+        <div class="row history" style="margin-bottom: 50px;">
+            <div class="col-md-10">
+                <h2><a href="./pages/history.html">历史</a></h2>
+                <h3>history</h3>
+            </div>
+            <div class="col-md-2">
+                <a href="./pages/history.html" class="history_more">更多</a>
+            </div>
+            <div class="col-md-12">
+                <img src="./images/idx_img/idx_history.jpg" class="img-responsive wow fadeIn" data-wow-delay="0.8s" alt="天府之国">
+            </div>
+        </div>
+    </div>
+    <!-- 主体内容结束 -->
+
+    <!-- 底部开始 -->
+    <div id="foot"></div>
+    <!-- 底部结束 -->
+
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/navfoot_index.js"></script>
+</body>
+</html>

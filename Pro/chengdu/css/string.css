@@ -1,0 +1,26 @@
+.container .chuanchuan{
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 70px;
+}
+.container .chuanchuan h2{
+	text-align: center;
+	color: #ee9600;
+}
+.container .chuanchuan .chuanchuan_text{
+	width: 90%;
+	margin: 0 auto;
+	text-indent: 2em;
+	padding: 10px;
+	font-size: 18px;
+	line-height: 200%;
+	background: rgba(225,225,225,.6);
+}
+.container .you_like{
+	width: 100%;
+	margin-top: 6%;
+}
+.container .you_like h2{
+	text-align: center;
+	color: #ee9600;
+}

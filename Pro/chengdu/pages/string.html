@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>串串香</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/nav.css">
+		<link rel="stylesheet" href="../css/string.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.main.css"/>
+
+		<style>
+			.swiper-slide { background-position: center; background-size: cover; width: 300px; height: 300px; } 
+			.swiper-container { width: 100%; padding-top: 50px; padding-bottom: 50px; }
+			.swiper-pagination-bullet-active {
+				opacity: 1;
+				background: #ee7600;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏开始 -->
+		<div id="head"></div>
+		<!-- 导航栏结束 -->
+
+		<div class="container">
+			<div class="row chuanchuan">
+				<h2>串串香</h2>
+				<div class="chuanchuan_text">串串香，起源于四川成都[1][2]，不仅是四川地区的特色传统小吃之一，也是草根美食最大众化的体现，串串香实际上是火锅的另一种形式，所以人们又往往称其为小火锅。</div>
+				<div class="chuanchuan_text">“串串香”名字的由来是因为这是一种以竹签串上各种菜，将其放进滚烫的火锅中涮着吃的小吃。串串香以其独特的魅力和鲜明的特色遍布于全国众多城市，“麻辣烫”亦是其变体，可以说只要有人的地方就有串串香的存在，甚至在一定程度上，串串香已成为四川味道的代表之一。</div>
+			</div>
+			<div class="row you_like">
+				<h2>猜你喜欢</h2>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d1.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d2.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d3.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d4.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d5.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d6.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d7.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d8.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d9.jpg)"></div>
+						<div class="swiper-slide" style="background-image:url(../images/deli_img/d10.jpg)"></div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 底部开始 -->
+		<div id="foot"></div>
+		<!-- 底部结束 -->
+
+
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/navandfoot.js"></script>
+	</body>
+	<script src="../js/swiper.js"></script>
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+</html>

@@ -1,0 +1,215 @@
+/*.block5,.block8,.block10,.block12,.block20,.block22,.block30,.block40,.block50,.block60,.block70,.block80,.block100{height:0.4rem; font:0; overflow:hidden; clear:both;}
+.block8{height:0.4rem;}.block10{height:0.5rem;}.block15{height:0.75rem;}.block20{height:1rem;}.block25{height:1.25rem;}.block30{height:1.5rem;}.block40{height:2rem;}.block50{height:2.5rem;}.block60{height:3rem;}.block70{height:3.5rem;}.block80{height:4rem;}.block100{height:5rem;}
+.fB{font-weight:bold;}.fem{font-style:italic;}*/
+
+body,h1,h2,h3,p,dl,dd,ol,ul,th,td,form,fieldset,input,button,textarea,img,.container-fluid{margin:0;padding:0}
+html{-webkit-text-size-adjust:none;word-wrap:break-word}
+h1,h2,h3{font-size:100%}ol,ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0;empty-cells:show;font-size:inherit}
+fieldset,img{border:0}
+cite,em,s,i,b{font-style:normal}
+input,button,textarea,select{font-size:100%}
+body,input,button,textarea,select,option{font-size:normal}
+a,input,textarea{text-decoration:none;outline:0}
+li,img,label,input{vertical-align:middle}
+var{font-style:normal}
+ins{text-decoration:none;font-size: 5px;}
+body{font:14px/1.5 "Microsoft Yahei";font-size:20px; color:#666;font-family:Arial, Verdana,"微软雅黑","宋体"; }a{ color:#666}
+.navbar{/*去除bootstrap中的nav底部的样式*/
+	margin-bottom: 0;
+	border: 0px;
+}
+#top{
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+#top img{
+	width:50%;
+	height: 40%;
+	position: relative;
+	z-index: 999;
+	margin: 15% 25%;
+}
+#top canvas{
+	width: 100%;
+	height: 350px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+/*热门拍摄城市样式开始*/
+.container>p{
+	text-align: center;
+}
+.container>.h2{/*重写bootstrap里面的h2的上外边距*/
+	margin-top: 50px;
+}
+.city,.hunsha{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.city>div:nth-child(1),.hunsha>div:nth-child(1){
+	width: 60%;
+	height: 50px;
+	line-height: 50px;
+	background: #48D1CC;
+	color: #FFFFFF;
+	font-weight: bolder;
+	font-size: 25px;
+	text-align: center;
+	height: 50px;
+}
+.city>div:nth-child(2),.hunsha>div:nth-child(2){
+	width: 40%;
+	height: 50px;
+	line-height: 50px;
+	background: red;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+	height: 50px;
+}
+.city_box1{
+	display: flex;
+	justify-content: center;
+	margin: 30px 0;
+}
+.city_box1 > div{
+	width: 29.89795918%;
+	padding: 0;
+}
+.city_box1 > div:nth-child(2){
+	margin: 0 2%;
+}
+.city_box1 > div>p{
+	width: 96%;
+}
+/*热门拍摄城市样式结束*/
+
+/*你可能会喜欢样式开始*/
+.tu{
+	width: 980px;
+	height: 800px;				
+	margin: 0 auto;
+	display: flex;
+}
+.tu > div{
+	width: 245px;
+	height: 800px;
+	flex: 1;
+	position: relative;
+	overflow: hidden;
+}
+.tu > div > span{
+	width: 245px;
+	height: 800px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.container-fluid > input{
+	display: none;
+}
+.container-fluid > label{
+	position: relative;
+	z-index: 999;
+	width: 245px;
+	height: 40px;
+	display: block;
+	float: left;
+	top: 760px;
+	left: 0px;
+	cursor: pointer;
+}
+.container-fluid > label::before{
+	content: "1";
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background-color: rgba(130,295,213,.9);
+	box-shadow: 0px 0px 0px 4px rgba(255,255,255,.3);
+	display: block;
+	position: absolute;
+	left:110px;/*调节按钮的位置*/
+	/*文字居中*/
+	text-align: center;
+	line-height: 35px;
+	color: #FFFFFF;
+}
+.container-fluid > label:nth-child(5):before{
+	content: "1";
+}
+.container-fluid > label:nth-child(6):before{
+	content: "2";
+}
+.container-fluid > label:nth-child(7):before{
+	content: "3";
+}
+.container-fluid > label:nth-child(8):before{
+	content: "4";
+}
+.container-fluid > .xuan-1:checked~label:nth-child(5):before,
+.container-fluid > .xuan-2:checked~label:nth-child(6):before,
+.container-fluid > .xuan-3:checked~label:nth-child(7):before,
+.container-fluid > .xuan-4:checked~label:nth-child(8):before{
+	color: rgba(130,195,213,.9);
+	background-color: #FFFFFF;
+}
+
+/*放图片，每个div里面的第一个放的是第一张图片*/
+.tu > div > span:nth-child(1){
+	background-image: url(../img/hunsha1.jpg);
+	background-size: 980px 800px;
+}
+.tu > div > span:nth-child(2){
+	background-image: url(../img/hunsha2.jpg);
+	background-size: 980px 800px;
+}
+.tu > div > span:nth-child(3){
+	background-image: url(../img/hunsha3.jpg);
+	background-size: 980px 800px;
+}
+.tu > div > span:nth-child(4){
+	background-image: url(../img/hunsha4.jpg);
+	background-size: 980px 800px;
+}
+	
+.tu > div:nth-child(1)> span{
+	background-position: 0px 0px;
+}
+.tu > div:nth-child(2)> span{
+	background-position: -245px 0px;
+}
+.tu > div:nth-child(3)> span{
+	background-position: -490px 0px;
+}
+.tu > div:nth-child(4)> span{
+	background-position: -735px 0px;
+}
+.container-fluid > .xuan-1:checked ~ .tu > div > span:nth-child(1),
+.container-fluid > .xuan-2:checked ~ .tu > div > span:nth-child(2),
+.container-fluid > .xuan-3:checked ~ .tu > div > span:nth-child(3),
+.container-fluid > .xuan-4:checked ~ .tu > div > span:nth-child(4){
+	z-index: 998;
+	animation: dongqilai;
+	animation-delay: 0s;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+}
+@keyframes dongqilai{
+	0%{
+		left: -245px;
+	}
+	100%{
+		left: 0px;
+	}
+}					
+
+/*你可能会喜欢结束*/
