@@ -1,0 +1,47 @@
+body{
+	margin: 0;
+	background: #eee;
+}
+a{
+	color: #000;
+}
+a:hover{
+	color: red;
+}
+ul{
+	list-style: none;
+}
+.container{
+	width: 100%;
+	/*height: 600px;*/
+   /* background: #EEEEEE;*/
+}
+
+.container .warp{
+	width: 1000px;
+	/*height: 600px;*/
+	padding-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+}
+
+.container .warp .down{
+	width: 100%;
+	/*height: 560px;*/
+	border: 1px solid #eee;
+}
+
+.container .warp .down li{
+	font-size: 18px;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px dotted black;
+}
+
+.container .warp .down li input{
+	float: right;
+	cursor: pointer;
+	margin-top: 10px;
+    margin-right: 20px;
+}
