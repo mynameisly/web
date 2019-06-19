@@ -1,0 +1,694 @@
+﻿<html>
+<head>
+    <title>qiaoModel</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0px;
+            overflow: hidden;
+        }
+ 
+        #WebGL {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+           
+        }
+		
+		
+#loading {
+    background: #f3815e;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.loadingImage {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #2e98df;
+    border-radius: 50px;
+    animation: loadingImage 1.5s infinite linear;
+}
+
+.loadingImage::after {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-top: 10px solid #b160d1;
+    border-bottom: 10px solid #b160d1;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-radius: 50px;
+    content: '';
+    top: -20px;
+    left: -20px;
+    animation: loadingImage_after 1.5s infinite linear;
+}
+
+@keyframes loadingImage {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+        background: #2ecc71;
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loadingImage_after {
+    0% {
+        border-top: 10px solid #b160d1;
+        border-bottom: 10px solid #b160d1;
+    }
+
+    50% {
+        border-top: 10px solid #2e98df;
+        border-bottom: 10px solid #2e98df;
+    }
+
+    100% {
+        border-top: 10px solid #b160d1;
+        border-bottom: 10px solid #b160d1;
+    }
+}
+
+		
+		
+		
+    </style>
+</head>
+ 
+<body>
+    <script src="http://www.yanhuangxueyuan.com/threejs/build/three.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script src="https://threejs.org/examples/../build/three.js"></script>
+    <script src="https://threejs.org/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+	<script src="http://www.yanhuangxueyuan.com/threejs/examples/js/loaders/OBJLoader.js"></script>
+	<script src="https://threejs.org/examples/js/controls/DragControls.js"></script>
+	<script src="https://threejs.org/examples/js/controls/TrackballControls.js"></script>
+    <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+	<script src="https://threejs.org/examples/js/WebGL.js"></script>
+	<script src="../js/utils.js"></script>
+    <script src="../js/textures.js"></script>
+    <script src="../js/Car.js"></script>
+	<script src="https://threejs.org/examples/js/libs/dat.gui.min.js"></script>
+	<script src="https://threejs.org/examples/js/ShaderTranslucent.js"></script>
+	<div id="loading">
+    <div class="loadingImage"><div id="WebGL"></div></div>
+</div>
+    <script>
+	    var stats,model3,model_w,sphere1,light_y,light_r,light_g,RGB_time=0,light1;
+        var container, camera, scene, renderer, geometry, material, animate, controls; //常用变量
+        var spotLight, mshStdBox; //自定义对象变量
+        var target = new THREE.Vector3(0, 30, 0);
+        var model, skeleton;
+        var webGLW = $('#WebGL').width();
+        var webGLH = $('#WebGL').height();
+		var now_cars_nums=0,cars_nums_z=10;
+		var cars = [];
+		var cars_fx=[[-550+150,120-75,0],
+		             [-550+150,87-75,0],
+	                 [220+150,64-75,1],
+	                 [220+150,41-75,1]];
+		var Lights=[];
+		var time_r=200;
+		var time_y=80;
+		var time_g=300;
+		var light_y_w;
+		var objects = [];
+		var totx=1, cube;
+		var stats;
+		var gui;
+		var wedu_cg;
+		var yali_cg;
+		var shuiwei_cg;
+        init();
+        loop();
+ 
+        function init() {
+		
+            container = document.getElementById('WebGL');
+			document.body.appendChild( container );
+            scene = new THREE.Scene();
+			scene.position.set(0,-100,0)
+            scene.background = new THREE.Color(0xcfcfcf);
+		   //scene.background = new THREE.Color(0xffffff);
+            camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 5000);
+            camera.position.set(1000, 400, 700);
+			//camera.position.set(420, 420, 420);
+            var ambient = new THREE.AmbientLight(0xffffff, 0.08);
+            scene.add(ambient);
+            lights(); //灯光：聚光灯
+		    loadModel(); //添加人物模型
+			loadModel2();
+			build_cg();
+			//plane();
+			//initStats();
+			gui_init();
+		
+			for (var i=0;i<5;i++)loadfile(i,150,1.5,28-75,-220-150+150);
+			for (var i=0;i<6;i++)loadfile(i,150,0.5,-129+75,-530+150);
+			loadfile_RGB();
+			
+			for(var i=0;i<cars_nums_z;i++){
+			     now_cars_nums=now_cars_nums+1;
+			     buildMovingCars();
+			}
+            rendererScene(); //场景渲染
+            OrbitControls(camera, renderer); 
+            window.addEventListener('resize', onWindowResize, false); //监听屏幕变化
+ 
+        }
+        function lights() {
+            //  SpotLight( color：颜色, intensity：强度, distance：发光距离, angle：角度, penumbra：边缘范围, decay：衰减 )
+            spotLight = new THREE.SpotLight(0xffffff, 0.05);
+            spotLight.position.set(55, 520, 550);
+            spotLight.angle = Math.PI / 4;
+            spotLight.penumbra = 0.05; //边缘范围，反比
+            spotLight.decay = 2; //衰减系数，反比
+            spotLight.distance = 4; //发光距离
+            spotLight.castShadow = true; //阴影
+            spotLight.shadow.mapSize.width = 1024;
+            spotLight.shadow.mapSize.height = 1024;
+            spotLight.shadow.camera.near = 10; //近截面
+            spotLight.shadow.camera.far = 25;
+            scene.add(spotLight);
+        }
+        function loadModel() {
+            var loader = new THREE.GLTFLoader();
+            loader.load('https://five-great.coding.me/model/qlhl.glb', function (gltf) {
+                model = gltf.scene;
+                scene.add(model);
+                model.traverse(function (object) {
+                    if (object.isMesh) {
+                        object.castShadow = true;
+                        //console.log(object);
+                        
+                    }
+                });
+                model.rotation.y = -Math.PI;
+                model.scale.set(200, 200, 200);
+                model.translateX(-150);
+				model.translateY(0);
+				model.translateZ(75);
+                // 骨骼显示助手
+                skeleton = new THREE.SkeletonHelper(model);
+                scene.add(skeleton);
+            });
+        }
+		
+		function loadfile_RGB() {
+            var loader = new THREE.GLTFLoader();
+            loader.load('https://five-great.coding.me/model/RGB_file11.glb', function (gltf) {
+                model = gltf.scene;
+                scene.add(model);
+                model.traverse(function (object) {
+                    if (object.isMesh) {
+                        object.castShadow = true;
+                        //console.log(object);
+                    }
+                });
+                model.scale.set(100, 100, 100);
+				model.rotation.y = 0.5*Math.PI;
+                model.translateX(-35+75);
+				model.translateY(82);
+				model.translateZ(190+150);
+				var sphere = new THREE.SphereBufferGeometry( 0.0115, 10, 18 );
+				light_r = new THREE.PointLight( 0xcc0405, 1.2, 12, 1.8 );
+				light_r.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xcc0405 } ) ) );
+				light_r.position.set(-0.1,0.233,0.265);
+				model.add( light_r );
+				//console.log("------------------------------");
+				//console.log(light_r);
+				light_y = new THREE.PointLight( 0xff9500, 1.2, 12, 1.8 );
+				light_y_w=new THREE.Mesh(sphere, new THREE.MeshBasicMaterial( { color: 0xff9500 } ) )
+				light_y.add( light_y_w );
+				light_y.position.set(-0.1,0.205,0.265);
+				model.add(light_y);
+				light_g = new THREE.PointLight( 0x079155, 1.2, 12, 1.8 );
+				light_g.add( new THREE.Mesh(sphere, new THREE.MeshBasicMaterial( { color: 0x079155 } ) ) );
+				light_g.position.set(-0.1,0.175,0.265);
+				model.add(light_g);
+                // 骨骼显示助手
+                skeleton = new THREE.SkeletonHelper(model);
+                scene.add(skeleton);
+            });
+        }
+		
+
+		function loadfile(i,d,fx,xx,zz) {
+		    
+		 
+            var loader = new THREE.GLTFLoader();
+            loader.load('https://five-great.coding.me/model/file.glb', function (gltf) {
+                model = gltf.scene;
+                scene.add(model);
+                model.traverse(function (object) {
+                    if (object.isMesh) {
+                        object.castShadow = true;
+                        //console.log(object);
+                    }
+                });
+                model.rotation.y = fx*Math.PI;
+                model.scale.set(6, 6, 6);
+				model.translateX(xx);
+				model.translateY(52);
+				model.translateZ(zz+i*d);
+			    var sphere = new THREE.SphereBufferGeometry( 0.1, 30, 98 );
+				//light1 = new THREE.PointLight( 0xffff8f, 2.5, 125, 0.5 );
+				light1 = new THREE.PointLight( 0xfaaa3c, 20.5, 115, 2.1 );
+				light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffff8f } ) ) );
+				
+				light1.position.set(1.6,9.2,0);
+				Lights.push(light1);
+				model.add( light1 );
+                // 骨骼显示助手
+                skeleton = new THREE.SkeletonHelper(model);
+				scene.add(skeleton);
+            }); 
+				
+        }
+		
+		
+
+		
+		 function loadModel2() {
+            var loader = new THREE.GLTFLoader();
+            loader.load('https://five-great.coding.me/model/qlhl_mian.glb', function (gltf) {
+                model = gltf.scene;
+                scene.add(model);
+                model.traverse(function (object) {
+                    if (object.isMesh) {
+                        object.castShadow = true;
+                        //console.log(object);
+                    }
+                });
+                model.rotation.y = -Math.PI;
+                model.scale.set(2200, 2200, 2200);
+				model.translateX(400-150);
+				model.translateY(102);
+				model.translateZ(-1050+75);
+                
+                // 骨骼显示助手
+                skeleton = new THREE.SkeletonHelper(model);
+                scene.add(skeleton);
+            });
+        }
+		 function loadModel3() {
+             loader = new THREE.GLTFLoader();
+            loader.load('https://five-great.coding.me/model/car-lhl-001.glb', function (gltf) {
+                model3 = gltf.scene;
+				 var obj1,obj4,obj3,obj2;
+                scene.add(model3);
+                model3.traverse(function (object) {
+                    if (object.isMesh) {
+                        object.castShadow = true;
+						//console.log("123333");
+                        //console.log(object);
+                    }
+					if(object.name=="node_id2811"){
+					     
+						model_w=object; 
+
+					}
+
+                });
+                model3.rotation.y = 1.56*Math.PI;
+                model3.scale.set(30, 30, 30);
+				model3.translateX(48);
+				model3.translateY(63);
+				model3.translateZ(-50);
+				 
+               
+                // 骨骼显示助手
+                skeleton = new THREE.SkeletonHelper(model3);
+                scene.add(skeleton);
+            });
+        }
+		
+		  function loadMode4() {
+            var loader = new THREE.GLTFLoader();
+            loader.load('https://five-great.coding.me/model/bus.glb', function (gltf) {
+                model = gltf.scene;
+                scene.add(model);
+                model.traverse(function (object) {
+                    if (object.isMesh) {
+                        object.castShadow = true;
+                       // console.log(object);
+                    }
+                });
+                model.rotation.y = -Math.PI;
+                model.scale.set(200, 200, 200);
+ 
+                // 骨骼显示助手
+                skeleton = new THREE.SkeletonHelper(model);
+                scene.add(skeleton);
+            });
+        }
+ 
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+ 
+            renderer.setSize(window.innerWidth, window.innerHeight);
+			
+		
+ 
+        }
+ 
+        function rendererScene() {
+            renderer = new THREE.WebGLRenderer({antialias: true});
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            renderer.gammaInput = true;
+            renderer.gammaOutput = true;
+            container.appendChild(renderer.domElement);
+			
+				var dragControls = new THREE.DragControls( objects, camera, renderer.domElement );
+				dragControls.addEventListener( 'dragstart', function () {
+					controls.enabled = false;
+				} );
+				dragControls.addEventListener( 'dragend', function () {
+					controls.enabled = true;
+				} );
+        }
+ 
+        function OrbitControls(camera, renderer) {
+            //OrbitControls控件操作模块
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.target=target;//控制的target
+            controls.autoRotate = true;//是否自动旋转
+            controls.autoRotateSpeed = 0.5;//自动旋转速度，正比
+
+        }
+
+		function  myabs(aa){
+		
+		    if(aa<0)return -aa;
+			else return aa
+		}
+		function buildMovingCars() {
+
+	      var car = new Car()
+		  var cd=Math.floor(Math.random()*4);
+		  var now_x=Math.floor(Math.random()*750-550+150);
+		  var now_y=cars_fx[cd][1]+Math.floor(Math.random()*3);
+		 
+		      //var index = Math.floor(Math.random() * colors.length)
+              if(now_cars_nums<=1){
+			  var car = new Car();
+			  car.setPosition(-550+150, 55, 120-75);
+		      car.mesh.rotation.y = cars_fx[0][2] * Math.PI;
+			  cars.push(car);
+			  scene.add(car.mesh);
+			  }else{  
+			          var flag=0;
+					  cars.forEach(function(car) {
+			              var angle = car.mesh.rotation.y
+		                  var x = car.mesh.position.x,
+			               z = car.mesh.position.z;
+						   if(z==cars_fx[cd][1]){//如果同一条路比较距离 小于80 不可放置车辆
+						        if(cars_fx[cd][1]&& myabs(now_x-x)<130)flag=1;
+								//console.log("akak");
+						   }
+						  
+		              })
+			     if(flag==0){
+				  var car = new Car();
+			      car.setPosition(now_x, 55, now_y);
+		          car.mesh.rotation.y = cars_fx[cd][2] * Math.PI;
+				  cars.push(car);
+			      scene.add(car.mesh);
+				}
+			  
+			  }
+			
+			
+	}
+	
+	
+	    function build_f(xx,yy,zz,color1){
+		
+		 var geometry = new THREE.BoxGeometry( xx, yy, zz );
+         var material = new THREE.MeshBasicMaterial( {color: color1} );
+         var cube = new THREE.Mesh( geometry, material );
+		 return cube;
+		
+		}
+	
+	   function build_cg(){
+	      
+	      wedu_cg = build_f(10,20,10, 0x333333);
+		  wedu_cg.position.set(30,10,-40);
+		  scene.add(wedu_cg);
+		  
+		  yali_cg = build_f(100,10,100,0xfaaa3c);
+		  yali_cg.position.set(250,45,0);
+		  scene.add(yali_cg);
+		  
+		  shuiwei_cg = build_f(20,30,2,0x079155);
+		  shuiwei_cg.position.set(30,-10,50);
+	   	  scene.add(shuiwei_cg);
+	   
+
+	   }
+		
+		function carMoving(car) {
+		  var angle = car.mesh.rotation.y
+		  var x = car.mesh.position.x,
+			z = car.mesh.position.z;
+			if(x>=220+150 && angle==0 && x<1000){
+			    car.setPosition(2301-Math.floor(Math.random() *300), 3000, z);
+              
+			}else if(x<=-540+150 && angle==1* Math.PI&&x>-1000){
+			  car.setPosition(-2301+Math.floor(Math.random() * 300), 3000, z);
+              
+			}else if(angle==0&& x>=2301){
+			     car.setPosition(-550+150, 55,z );
+			     
+			}else if(angle==1*Math.PI&& x<=-2301){
+			     car.setPosition(220+150, 55,z);
+			}
+			if(x<220+150 && x>-550+150){
+			            var cd;
+						if(z==cars_fx[0][1]) cd=cars_fx[0][1];
+						if(z==cars_fx[1][1]) cd=cars_fx[1][1];
+						if(z==cars_fx[2][1]) cd=cars_fx[2][1];
+						if(z==cars_fx[3][1]) cd=cars_fx[3][1];
+							 var flag=0;
+								  cars.forEach(function(car) {
+						
+									  var xx = car.mesh.position.x,
+									   zz = car.mesh.position.z;
+									  if(xx<220 && xx>-550){
+									  if(zz==cd && xx != x){//如果同一条路比较距离 小于60 不可车辆
+											 
+											if(cd && myabs(x-xx)<140)flag=1;
+									   }
+									  }
+								  })
+							if(flag==1){
+							   car.forward(0.001);//停车
+							   //console.log("//停车");
+							}else{
+							  car.forward(0.5);
+							}
+			}else{
+			   car.forward(0.5+Math.random() *0.5);
+			} 
+			// car.forward(0.5+Math.random() *0.5);
+       }
+	   
+
+	     function gui_init(){
+                var h1,h2,h3;
+				gui = new dat.GUI({width: 300});
+				var param = {
+				    // 场景设置
+					'xz': true , 
+					
+					//公共设施
+					 // 路灯
+					 'kg': true,
+					 'qd': 20.5,
+					 //交通灯控制
+					 'light_r': 2,
+					 'light_y': 0.8,
+					 'light_g': 3,
+					//传感器控制
+					 //温度传感器
+					  'wedu_qy': true,
+					  'wedu_x': 30,
+					  'wedu_y': 10,
+					  'wedu_z': -40,
+					 //压力传感器
+					  'yali_qy': true,
+					  'yali_x': 250,
+					  'yali_y': 40,
+					  'yali_z': 0,
+					 //水位传感器
+					  'shuiwei_qy': true,
+					  'shuiwei_x': 30,
+					  'shuiwei_y': -10,
+					  'shuiwei_z': 50
+					 
+					 
+				};
+				
+				 h1=gui.addFolder( "场景设置" );
+				 h1.add( param, 'xz' ).name("主体旋转").onChange( function ( val ) {
+				   controls.autoRotate=val;
+				} );
+				
+				 h1=gui.addFolder( "公共设施" );
+					h2=h1.addFolder("路灯");
+			        h2.add( param, 'kg' ).name("开关：").onChange( function ( val ) {
+				        Lights.forEach(function(light1) {
+				           if (val)light1.intensity=20.5 ;
+				           else light1.intensity=0; 
+		                   })
+				    } );
+				    h2.add( param, 'qd',0.0,50.0 ).name("灯光强度：").onChange( function () {
+					    Lights.forEach(function(light1) {
+				         light1.intensity=param.qd;
+		               })
+				    } );
+				
+			       h2=h1.addFolder( "交通灯控制" );
+				   h2.add( param, 'light_r',[0,1,2,3,4,5,6,10,20,30] ).name("红灯(占比):").onChange( function () {
+					   time_r=param.light_r*100;
+				   } );
+				   h2.add( param, 'light_y',[0,0.4,0.8,1,1.5,2] ).name("黄灯(占比):").onChange( function () {
+					   time_y=param.light_y*100;
+				   } );
+			       h2.add( param, 'light_g',[0,1,2,3,4,5,6,10,20,30] ).name("红灯(占比):").onChange( function () {
+					   time_g=param.light_g*100;
+				   } );
+				h1=gui.addFolder( "传感器控制" );
+				   h2=h1.addFolder( "温度传感器" );
+						h2.add( param, 'wedu_qy').name("启用：").onChange( function (val) {
+							 if(val) wedu_cg.position.set(30,10,-40);
+							 else wedu_cg.position.set(30,600000,-40);
+							
+						} );
+						h2.add( param, 'wedu_x',-300,300).name("X：").onChange( function () {
+							wedu_cg.position.y=param.wedu_y;
+							
+						} );
+						h2.add( param, 'wedu_y',-300,300).name("Y：").onChange( function () {
+							wedu_cg.position.y=param.wedu_y;
+							
+						} );
+						h2.add( param, 'wedu_z',-300,300).name("Z：").onChange( function () {
+							wedu_cg.position.z=param.wedu_z;
+							
+						} );
+		           h2=h1.addFolder( "压力传感器" );
+						h2.add( param, 'yali_qy').name("启用：").onChange( function (val) {
+							if(val) yali_cg.position.set(250,40,0);
+							 else yali_cg.position.set(50,600000,70);
+							
+						} );
+						h2.add( param, 'yali_x',-300,300).name("X：").onChange( function () {
+							
+							yali_cg.position.x=param.yali_x;
+						} );
+						h2.add( param, 'yali_y',-300,300).name("Y：").onChange( function () {
+							
+							yali_cg.position.y=param.yali_y;
+						} );
+						h2.add( param, 'yali_z',-300,300).name("Z：").onChange( function () {
+							
+							yali_cg.position.z=param.yali_z;
+						} );
+				   h2=h1.addFolder( "水位传感器" );
+						h2.add( param, 'shuiwei_qy').name("启用：").onChange( function (val) {
+							if(val) shuiwei_cg.position.set(30,-10,50);
+							 else shuiwei_cg.position.set(50,6000000,70);
+							
+						} );
+						h2.add( param, 'shuiwei_x',-300,300).name("X：").onChange( function () {
+							shuiwei_cg.position.x=param.shuiwei_x;
+							
+						} );
+						h2.add( param, 'shuiwei_y',-300,300).name("Y：").onChange( function () {
+							shuiwei_cg.position.y=param.shuiwei_y;
+							
+						} );
+						h2.add( param, 'shuiwei_z',-300,300).name("Z：").onChange( function () {
+							shuiwei_cg.position.z=param.shuiwei_z;
+							
+						} );
+				
+			
+		}
+	   function RGB_up(){
+	   
+	    if(RGB_time===0){
+						light_r.children[0].material.color.setHex(0xcc0405)
+						light_r.color.setHex(0xcc0405)
+						light_y.children[0].material.color.setHex(0x26394a)
+						light_y.color.setHex(0x26394a)
+						light_g.children[0].material.color.setHex(0x26394a)
+						light_g.color.setHex(0x26394a)
+		
+				
+                       }
+    			     if(RGB_time===time_r){
+						light_r.children[0].material.color.setHex(0x26394a)
+						light_r.color.setHex(0x26394a)
+						light_y.children[0].material.color.setHex(0xff9500)
+						light_y.color.setHex(0xff9500)
+						light_g.children[0].material.color.setHex(0x26394a)
+						light_g.color.setHex(0x26394a)
+					   }
+					  if(RGB_time===(time_r+time_y)){
+						light_r.children[0].material.color.setHex(0x26394a)
+						light_r.color.setHex(0x26394a)
+					    light_y.children[0].material.color.setHex(0x26394a)
+						light_y.color.setHex(0x26394a)
+				        light_g.children[0].material.color.setHex(0x079155)
+						light_g.color.setHex(0x079155)
+			
+					   }
+					RGB_time=RGB_time+1;
+					if(RGB_time>(time_g+time_r+time_y))RGB_time=0;
+	   }
+		function loop() {
+		    
+		    cars.forEach(function(car) {
+			     carMoving(car);
+		    })
+			
+			//if(wedu_cg){console.log("121211111111111");console.log(wedu_cg);}
+			if(light_y && light_r && light_g)RGB_up();
+		   if (controls) controls.update();
+		  renderer.render(scene, camera)
+		  requestAnimationFrame(loop)
+		   //stats.update();
+		  
+		}
+		$("#loading").fadeOut(2000);
+    </script>
+</body>
+ 
+</html>
+
