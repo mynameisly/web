@@ -1,0 +1,119 @@
+.main{
+    width: 100%;
+}
+
+.main .wrap{
+    width: 1000px;
+    /*height: 800px;*/
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.main .wrap .tab{
+    width: 200px;
+}
+
+.main .wrap .tab li{
+    /*border: 1px solid black;*/
+    margin: 5px auto;
+    cursor: pointer;
+    padding: 15px 0 15px 15px;
+    background: gainsboro;
+}
+
+.main .wrap .tab li:hover >img {
+    visibility: visible;
+}
+.main .wrap .tab li:hover >a{
+    color: red;
+}
+
+.main .wrap .tab li img{
+    visibility: hidden;
+    float: right;
+}
+
+.main .wrap .con{
+    width: 780px;
+    border: 2px solid gainsboro;
+}
+
+.main .wrap .con .content ul{
+    /*height: 600px;*/
+    overflow: hidden;
+}
+
+.main .wrap .con .content ul li{
+    width: 94%;
+}
+
+.main .wrap .con .content ul li .zan{
+    border: 1px solid red;
+    margin-right: 15px;
+    width: 60px;
+    float: right;
+}
+
+.main .wrap .con .content ul li .date{
+    display: block;
+    float: right;
+}
+
+.main .wrap .con .content ul li{
+    padding: 25px 20px 0 20px;
+}
+
+.main .wrap .tab li>a,
+.main .wrap .con .content ul li>a{
+    color: #000;
+}
+
+.main .wrap .con .content ul li>a:hover,
+.main .wrap .con .content ul li>a:hover .date{
+    color: red;
+    text-decoration: underline;
+}
+
+.main .wrap .con .content ul li .date{
+    cursor: pointer;
+}
+
+.main .wrap .con .content .zan .num{
+    display: block;
+    float: left;
+}
+
+
+.active{
+    /*border:1px solid green;*/
+}
+
+.content{
+    display:none;
+}
+
+.content.active{
+    display:block;
+}
+
+.page{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.page .pageWrap a,
+.page .pageWrap span{
+    display: inline-block;
+    margin: 0px 2px;
+    padding: 2px 5px;
+    text-align: center;
+    border: 1px solid #f60;
+    background: #eee;
+}
+
+.page .pageWrap .curPage{
+    color: #fff;
+    background: #e93;
+    font-weight: bold;
+}
